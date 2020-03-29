@@ -1,0 +1,1 @@
+json.device_type @device_type

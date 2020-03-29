@@ -1,0 +1,3 @@
+json.resource_types Role::RESOURCE_TYPE
+json.unselected_actions @unselected_actions
+json.selected_actions @selected_actions
