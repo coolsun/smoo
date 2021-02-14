@@ -658,7 +658,7 @@
 import mdbContainer from 'mdbvue';
 
 export default {
-  name: "Contact",
+  name: "Home2",
   components: {
     mdbContainer
   },

@@ -4,8 +4,13 @@ import Router from 'vue-router';
 import Home from '@/views/layouts/Home';
 
 import NotFound from '@/views/layouts/NotFound';
+import About from '@/views/pages/About';
 import Contact from '@/views/pages/Contact';
 import Home2 from '@/views/pages/Home2';
+import Featured from '@/views/featured/Featured';
+import Featured2 from '@/views/featured/Featured2';
+import Blog from '@/views/blog/Blog';
+import BlogDetails from '@/views/blog/BlogDetails';
 import Causes from '@/views/causes/Causes';
 import Causes2 from '@/views/causes/Causes2';
 import CausesDetails from '@/views/causes/CausesDetails';
@@ -30,9 +35,34 @@ export default new Router({
       component: Home2
     },
     {
+      path: '/about',
+      name: 'About',
+      component: About
+    },
+    {
       path: '/contact',
       name: 'Contact',
       component: Contact
+    },
+    {
+      path: '/featured',
+      name: 'Featured',
+      component: Featured
+    },
+    {
+      path: '/featured-2',
+      name: 'Featured2',
+      component: Featured2
+    },
+    {
+      path: '/blog',
+      name: 'Blog',
+      component: Blog
+    },
+    {
+      path: '/blog-details',
+      name: 'BlogDetails',
+      component: BlogDetails
     },
     {
       path: '/causes',
