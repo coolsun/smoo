@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <custom-header />
-
+    <custom-breadcrumb />
     <main>
       <transition name="fade" mode="out-in">
         <router-view/>
@@ -16,6 +16,7 @@
 <script>
 
 import CustomHeader from '@/views/layouts/Header';
+import CustomBreadcrumb from '@/views/layouts/Breadcrumb';
 import CustomFooter from '@/views/layouts/Footer';
 import CustomCopyright from '@/views/layouts/Copyright';
 
@@ -23,6 +24,7 @@ export default {
   name: "app",
   components: {
     CustomHeader,
+    CustomBreadcrumb,
     CustomFooter,
     CustomCopyright
   },
