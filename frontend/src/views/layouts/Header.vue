@@ -50,21 +50,19 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ $t('app.home') }}</a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="/">{{ $t('app.home') + ' 1' }}</a>
-                                <a class="dropdown-item" href="home2">{{ $t('app.home') + ' 2' }}</a>
-                            </div>
-                        </li>
+                        <li class="nav-item"><a class="nav-link" href="/">{{ $t('header.home') }}</a></li>
                         <li class="nav-item"><a class="nav-link" href="about">{{ $t('header.about') }}</a></li>
 						<li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ $t('header.featured') }}</a>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="featured">{{ $t('header.featured') + ' 1' }}</a>
-                                <a class="dropdown-item" href="featured-2">{{ $t('header.featured') + ' 2' }}</a>
+                                <a class="dropdown-item" href="emergency">{{ $t('header.emergency') }}</a>
+                                <a class="dropdown-item" href="memorial">{{ $t('header.memorial') }}</a>
+                                <a class="dropdown-item" href="animal-rescue">{{ $t('header.animal-rescue') }}</a>
+                                <a class="dropdown-item" href="medical">{{ $t('header.medical') }}</a>
+                                <a class="dropdown-item" href="charity">{{ $t('header.charity') }}</a>
                             </div>
                         </li>
+                        <!--
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
                             <div class="dropdown-menu">
@@ -85,6 +83,7 @@
                                 <a class="dropdown-item" href="blog-details">{{ $t('header.blog_details') }}</a>
                             </div>
                         </li>
+                        -->
                         <li class="nav-item"><a class="nav-link" href="contact">{{ $t('header.contact') }}</a></li>
                     </ul>
                 </div>

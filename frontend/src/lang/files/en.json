@@ -35,7 +35,23 @@
     "all_blogs": "All blogs",
     "blog_details": "Blog Details",
     "contact_us": "Contact us",
-    "contact": "Contact"
+    "contact": "Contact",
+    "medical": "Medical",
+    "memorial": "Memorial",
+    "emergency": "Emergency",
+    "charity": "Charity",
+    "animal-rescue": "Animal Rescue",
+    "home": "Home"
+  },
+  "footer": {
+    "contact_us": "Contact us",
+    "contact": "Contact",
+    "medical": "Medical",
+    "memorial": "Memorial",
+    "emergency": "Emergency",
+    "charity": "Charity",
+    "animal-rescue": "Animal Rescue",
+    "home": "Home"
   },
   "layouts": {
     "hello": "Welcome to SCloud!",
