@@ -26,6 +26,20 @@
     "t_chinese": "繁體中文",
     "english": "英文"
   },
+  "header": {
+    "explore": "Explore-C",
+    "start_project": "Start a project-C",
+    "help": "Need help? Call now: +123-234-567-000-C",
+    "about": "About us-C",
+    "featured": "Featured-C",
+    "causes": "Causes-C",
+    "cause_details": "Cause Details-C",
+    "blog": "Blog-C",
+    "all_blogs": "All blogs-C",
+    "blog_details": "Blog Details-C",
+    "contact_us": "Contact us-C",
+    "contact": "Contact"
+  },
   "layouts": {
     "hello": "歡迎來到 SCloud!",
     "not_found_page": "沒有此頁面"

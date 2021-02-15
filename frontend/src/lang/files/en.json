@@ -23,6 +23,20 @@
     "t_chinese": "Chinese(Traditional)",
     "english": "English"
   },
+  "header": {
+    "explore": "Explore",
+    "start_project": "Start a project",
+    "help": "Need help? Call now: +123-234-567-000",
+    "about": "About us",
+    "featured": "Featured",
+    "causes": "Causes",
+    "cause_details": "Cause Details",
+    "blog": "Blog",
+    "all_blogs": "All blogs",
+    "blog_details": "Blog Details",
+    "contact_us": "Contact us",
+    "contact": "Contact"
+  },
   "layouts": {
     "hello": "Welcome to SCloud!",
     "not_found_page": "Not Found Page"
