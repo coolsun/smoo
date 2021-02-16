@@ -41,7 +41,8 @@
     "emergency": "Emergency",
     "charity": "Charity",
     "animal-rescue": "Animal Rescue",
-    "home": "Home"
+    "home": "Home",
+    "donate_now": "Donate now"
   },
   "footer": {
     "contact_us": "Contact us",
