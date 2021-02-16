@@ -23,7 +23,8 @@
                             <h3><a href="">Denote Simple Fat Denied</a></h3>
                         </div>
                         <p>Wandered or strictly raillery stanhill as. Jennings appetite disposed me an at subjects an.</p>
-                        <a href="" class="bttn-small btn-wht">Donate now</a>
+                        <router-link class="bttn-small btn-wht" :to="{ name: 'CausesDetails'}" tag="button">Donate now</router-link>
+
                     </div>
                 </div>
 
