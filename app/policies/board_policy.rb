@@ -1,2 +1,0 @@
-class BoardPolicy < ApplicationPolicy
-end
