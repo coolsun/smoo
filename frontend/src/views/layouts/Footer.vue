@@ -5,7 +5,7 @@
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
                     <div class="footer-widget">
                         <img src="@/assets/images/logo-2.png" alt="">
-                        <p>Death there mirth way the noisy merit. Piqued shy spring nor six though mutual living ask extent. Replying of dashwood advanc ladyship smallest disposal or.</p>
+                        <p>{{ $t('footer.summary') }}</p>
                         <div class="footer-social">
                             <a href="" class="facebook"><i class="fa fa-facebook"></i></a>
                             <a href="" class="twitter"><i class="fa fa-twitter"></i></a>
@@ -16,48 +16,37 @@
                 </div>
                 <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6">
                     <div class="footer-nav">
-                        <h3>Home</h3>
+                        <h3>{{ $t('footer.overview') }}</h3>
                         <ul>
-                            <li><a href="">About us</a></li>
-                            <li><a href="">Featured</a></li>
-                            <li><a href="">Pages</a></li>
-                            <li><a href="">Contact</a></li>
-                            <li><a href="">Blog</a></li>
+                            <li><a href="/">{{ $t('footer.home') }}</a></li>
+                            <li><a href="about">{{ $t('footer.about') }}</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6">
                     <div class="footer-nav">
-                        <h3>Important Links</h3>
+                        <h3>{{ $t('footer.featured') }}</h3>
                         <ul>
-                            <li><a href="">Madical</a></li>
-                            <li><a href="">Stady</a></li>
-                            <li><a href="">Water</a></li>
-                            <li><a href="">Design & Tech</a></li>
-                            <li><a href="">Film</a></li>
+                            <li><a href="medical">{{ $t('footer.medical') }}</a></li>
+                            <li><a href="memorial">{{ $t('footer.memorial') }}</a></li>
+                            <li><a href="emergency">{{ $t('footer.emergency') }}</a></li>
+                            <li><a href="animal-rescue">{{ $t('footer.animal-rescue') }}</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6">
                     <div class="footer-nav">
-                        <h3>Important Links</h3>
+                        <h3>{{ $t('footer.featured') }}</h3>
                         <ul>
-                            <li><a href="">Food & Craft</a></li>
-                            <li><a href="">Games</a></li>
-                            <li><a href="">Music</a></li>
-                            <li><a href="">Publishing</a></li>
+                            <li><a href="chairty">{{ $t('footer.chairty') }}</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6">
                     <div class="footer-nav">
-                        <h3>Important Links</h3>
+                        <h3>Help or Question</h3>
                         <ul>
-                            <li><a href="">Support</a></li>
-                            <li><a href="">Help Center</a></li>
-                            <li><a href="">Our Rules</a></li>
-                            <li><a href="">Creator Handbook</a></li>
-                            <li><a href="">Patrons</a></li>
+                            <li><a href="contact">{{ $t('footer.contact') }}</a></li>
                         </ul>
                     </div>
                 </div>

@@ -7,8 +7,11 @@ import NotFound from '@/views/layouts/NotFound';
 import About from '@/views/pages/About';
 import Contact from '@/views/pages/Contact';
 import Home2 from '@/views/pages/Home2';
-import Featured from '@/views/featured/Featured';
-import Featured2 from '@/views/featured/Featured2';
+import AnimalRescue from '@/views/featured/AnimalRescue';
+import Emergency from '@/views/featured/Emergency';
+import Charity from '@/views/featured/Charity';
+import Memorial from '@/views/featured/Memorial';
+import Medical from '@/views/featured/Medical';
 import Blog from '@/views/blog/Blog';
 import BlogDetails from '@/views/blog/BlogDetails';
 import Causes from '@/views/causes/Causes';
@@ -45,14 +48,29 @@ export default new Router({
       component: Contact
     },
     {
-      path: '/featured',
-      name: 'Featured',
-      component: Featured
+      path: '/medical',
+      name: 'Medical',
+      component: Medical
     },
     {
-      path: '/featured-2',
-      name: 'Featured2',
-      component: Featured2
+      path: '/emergency',
+      name: 'Emergency',
+      component: Emergency
+    },
+    {
+      path: '/animal-rescue',
+      name: 'AnimalRescue',
+      component: AnimalRescue
+    },
+    {
+      path: '/memorial',
+      name: 'memorial',
+      component: Memorial
+    },
+    {
+      path: '/charity',
+      name: 'Charity',
+      component: Charity
     },
     {
       path: '/blog',

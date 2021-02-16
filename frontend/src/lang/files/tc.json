@@ -27,19 +27,36 @@
     "english": "英文"
   },
   "header": {
-    "explore": "Explore-C",
-    "start_project": "Start a project-C",
-    "help": "Need help? Call now: +123-234-567-000-C",
-    "about": "About us-C",
+    "explore": "關懷協助",
+    "start_project": "尋找協助",
+    "help": "Need help? Call now: +123-234-567-000",
+    "about": "主旨",
     "featured": "Featured-C",
     "causes": "Causes-C",
     "cause_details": "Cause Details-C",
     "blog": "Blog-C",
     "all_blogs": "All blogs-C",
     "blog_details": "Blog Details-C",
-    "contact_us": "Contact us-C",
-    "contact": "Contact"
+    "contact_us": "聯繫我們",
+    "contact": "聯繫",
+    "medical": "醫療救助",
+    "memorial": "喪葬事宜",
+    "emergency": "緊急協助",
+    "charity": "慈善",
+    "animal-rescue": "動物關懷",
+    "home": "本會宗旨"
   },
+  "footer": {
+    "contact_us": "聯繫我們",
+    "contact": "聯繫",
+    "medical": "醫療救助",
+    "memorial": "喪葬事宜",
+    "emergency": "緊急協助",
+    "charity": "慈善",
+    "animal-rescue": "動物關懷",
+    "home": "本會宗旨"
+  },
+  
   "layouts": {
     "hello": "歡迎來到 SCloud!",
     "not_found_page": "沒有此頁面"

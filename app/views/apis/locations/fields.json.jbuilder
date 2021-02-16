@@ -1,1 +1,0 @@
-json.location @location, *@fields 
