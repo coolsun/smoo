@@ -7,7 +7,6 @@
     </div> 
     
       Preloader -->
-
     <!--Header Top-->
     <div class="header-top dark-green-bg">
         <div class="container">
@@ -29,11 +28,22 @@
                     <div class="single-header-top last">
                         <ul>
                             <li><a href=""><i class="fa fa-search"></i></a></li>
-                            <li><a href="index-user">{{ $t('app.sign_in') }}</a></li>
+                            <li><a href="">{{ $t('app.sign_in') }}</a></li>
                         </ul>
                     </div>
                 </div>
-            </div>    
+            </div> 
+            <mdb-btn color="primary" @click.native="modal = true">Launch demo modal</mdb-btn>
+              <mdb-modal :show="modal" @close="modal = false">
+                <mdb-modal-header>
+                  <mdb-modal-title>Modal title</mdb-modal-title>
+                </mdb-modal-header>
+                <mdb-modal-body>...</mdb-modal-body>
+                <mdb-modal-footer>
+                  <mdb-btn color="secondary" @click.native="modal = false">Close</mdb-btn>
+                  <mdb-btn color="primary">Save changes</mdb-btn>
+                </mdb-modal-footer>
+              </mdb-modal>   
         </div>
     </div><!--/Header Top-->
   
@@ -94,16 +104,30 @@
 </template>
 
 <script>
+  import { mdbModal, mdbModalHeader, mdbModalTitle, mdbModalBody, mdbModalFooter, mdbBtn } from 'mdbvue';
   export default {
+    components: {
+      mdbModal,
+      mdbModalHeader,
+      mdbModalTitle,
+      mdbModalBody,
+      mdbModalFooter,
+      mdbBtn
+    },
     data() {
       return {
-        methods: {
-          changeLang() {
-            this.$i18n.locale = this.$i18n.locale == 'zh-tw' ? 'en' : 'zh-tw';
-            console.log("changeLang()");
-          },
-        }
-      }
+        modal: false
+      };
+    },
+    methods: {
+      openSignInModal() {
+        this.showSignIn = true;
+        console.log("showSignIn=true");
+      },
+      changeLang() {
+        this.$i18n.locale = this.$i18n.locale == 'zh-tw' ? 'en' : 'zh-tw';
+        console.log("changeLang()");
+      },
     }  
   };
 </script>
