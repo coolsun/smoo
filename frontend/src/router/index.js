@@ -7,6 +7,7 @@ import NotFound from '@/views/layouts/NotFound';
 import About from '@/views/pages/About';
 import Contact from '@/views/pages/Contact';
 import Home2 from '@/views/pages/Home2';
+import SignUp from '@/views/pages/SignUp';
 import AnimalRescue from '@/views/featured/AnimalRescue';
 import Emergency from '@/views/featured/Emergency';
 import Charity from '@/views/featured/Charity';
@@ -41,6 +42,11 @@ export default new Router({
       path: '/about',
       name: 'About',
       component: About
+    },
+    {
+      path: '/sign-up',
+      name: 'SignUp',
+      component: SignUp
     },
     {
       path: '/contact',

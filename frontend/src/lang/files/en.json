@@ -54,6 +54,19 @@
     "animal-rescue": "Animal Rescue",
     "home": "Home"
   },
+  "sign_in": {
+    "login": "Log In",
+    "register": "Register",
+    "your_email": "Your Email",
+    "your_password": "Your Password",
+    "repeat_password": "Repeat Password",
+    "not_a_member": "You are not yet a member?",
+    "sign_up": "Sign Up",
+    "forget_password": "Forget password?",
+    "reset_password": "Reset Password",
+    "already_have_an_account": "Already have an account?",
+    "close": "Close"
+  },
   "layouts": {
     "hello": "Welcome to SCloud!",
     "not_found_page": "Not Found Page"

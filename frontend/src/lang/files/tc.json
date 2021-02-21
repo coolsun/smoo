@@ -57,7 +57,21 @@
     "animal-rescue": "動物關懷",
     "home": "本會宗旨"
   },
-  
+  "sign_in": {
+    "login": "登入",
+    "register": "註冊",
+    "your_email": "您的信箱",
+    "your_password": "您的密碼",
+    "check_code": "驗證碼",
+    "your_new_password": "輸入您的新密碼",
+    "repeat_password": "再次輸入您的密碼",
+    "not_a_member": "您還不是會員?",
+    "sign_up": "註冊",
+    "forget_password": "忘記密碼",
+    "reset_password": "重設密碼",
+    "already_have_an_account": "已經擁有帳號?",
+    "close": "關閉"
+  },
   "layouts": {
     "hello": "歡迎來到 SCloud!",
     "not_found_page": "沒有此頁面"

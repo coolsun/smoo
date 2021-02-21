@@ -13,9 +13,9 @@
             <div class="row">
                 <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4">
                     <div class="single-header-top">
-                        <ul>
-                            <li><a href="explore">{{ $t('header.explore') }}</a></li>
-                            <li><a href="start-a-project">{{ $t('header.start_project') }}</a></li>
+                        <ul>                        
+                            <li><mdb-btn class="btn-sm btn-emt" ><a href="explore">{{ $t('header.explore') }}</a></mdb-btn></li>
+                            <li><mdb-btn class="btn-sm btn-emt" ><a href="start-a-project">{{ $t('header.start_project') }}</a></mdb-btn></li>
                         </ul>
                     </div>
                 </div>
@@ -27,23 +27,38 @@
                 <div class="col-xl-3 col-lg-3 col-md-2 col-sm-3">
                     <div class="single-header-top last">
                         <ul>
+                            <mdb-btn class="btn-sm btn-emt" @click.native="modal = true">{{ $t('app.sign_in') }}</mdb-btn>
+                              <mdb-modal :show="modal" @close="modal = false">
+                                <mdb-tab tabs justify class="light-blue darken-3">
+                                  <mdb-tab-item>
+                                    <mdb-icon icon="user" class="mr-1"/>{{ $t('sign_in.login') }}
+                                  </mdb-tab-item>
+                                </mdb-tab>
+                                <mdb-modal-body class="mx-3">
+                                  <mdb-input class="mb-5" :label="$t('sign_in.your_email')" icon="envelope" type="email" v-model="email"/>
+                                  <mdb-input :label="$t('sign_in.your_password')" icon="lock" type="password" v-model="password"/>
+                                  <div class="mt-2 text-center">
+                                    <mdb-btn color="info" @click="signIn">
+                                      {{ $t('sign_in.login') }}<mdb-icon icon="sign-in-alt" class="ml-1"/>
+                                    </mdb-btn>
+                                    <mdb-btn color="info" @click="modal = false">
+                                      <router-link class="" :to="{ name: 'SignUp'}" tag="button">{{ $t('sign_in.sign_up')}}</router-link>
+                                    </mdb-btn>
+                                  </div>
+                                </mdb-modal-body>
+                                <mdb-modal-footer center>
+                                  <div class="options mt-1">
+                                    <p><a href="#" @click="forgetPassword">{{ $t('sign_in.forget_password') }} ?</a></p>
+                                  </div>
+                                  <mdb-btn outline="info" class="ml-auto" @click.native="modal = false">{{ $t('sign_in.close') }}</mdb-btn>
+                                </mdb-modal-footer>
+                              </mdb-modal>   
                             <li><a href=""><i class="fa fa-search"></i></a></li>
-                            <li><a href="">{{ $t('app.sign_in') }}</a></li>
+
                         </ul>
                     </div>
                 </div>
             </div> 
-            <mdb-btn color="primary" @click.native="modal = true">Launch demo modal</mdb-btn>
-              <mdb-modal :show="modal" @close="modal = false">
-                <mdb-modal-header>
-                  <mdb-modal-title>Modal title</mdb-modal-title>
-                </mdb-modal-header>
-                <mdb-modal-body>...</mdb-modal-body>
-                <mdb-modal-footer>
-                  <mdb-btn color="secondary" @click.native="modal = false">Close</mdb-btn>
-                  <mdb-btn color="primary">Save changes</mdb-btn>
-                </mdb-modal-footer>
-              </mdb-modal>   
         </div>
     </div><!--/Header Top-->
   
@@ -64,7 +79,7 @@
                         <li class="nav-item"><a class="nav-link" href="about">{{ $t('header.about') }}</a></li>
 						<li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ $t('header.featured') }}</a>
-                            <div class="dropdown-menu">
+                            <div class="dropdown-menu collapse">
                                 <a class="dropdown-item" href="emergency">{{ $t('header.emergency') }}</a>
                                 <a class="dropdown-item" href="memorial">{{ $t('header.memorial') }}</a>
                                 <a class="dropdown-item" href="animal-rescue">{{ $t('header.animal-rescue') }}</a>
@@ -104,16 +119,18 @@
 </template>
 
 <script>
-  import { mdbModal, mdbModalHeader, mdbModalTitle, mdbModalBody, mdbModalFooter, mdbBtn } from 'mdbvue';
+import { mdbModal, mdbTab, mdbTabItem, mdbModalBody, mdbInput, mdbModalFooter, mdbBtn, mdbIcon } from 'mdbvue'
   export default {
     components: {
       mdbModal,
-      mdbModalHeader,
-      mdbModalTitle,
+      mdbTab,
+      mdbTabItem,
       mdbModalBody,
+      mdbInput,
       mdbModalFooter,
-      mdbBtn
-    },
+      mdbBtn,
+      mdbIcon
+  },
     data() {
       return {
         modal: false
