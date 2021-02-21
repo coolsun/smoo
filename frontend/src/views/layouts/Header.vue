@@ -63,63 +63,61 @@
     </div><!--/Header Top-->
   
     <!--Header Area-->
-    <header class="header-area primary-bg">
-        <nav class="navbar sticky-top navbar-expand-lg main-menu">
-            <div class="container">
+      <mdb-container>
+          <mdb-navbar class="header-area primary-bg mt-2 lighten-4" expand="xl" togglerIcon="" animated animation="1">
+            <!-- Navbar brand -->
+            <mdb-navbar-brand><a href="/"><img src="@/assets/images/logo.png" class="d-inline-block align-top" alt="" width="30%"></a>
+            </mdb-navbar-brand>
+            <mdb-navbar-toggler>
+              <mdb-navbar-nav right>
+                <mdb-nav-item href="/" waves-fixed>{{ $t('header.home') }}</mdb-nav-item>
+                <mdb-nav-item href="about" waves-fixed>{{ $t('header.about') }}</mdb-nav-item>
+                <mdb-dropdown tag="li" class="nav-item">
+                  <mdb-dropdown-toggle
+                    tag="a"
+                    navLink
+                    color="primary-bg"
+                    slot="toggle"
+                    waves-fixed
+                    >{{ $t('header.featured') }}</mdb-dropdown-toggle>
+                  <mdb-dropdown-menu color="primary-bg">
+                    <mdb-dropdown-item href="emergency">{{ $t('header.emergency') }}</mdb-dropdown-item>
+                    <mdb-dropdown-item href="memorial">{{ $t('header.memorial') }}</mdb-dropdown-item>
+                    <mdb-dropdown-item href="animal-rescue">{{ $t('header.animal-rescue') }}</mdb-dropdown-item>
+                    <mdb-dropdown-item href="medical">{{ $t('header.medical') }}</mdb-dropdown-item>
+                    <mdb-dropdown-item href="charity">{{ $t('header.charity') }}</mdb-dropdown-item>
+                  </mdb-dropdown-menu>
+                </mdb-dropdown>
+                <mdb-nav-item href="contact" waves-fixed>{{ $t('header.contact') }}</mdb-nav-item>
+              </mdb-navbar-nav>
+            </mdb-navbar-toggler>
 
-                <a class="navbar-brand" href="/"><img src="@/assets/images/logo.png" class="d-inline-block align-top" alt="" width="30%"></a>
-
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="menu-toggle"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item"><a class="nav-link" href="/">{{ $t('header.home') }}</a></li>
-                        <li class="nav-item"><a class="nav-link" href="about">{{ $t('header.about') }}</a></li>
-						<li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ $t('header.featured') }}</a>
-                            <div class="dropdown-menu collapse">
-                                <a class="dropdown-item" href="emergency">{{ $t('header.emergency') }}</a>
-                                <a class="dropdown-item" href="memorial">{{ $t('header.memorial') }}</a>
-                                <a class="dropdown-item" href="animal-rescue">{{ $t('header.animal-rescue') }}</a>
-                                <a class="dropdown-item" href="medical">{{ $t('header.medical') }}</a>
-                                <a class="dropdown-item" href="charity">{{ $t('header.charity') }}</a>
-                            </div>
-                        </li>
-                        <!--
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="about">{{ $t('header.about') }}</a>
-                                <a class="dropdown-item" href="causes">{{ $t('header.causes') + ' 1' }}</a>
-                                <a class="dropdown-item" href="causes2">{{ $t('header.causes') + ' 2' }}</a>
-                                <a class="dropdown-item" href="causes-details">{{ $t('header.cause_details') }}</a>
-                                <a class="dropdown-item" href="start-a-project">{{ $t('header.start_project') }}</a>
-                                <a class="dropdown-item" href="blog">{{ $t('header.all_blogs') }}</a>
-                                <a class="dropdown-item" href="blog-details">{{ $t('header.blog_details') }}</a>
-                                <a class="dropdown-item" href="contact">{{ $t('header.contact_us') }}</a>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="blog" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blog</a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="blog">{{ $t('header.all_blogs') }}</a>
-                                <a class="dropdown-item" href="blog-details">{{ $t('header.blog_details') }}</a>
-                            </div>
-                        </li>
-                        -->
-                        <li class="nav-item"><a class="nav-link" href="contact">{{ $t('header.contact') }}</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header><!--/Header Area-->
+          </mdb-navbar>
+      </mdb-container>
 </div>
 </template>
 
 <script>
-import { mdbModal, mdbTab, mdbTabItem, mdbModalBody, mdbInput, mdbModalFooter, mdbBtn, mdbIcon } from 'mdbvue'
+import { 
+  mdbModal, 
+  mdbTab, 
+  mdbTabItem, 
+  mdbModalBody, 
+  mdbInput, 
+  mdbModalFooter, 
+  mdbBtn, 
+  mdbIcon, 
+  mdbContainer,
+  mdbNavbar,
+  mdbNavbarBrand,
+  mdbNavbarNav,
+  mdbNavbarToggler,
+  mdbNavItem,
+  mdbDropdown,
+  mdbDropdownItem,
+  mdbDropdownMenu,
+  mdbDropdownToggle
+  } from 'mdbvue'
   export default {
     components: {
       mdbModal,
@@ -129,7 +127,17 @@ import { mdbModal, mdbTab, mdbTabItem, mdbModalBody, mdbInput, mdbModalFooter, m
       mdbInput,
       mdbModalFooter,
       mdbBtn,
-      mdbIcon
+      mdbIcon,
+      mdbContainer,
+      mdbNavbar,
+      mdbNavbarBrand,
+      mdbNavbarNav,
+      mdbNavbarToggler,
+      mdbNavItem,
+      mdbDropdown,
+      mdbDropdownItem,
+      mdbDropdownMenu,
+      mdbDropdownToggle
   },
     data() {
       return {

@@ -36,15 +36,15 @@
                 </div>
                 <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6">
                     <div class="footer-nav">
-                        <h3>{{ $t('footer.featured') }}</h3>
+                        <h3>{{ $t('footer.more_featured') }}</h3>
                         <ul>
-                            <li><a href="chairty">{{ $t('footer.chairty') }}</a></li>
+                            <li><a href="charity">{{ $t('footer.charity') }}</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6">
                     <div class="footer-nav">
-                        <h3>Help or Question</h3>
+                        <h3>{{ $t('footer.help_or_question') }}</h3>
                         <ul>
                             <li><a href="contact">{{ $t('footer.contact') }}</a></li>
                         </ul>
