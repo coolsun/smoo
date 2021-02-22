@@ -69,7 +69,7 @@
             </mdb-navbar-brand>
             <mdb-navbar-toggler>
               <mdb-navbar-nav right>
-                <mdb-nav-item href="/" waves-fixed>{{ $t('header.home') }}</mdb-nav-item>
+                <mdb-nav-item href="/" waves-fixed>{{ $t('header.101moo') }}</mdb-nav-item>
                 <mdb-nav-item href="about" waves-fixed>{{ $t('header.about') }}</mdb-nav-item>
                 <mdb-dropdown tag="li" class="nav-item">
                   <mdb-dropdown-toggle

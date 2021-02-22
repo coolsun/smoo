@@ -24,7 +24,9 @@
     "english": "English"
   },
   "header": {
+    "101moo": "101moo",
     "explore": "Explore",
+    "start-a-project": "Start a project",
     "start_project": "Start a project",
     "help": "Need help? Call now: +123-234-567-000",
     "about": "About us",
@@ -45,6 +47,7 @@
     "donate_now": "Donate now"
   },
   "footer": {
+    "101moo": "101Moo",
     "about": "About us",
     "featured": "Featured",
     "more_featured": "More Featured",
@@ -57,7 +60,9 @@
     "animal-rescue": "Animal Rescue",
     "home": "Home",
     "summary": "Love and care around your world!",
-    "help_or_question": "Help or Question"
+    "help_or_question": "Help or Question",
+    "copyright": "Copyright",
+    "all-rights-reserved": "All Rights Reserved"
   },
   "sign_in": {
     "login": "Log In",

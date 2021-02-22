@@ -27,10 +27,12 @@
     "english": "英文"
   },
   "header": {
+    "101moo": "一日一募",
     "explore": "關懷協助",
+    "start-a-project": "尋找協助",
     "start_project": "尋找協助",
     "help": "需要客服? 請撥打: +123-234-567-000",
-    "about": "主旨",
+    "about": "服務宗旨",
     "featured": "關懷事項",
     "causes": "協助事項",
     "cause_details": "協助內容",
@@ -38,7 +40,7 @@
     "all_blogs": "部落客內容",
     "blog_details": "Blog Details-C",
     "contact_us": "聯繫我們",
-    "contact": "聯繫",
+    "contact": "聯繫客服",
     "medical": "醫療救助",
     "memorial": "喪葬事宜",
     "emergency": "緊急協助",
@@ -48,11 +50,12 @@
     "donate_now": "慷慨捐助"
   },
   "footer": {
-    "about": "主旨",
+    "101moo": "一日一募",
+    "about": "服務宗旨",
     "featured": "關懷事項",
     "more_featured": "更多關懷事項",
     "contact_us": "聯繫我們",
-    "contact": "聯繫",
+    "contact": "聯繫客服",
     "medical": "醫療救助",
     "memorial": "喪葬事宜",
     "emergency": "緊急協助",
@@ -61,7 +64,9 @@
     "home": "本會宗旨",
     "donate_now": "慷慨捐助",
     "summary": "助⼈為快樂之本。光是憐憫還不夠，及時伸出援⼿的才是真正的同情者。 透過這個募資網站平台接收到愛與溫暖，透過眾⼈累積集資的⼒ 量，讓社會弱勢的⻆落看到希望。",
-    "help_or_question": "客服或建議回饋"
+    "help_or_question": "客服或建議回饋",
+    "copyright": "版權所有",
+    "all-rights-reserved": "一日一募，雲端捐助"
   },
   "sign_in": {
     "login": "登入",
