@@ -63,8 +63,7 @@
     </div><!--/Header Top-->
   
     <!--Header Area-->
-      <mdb-container>
-          <mdb-navbar class="header-area primary-bg mt-2 lighten-4" expand="xl" togglerIcon="" animated animation="1">
+          <mdb-navbar class="header-area primary-bg lighten-4" expand="xl" togglerIcon="" animated animation="1" style="margin: 0;">
             <!-- Navbar brand -->
             <mdb-navbar-brand><a href="/"><img src="@/assets/images/logo.png" class="d-inline-block align-top" alt="" width="30%"></a>
             </mdb-navbar-brand>
@@ -93,7 +92,6 @@
             </mdb-navbar-toggler>
 
           </mdb-navbar>
-      </mdb-container>
 </div>
 </template>
 
@@ -107,7 +105,6 @@ import {
   mdbModalFooter, 
   mdbBtn, 
   mdbIcon, 
-  mdbContainer,
   mdbNavbar,
   mdbNavbarBrand,
   mdbNavbarNav,
@@ -128,7 +125,6 @@ import {
       mdbModalFooter,
       mdbBtn,
       mdbIcon,
-      mdbContainer,
       mdbNavbar,
       mdbNavbarBrand,
       mdbNavbarNav,

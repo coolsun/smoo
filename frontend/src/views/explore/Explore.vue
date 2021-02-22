@@ -21,7 +21,7 @@
 
                 <div class="portfolio-item cat1 cat3">
                     <div class="item-thumb">
-                        <img src="assets/images/portfolios/7.jpg" alt="">
+                        <img src="@/assets/images/portfolios/7.jpg" alt="">
                         <div class="item-tag">By Petey Cruiser</div>
                         <div class="progress light-blue-bg">
                             <div class="progress-bar" role="progressbar" style="width: 45%;" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"><span>45%</span></div>
@@ -44,7 +44,7 @@
 
                 <div class="portfolio-item cat2 cat4 ">
                     <div class="item-thumb">
-                        <img src="assets/images/portfolios/8.jpg" alt="">
+                        <img src="@/assets/images/portfolios/8.jpg" alt="">
                         <div class="item-tag">By Petey Cruiser</div>
                         <div class="progress light-blue-bg">
                             <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"><span>75%</span></div>
@@ -67,7 +67,7 @@
 
                 <div class="portfolio-item cat1 cat5 ">
                     <div class="item-thumb">
-                        <img src="assets/images/portfolios/9.jpg" alt="">
+                        <img src="@/assets/images/portfolios/9.jpg" alt="">
                         <div class="item-tag">By Petey Cruiser</div>
                         <div class="progress light-blue-bg">
                             <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"><span>75%</span></div>
@@ -90,7 +90,7 @@
 
                 <div class="portfolio-item cat3 ">
                     <div class="item-thumb">
-                        <img src="assets/images/portfolios/10.jpg" alt="">
+                        <img src="@/assets/images/portfolios/10.jpg" alt="">
                         <div class="item-tag">By Petey Cruiser</div>
                         <div class="progress light-blue-bg">
                             <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"><span>75%</span></div>
@@ -113,7 +113,7 @@
 
                 <div class="portfolio-item cat1 cat2 ">
                     <div class="item-thumb">
-                        <img src="assets/images/portfolios/11.jpg" alt="">
+                        <img src="@/assets/images/portfolios/11.jpg" alt="">
                         <div class="item-tag">By Petey Cruiser</div>
                         <div class="progress light-blue-bg">
                             <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"><span>75%</span></div>
@@ -136,7 +136,7 @@
 
                 <div class="portfolio-item cat3 cat4 ">
                     <div class="item-thumb">
-                        <img src="assets/images/portfolios/12.jpg" alt="">
+                        <img src="@/assets/images/portfolios/12.jpg" alt="">
                         <div class="item-tag">By Petey Cruiser</div>
                         <div class="progress light-blue-bg">
                             <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"><span>75%</span></div>
