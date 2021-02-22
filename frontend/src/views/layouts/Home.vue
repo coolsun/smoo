@@ -1,7 +1,7 @@
 <template>
   <div>
     <section class="hero-section">
-        <div class="hero-area-1 owl-carousel" id="hero-slideshow">
+        <div class="hero-area-1 owl-carousel" id="hero-slideshow" ref="hero-slideshow">
             <div class="single-hero dark-overlay" :style="{'background-image': 'url(' + require('@/assets/images/hero-1.jpg') + ') no-repeat'}">
                 <div class="container">
                 <div class="row justify-content-center">
@@ -679,6 +679,14 @@ export default {
   data() {
     return {
     };
+  },
+  mounted() {
+    this.$refs.hero-slideshow.owlCarousel({
+    //Autoplay
+    autoplay : 5000,
+    stopOnHover : false
+    });
   }
 };
+
 </script>
