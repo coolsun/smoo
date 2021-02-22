@@ -63,15 +63,15 @@
     </div><!--/Header Top-->
   
     <!--Header Area-->
-          <mdb-navbar class="header-area primary-bg lighten-4" expand="xl" togglerIcon="" animated animation="1" style="margin: 0;">
+          <mdb-navbar class="header-area primary-bg lighten-4 white-text" expand="xl" togglerIcon="" animated animation="1">
             <!-- Navbar brand -->
             <mdb-navbar-brand><a href="/"><img src="@/assets/images/logo.png" class="d-inline-block align-top" alt="" width="30%"></a>
             </mdb-navbar-brand>
             <mdb-navbar-toggler>
               <mdb-navbar-nav right>
-                <mdb-nav-item href="/" waves-fixed>{{ $t('header.101moo') }}</mdb-nav-item>
-                <mdb-nav-item href="about" waves-fixed>{{ $t('header.about') }}</mdb-nav-item>
-                <mdb-dropdown tag="li" class="nav-item">
+                <mdb-nav-item href="/" waves-fixed class="nav-item nav-link">{{ $t('header.101moo') }}</mdb-nav-item>
+                <mdb-nav-item href="about" waves-fixed class="nav-item nav-link">{{ $t('header.about') }}</mdb-nav-item>
+                <mdb-dropdown tag="li" class="nav-item nav-link">
                   <mdb-dropdown-toggle
                     tag="a"
                     navLink
@@ -87,7 +87,7 @@
                     <mdb-dropdown-item href="charity">{{ $t('header.charity') }}</mdb-dropdown-item>
                   </mdb-dropdown-menu>
                 </mdb-dropdown>
-                <mdb-nav-item href="contact" waves-fixed>{{ $t('header.contact') }}</mdb-nav-item>
+                <mdb-nav-item href="contact" waves-fixed class="nav-item nav-link">{{ $t('header.contact') }}</mdb-nav-item>
               </mdb-navbar-nav>
             </mdb-navbar-toggler>
 

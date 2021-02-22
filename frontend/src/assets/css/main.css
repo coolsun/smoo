@@ -1048,6 +1048,7 @@ a#scrollUp:hover {
     padding: 0px 0.5rem;
 }
 
+
 @media (max-width: 575px) {
     .header-top .single-header-top.last ul {
         float: none;
@@ -1334,6 +1335,10 @@ span.is-active:after {
     .navbar-toggler {
         padding-right: 0;
     }
+}
+
+.navbar .nav-item .nav-link {
+    color: white;
 }
 
 /*
