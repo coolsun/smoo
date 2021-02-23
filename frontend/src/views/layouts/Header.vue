@@ -67,6 +67,7 @@
     </div><!--/Header Top-->
   
     <!--Header Area-->
+<<<<<<< HEAD
     <mdb-navbar class="header-area primary-bg lighten-4 white-text" expand="xl" togglerIcon="" animated animation="1">
       <!-- Navbar brand -->
       <mdb-navbar-brand><router-link to="/"><img src="@/assets/images/logo.png" class="d-inline-block align-top" alt="" width="30%"></router-link>
@@ -94,6 +95,47 @@
           <mdb-nav-item href="contact" waves-fixed class="nav-item nav-link">{{ $t('header.contact') }}</mdb-nav-item>
         </mdb-navbar-nav>
       </mdb-navbar-toggler>
+=======
+          <mdb-navbar class="header-area primary-bg lighten-4 white-text" expand="xl" togglerIcon="" animated animation="1">
+            <!-- Navbar brand -->
+            <mdb-navbar-brand><router-link to="/"><img src="@/assets/images/logo.png" class="d-inline-block align-top" alt="" width="30%"></router-link>
+            </mdb-navbar-brand>
+            <mdb-navbar-toggler>
+              <mdb-navbar-nav right>
+                <mdb-nav-item router to="/" waves-fixed class="nav-item nav-link">{{ $t('header.101moo') }}</mdb-nav-item>
+                <mdb-nav-item router to="about" waves-fixed class="nav-item nav-link">{{ $t('header.about') }}</mdb-nav-item>
+                <mdb-dropdown tag="li" class="nav-item nav-link">
+                  <mdb-dropdown-toggle
+                    tag="a"
+                    navLink
+                    color="primary-bg"
+                    slot="toggle"
+                    waves-fixed
+                    >{{ $t('header.featured') }}</mdb-dropdown-toggle>
+                  <mdb-dropdown-menu color="primary-bg">
+                    <mdb-dropdown-item router to="/emergency">{{ $t('header.emergency') }}</mdb-dropdown-item>
+                    <mdb-dropdown-item router to="/memorial">{{ $t('header.memorial') }}</mdb-dropdown-item>
+                    <mdb-dropdown-item router to="/animal-rescue">{{ $t('header.animal-rescue') }}</mdb-dropdown-item>
+                    <mdb-dropdown-item router to="/medical">{{ $t('header.medical') }}</mdb-dropdown-item>
+                    <mdb-dropdown-item router to="/charity">{{ $t('header.charity') }}</mdb-dropdown-item>
+                  </mdb-dropdown-menu>
+                </mdb-dropdown>
+                <mdb-dropdown v-if="$store.state.isLoggedIn" tag="li" class="nav-item nav-link">
+                  <mdb-dropdown-toggle
+                    tag="a"
+                    navLink
+                    color="primary-bg"
+                    slot="toggle"
+                    waves-fixed
+                    >{{ $t('header.account') }}</mdb-dropdown-toggle>
+                  <mdb-dropdown-menu color="primary-bg">
+                    <mdb-dropdown-item router to="/my-account">{{ $t('header.my-account') }}</mdb-dropdown-item>
+                    <mdb-dropdown-item router to="/donation-history">{{ $t('header.donation-history') }}</mdb-dropdown-item>                  </mdb-dropdown-menu>
+                </mdb-dropdown>                
+                <mdb-nav-item router to="contact" waves-fixed class="nav-item nav-link">{{ $t('header.contact') }}</mdb-nav-item>
+              </mdb-navbar-nav>
+            </mdb-navbar-toggler>
+>>>>>>> cf5f70e94d77aced76ee0dc1679fa3e16fc125c3
 
     </mdb-navbar>
 </div>
