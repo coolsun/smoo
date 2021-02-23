@@ -44,7 +44,11 @@
     "charity": "Charity",
     "animal-rescue": "Animal Rescue",
     "home": "Home",
-    "donate_now": "Donate now"
+    "donate_now": "Donate now",
+    "account": "Account",
+    "my-account": "My Account",
+    "donation-history": "Donation History"
+
   },
   "footer": {
     "101moo": "101Moo",

@@ -47,7 +47,10 @@
     "charity": "慈善公益",
     "animal-rescue": "動物關懷",
     "home": "本會宗旨",
-    "donate_now": "慷慨捐助"
+    "donate_now": "慷慨捐助",
+    "account": "帳號管理",
+    "my-account": "我的帳號",
+    "donation-history": "協助紀錄"
   },
   "footer": {
     "101moo": "一日一募",
