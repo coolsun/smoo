@@ -30,7 +30,7 @@
                           <mdb-btn v-if="!$store.state.isLoggedIn" class="btn-sm btn-emt" @click.native="modal = true">{{ $t('app.sign_in') }}</mdb-btn>
                           <li v-if="$store.state.isLoggedIn">Welcome user!</li>
                           <mdb-modal :show="modal" @close="modal = false">
-                            <mdb-tab tabs justify class="light-blue darken-3">
+                            <mdb-tab tabs justify class="darken-3">
                               <mdb-tab-item>
                                 <mdb-icon icon="user" class="mr-1"/>{{ $t('sign_in.login') }}
                               </mdb-tab-item>
@@ -38,18 +38,21 @@
                             <mdb-modal-body class="mx-3">
                               <mdb-input class="mb-5" :label="$t('sign_in.your_email')" icon="envelope" type="email" v-model="email"/>
                               <mdb-input :label="$t('sign_in.your_password')" icon="lock" type="password" v-model="password"/>
+                              <div class="options" style="text-align: right;">
+                                <p><router-link to="#" @click="forgetPassword">{{ $t('sign_in.forget_password') }} ?</router-link></p>
+                              </div>
                               <div class="mt-2 text-center">
-                                <mdb-btn color="info" @click="signIn">
+                                <mdb-btn class="btn-emt btn-block" @click="signIn">
                                   {{ $t('sign_in.login') }}<mdb-icon icon="sign-in-alt" class="ml-1"/>
-                                </mdb-btn>
-                                <mdb-btn color="info" @click="modal = false">
-                                  <router-link class="" :to="{ name: 'SignUp'}" tag="button">{{ $t('sign_in.sign_up')}}</router-link>
                                 </mdb-btn>
                               </div>
                             </mdb-modal-body>
                             <mdb-modal-footer center>
                               <div class="options mt-1">
-                                <p><router-link to="#" @click="forgetPassword">{{ $t('sign_in.forget_password') }} ?</router-link></p>
+                                <p>{{ $t('sign_in.not_a_member')}}</p>
+                              </div>
+                              <div class="options mt-1" @click="modal=false">
+                                <router-link class="ml-1" :to="{ name: 'SignUp'}">{{ $t('sign_in.sign_up')}}</router-link>
                               </div>
                               <mdb-btn outline="info" class="ml-auto" @click.native="modal = false">{{ $t('sign_in.close') }}</mdb-btn>
                             </mdb-modal-footer>
@@ -151,6 +154,10 @@ import {
       },
       signIn() {
         this.$store.state.isLoggedIn = true;
+      },
+      goToSignUp() {
+        this.modal = false;
+        this.$router.push({ name: 'SignUp'});
       }
     }  
   };

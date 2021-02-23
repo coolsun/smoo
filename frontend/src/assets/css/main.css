@@ -950,6 +950,14 @@ font-family: 'Montserrat', sans-serif;
     border-color: #23A875;
 }
 
+.btn.btn-sm {
+  font-size: .80rem;
+}
+
+.btn.router-link {
+  color: white;
+}
+
 /* ==============================
    Preloader
    ============================== */
@@ -1017,7 +1025,7 @@ a#scrollUp:hover {
 
 */
 .header-top {
-    color: #ffffff;
+    color: gray;
     padding: 10px 0;
 }
 
