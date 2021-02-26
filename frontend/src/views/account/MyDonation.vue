@@ -2,7 +2,7 @@
     <!--DonationHistory Section-->
     <section class="donation-history-section">
         <div class="donation-table">
-            <h2>My Donations</h2>
+            <h2>{{ $t('header.my-donation') }}</h2>
             <div class="table-container">
                 <table class="table table-striped table-bordered">
                     <thead>

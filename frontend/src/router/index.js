@@ -22,6 +22,8 @@ import Explore from '@/views/explore/Explore';
 import StartAProject from '@/views/projects/StartAProject';
 import DonationNow from '@/views/donations/DonationNow';
 import MyAccount from '@/views/account/MyAccount';
+import MyDonation from '@/views/account/MyDonation';
+import MyCampaign from '@/views/account/MyCampaign';
 import DonationHistory from '@/views/donations/DonationHistory';
 
 Vue.use(Router);
@@ -123,6 +125,16 @@ export default new Router({
       path: '/my-account',
       name: 'MyAccount',
       component: MyAccount
+    },
+    {
+      path: '/my-donation',
+      name: 'MyDonation',
+      component: MyDonation
+    },
+    {
+      path: '/my-campaign',
+      name: 'MyCampaign',
+      component: MyCampaign
     },
     {
       path: '/donation-history',

@@ -47,8 +47,9 @@
     "donate_now": "Donate now",
     "account": "Account",
     "my-account": "My Account",
-    "donation-history": "Donation History"
-
+    "donation-history": "Donation History",
+    "my-donation": "My Donation",
+    "my-campaign": "My Campaign"
   },
   "footer": {
     "101moo": "101Moo",

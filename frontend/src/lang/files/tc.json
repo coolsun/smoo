@@ -50,7 +50,9 @@
     "donate_now": "慷慨捐助",
     "account": "帳號管理",
     "my-account": "我的帳號",
-    "donation-history": "協助紀錄"
+    "donation-history": "協助紀錄",
+    "my-donation": "我的協助紀錄",
+    "my-campaign": "我的募款紀錄"
   },
   "footer": {
     "101moo": "一日一募",
