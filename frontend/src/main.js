@@ -10,6 +10,7 @@ import Vue from 'vue';
 import App from './App.vue';
 import store from './store';
 import router from './router';
+import Notify from 'mdbvue/lib/components/Notify'
 //import Vue2TouchEvents from 'vue2-touch-events';
 //import LoadScript from 'vue-plugin-load-script';
 import i18n from './lang/language';
@@ -20,6 +21,7 @@ import axios from 'axios';
 Vue.prototype.$axios = axios;
 
 Vue.config.productionTip = false;
+Vue.use(Notify)
 
 /* eslint-disable no-new */
 new Vue({
