@@ -9,7 +9,7 @@
                     <div class="page-breadcrumb">
                         <ul>
                             <li><a href="/">{{ $t('header.101moo') }}</a></li>
-                            <li>{{ $t('header.start-a-project') }}</li>
+                            <li>{{ $t('header.' + $route.name ) }}</li>
                         </ul>
                     </div>
                 </div>

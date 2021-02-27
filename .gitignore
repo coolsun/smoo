@@ -42,3 +42,5 @@ yarn-debug.log*
 .DS_Store
 /frontend/node_modules
 /tmp
+
+/frontend/dist/

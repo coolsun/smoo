@@ -33,42 +33,42 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Home',
+      name: 'home',
       component: Home
     },
     {
       path: '/home2',
-      name: 'Home2',
+      name: 'home2',
       component: Home2
     },
     {
       path: '/about',
-      name: 'About',
+      name: 'about',
       component: About
     },
     {
       path: '/sign-up',
-      name: 'SignUp',
+      name: 'sign-up',
       component: SignUp
     },
     {
       path: '/contact',
-      name: 'Contact',
+      name: 'contact',
       component: Contact
     },
     {
       path: '/medical',
-      name: 'Medical',
+      name: 'medical',
       component: Medical
     },
     {
       path: '/emergency',
-      name: 'Emergency',
+      name: 'emergency',
       component: Emergency
     },
     {
       path: '/animal-rescue',
-      name: 'AnimalRescue',
+      name: 'animal-rescue',
       component: AnimalRescue
     },
     {
@@ -78,77 +78,77 @@ export default new Router({
     },
     {
       path: '/charity',
-      name: 'Charity',
+      name: 'charity',
       component: Charity
     },
     {
       path: '/blog',
-      name: 'Blog',
+      name: 'blog',
       component: Blog
     },
     {
       path: '/blog-details',
-      name: 'BlogDetails',
+      name: 'blog-details',
       component: BlogDetails
     },
     {
       path: '/causes',
-      name: 'Causes',
+      name: 'causes',
       component: Causes
     },
     {
       path: '/causes2',
-      name: 'Causes2',
+      name: 'causes2',
       component: Causes2
     },
     {
       path: '/causes-details',
-      name: 'CausesDetails',
+      name: 'causes-details',
       component: CausesDetails
     },
     {
       path: '/explore',
-      name: 'Explore',
+      name: 'explore',
       component: Explore
     },
     {
       path: '/start-a-project',
-      name: 'StartAProject',
+      name: 'start-a-project',
       component: StartAProject
     },
     {
       path: '/donation-now',
-      name: 'DonationNow',
+      name: 'donation-now',
       component: DonationNow
     },
     {
       path: '/my-account',
-      name: 'MyAccount',
+      name: 'my-account',
       component: MyAccount
     },
     {
       path: '/my-donation',
-      name: 'MyDonation',
+      name: 'my-donation',
       component: MyDonation
     },
     {
       path: '/my-campaign',
-      name: 'MyCampaign',
+      name: 'my-campaign',
       component: MyCampaign
     },
     {
       path: '/donation-history',
-      name: 'DonationHistory',
+      name: 'donation-history',
       component: DonationHistory
     },
     {
-      path: '/404',
-      name: 'NotFound',
+      path: '/not-found',
+      name: 'not-found',
       component: NotFound
     },
     {
       path: '*',
-      redirect: '/404'
+      redirect: '/not-found'
     }
   ]
 });
