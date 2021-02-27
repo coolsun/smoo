@@ -1,5 +1,5 @@
 <template>
-    <section class="breadcrumb-area darkest-overlay" style="background: url('assets/images/hero.jpg') no-repeat center / cover;">
+    <section class="breadcrumb-area darkest-overlay" :style="bread_crumb_style">
         <div class="container">
             <div class="row">
                 <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12">
@@ -17,3 +17,12 @@
         </div>
     </section>
 </template>
+<script>
+export default {
+    computed: {
+        bread_crumb_style() {
+            return "{background: url('assets/images/" + this.$route.name +".jpg') no-repeat center / cover;}";
+        }
+    }
+}
+</script>

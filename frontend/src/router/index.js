@@ -150,5 +150,8 @@ export default new Router({
       path: '*',
       redirect: '/not-found'
     }
-  ]
+  ],
+  scrollBehavior () {
+    return { x: 0, y: 0 }
+  }
 });

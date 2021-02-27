@@ -29,7 +29,7 @@
                             <div class="hero-left">
                                 <h1>Start helping them for a day</h1>
                                 <p>Much evil soon high in hope do view. Out may few northward believing <br> attempted. Yet timed being songs marry one defer men our.</p>
-                                <router-link class="bttn-small btn-wht" :to="{ name: 'CausesDetails'}" tag="button">Donate now</router-link>
+                                <router-link class="bttn-small btn-wht" :to="{ name: 'causes-details'}" tag="button">Donate now</router-link>
                                 <a href="" class="bttn-mid btn-fill">About us</a>
                             </div>
                             </div>
@@ -100,7 +100,7 @@
                             <h3><a href="">Denote Simple Fat Denied</a></h3>
                         </div>
                         <p>Wandered or strictly raillery stanhill as. Jennings appetite disposed me an at subjects an.</p>
-                        <router-link class="bttn-small btn-wht" :to="{ name: 'CausesDetails'}" tag="button">{{ $t('header.donate_now') }}</router-link>
+                        <router-link class="bttn-small btn-wht" :to="{ name: 'causes-details'}" tag="button">{{ $t('header.donate_now') }}</router-link>
                     </div>
                 </div>
 
@@ -121,7 +121,7 @@
                             <h3><a href="">Anything embarrassing hidden</a></h3>
                         </div>
                         <p>Wandered or strictly raillery stanhill as. Jennings appetite disposed me an at subjects an.</p>
-                        <router-link class="bttn-small btn-wht" :to="{ name: 'CausesDetails'}" tag="button">{{ $t('header.donate_now') }}</router-link>
+                        <router-link class="bttn-small btn-wht" :to="{ name: 'causes-details'}" tag="button">{{ $t('header.donate_now') }}</router-link>
                     </div>
                 </div>
 
@@ -142,7 +142,7 @@
                             <h3><a href="">Latin literature from 45</a></h3>
                         </div>
                         <p>Wandered or strictly raillery stanhill as. Jennings appetite disposed me an at subjects an.</p>
-                        <router-link class="bttn-small btn-wht" :to="{ name: 'CausesDetails'}" tag="button">{{ $t('header.donate_now') }}</router-link>
+                        <router-link class="bttn-small btn-wht" :to="{ name: 'causes-details'}" tag="button">{{ $t('header.donate_now') }}</router-link>
                     </div>
                 </div>
 
@@ -163,7 +163,7 @@
                             <h3><a href="">Many desktop publishing</a></h3>
                         </div>
                         <p>Wandered or strictly raillery stanhill as. Jennings appetite disposed me an at subjects an.</p>
-                        <router-link class="bttn-small btn-wht" :to="{ name: 'CausesDetails'}" tag="button">{{ $t('header.donate_now') }}</router-link>
+                        <router-link class="bttn-small btn-wht" :to="{ name: 'causes-details'}" tag="button">{{ $t('header.donate_now') }}</router-link>
                     </div>
                 </div>
 
@@ -184,7 +184,7 @@
                             <h3><a href="">Anticipate for generation</a></h3>
                         </div>
                         <p>Wandered or strictly raillery stanhill as. Jennings appetite disposed me an at subjects an.</p>
-                        <router-link class="bttn-small btn-wht" :to="{ name: 'CausesDetails'}" tag="button">{{ $t('header.donate_now') }}</router-link>
+                        <router-link class="bttn-small btn-wht" :to="{ name: 'causes-details'}" tag="button">{{ $t('header.donate_now') }}</router-link>
                     </div>
                 </div>
 
@@ -205,7 +205,7 @@
                             <h3><a href="">Lorem Ipsum is that</a></h3>
                         </div>
                         <p>Wandered or strictly raillery stanhill as. Jennings appetite disposed me an at subjects an.</p>
-                        <router-link class="bttn-small btn-wht" :to="{ name: 'CausesDetails'}" tag="button">{{ $t('header.donate_now') }}</router-link>
+                        <router-link class="bttn-small btn-wht" :to="{ name: 'causes-details'}" tag="button">{{ $t('header.donate_now') }}</router-link>
                     </div>
                 </div>
             </div>

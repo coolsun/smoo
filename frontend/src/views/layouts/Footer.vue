@@ -18,7 +18,7 @@
                     <div class="footer-nav">
                         <h3>{{ $t('footer.home') }}</h3>
                         <ul>
-                            <li><router-link to="/">{{ $t('footer.101moo') }}</router-link></li>
+                            <li><router-link to="home">{{ $t('footer.101moo') }}</router-link></li>
                             <li><router-link to="about">{{ $t('footer.about') }}</router-link></li>
                         </ul>
                     </div>

@@ -118,7 +118,7 @@
                                 <span>5 Days ago</span>
                                 <span>45% Funded</span>
                             </div>
-                            <router-link class="bttn-mid btn-emt w-100" :to="{ name: 'DonationNow'}" tag="button">Donate now</router-link>
+                            <router-link class="bttn-mid btn-emt w-100" :to="{ name: 'donation-now'}" tag="button">Donate now</router-link>
                             <button class="bttn-mid btn-share w-100">Share</button>
                             <div class="icons">
                                 <div class="heart">

@@ -23,12 +23,12 @@
                                 <input type="text" placeholder="Phone Number">
                             </div>
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                                <select name="category">
-                                    <option value="">Category</option>
-                                    <option value="">Category</option>
-                                    <option value="">Category</option>
-                                    <option value="">Category</option>
-                                    <option value="">Category</option>
+                                <select name="Category">
+                                    <option value="donation">Donation</option>
+                                    <option value="campaign">Campaign</option>
+                                    <option value="partnership">Partnership</option>
+                                    <option value="customer-support">Customer Support</option>
+                                    <option value="other">Other</option>
                                 </select>
                             </div>
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">

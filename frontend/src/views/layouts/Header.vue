@@ -31,7 +31,7 @@
           <p>{{ $t('sign_in.not_a_member')}}</p>
         </div>
         <div class="options mt-1" @click="modal=false">
-          <router-link class="ml-1" :to="{ name: 'SignUp'}">{{ $t('sign_in.sign_up')}}</router-link>
+          <router-link class="ml-1" :to="{ name: 'sign-up'}">{{ $t('sign_in.sign_up')}}</router-link>
         </div>
         <mdb-btn outline="info" class="ml-auto" @click.native="modal = false">{{ $t('sign_in.close') }}</mdb-btn>
       </mdb-modal-footer>
@@ -171,14 +171,14 @@ import {
         this.$store.state.isLoggedIn = true;
       },
       goToExplore() {
-        this.$router.push({ name: 'Explore'});
+        this.$router.push({ name: 'explore'});
       },
       goToStartProject() {
-        this.$router.push({ name: 'StartAProject'});
+        this.$router.push({ name: 'start-a-project'});
       },
       goToSignUp() {
         this.modal = false;
-        this.$router.push({ name: 'SignUp'});
+        this.$router.push({ name: 'sign-up'});
       }
     }  
   };
