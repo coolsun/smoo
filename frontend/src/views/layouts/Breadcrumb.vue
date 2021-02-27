@@ -21,7 +21,7 @@
 export default {
     computed: {
         bread_crumb_style() {
-            return "{background: url('assets/images/" + this.$route.name +".jpg') no-repeat center / cover;}";
+            return "background: url('@/assets/images/" + this.$route.name +".jpg') no-repeat center / cover;";
         }
     }
 }
