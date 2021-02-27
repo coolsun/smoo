@@ -45,7 +45,7 @@
                             <h3><a href="">Anything embarrassing hidden</a></h3>
                         </div>
                         <p>Wandered or strictly raillery stanhill as. Jennings appetite disposed me an at subjects an.</p>
-                        <a href="" class="bttn-small btn-wht">Donate now</a>
+                        <router-link class="bttn-small btn-wht" :to="{ name: 'causes-details'}" tag="button">Donate now</router-link>
                     </div>
                 </div>
 
@@ -66,7 +66,7 @@
                             <h3><a href="">Latin literature from 45</a></h3>
                         </div>
                         <p>Wandered or strictly raillery stanhill as. Jennings appetite disposed me an at subjects an.</p>
-                        <a href="" class="bttn-small btn-wht">Donate now</a>
+                        <router-link class="bttn-small btn-wht" :to="{ name: 'causes-details'}" tag="button">Donate now</router-link>
                     </div>
                 </div>
 
@@ -87,7 +87,7 @@
                             <h3><a href="">Many desktop publishing</a></h3>
                         </div>
                         <p>Wandered or strictly raillery stanhill as. Jennings appetite disposed me an at subjects an.</p>
-                        <a href="" class="bttn-small btn-wht">Donate now</a>
+                        <router-link class="bttn-small btn-wht" :to="{ name: 'causes-details'}" tag="button">Donate now</router-link>
                     </div>
                 </div>
 
@@ -108,7 +108,7 @@
                             <h3><a href="">Anticipate for generation</a></h3>
                         </div>
                         <p>Wandered or strictly raillery stanhill as. Jennings appetite disposed me an at subjects an.</p>
-                        <a href="" class="bttn-small btn-wht">Donate now</a>
+                        <router-link class="bttn-small btn-wht" :to="{ name: 'causes-details'}" tag="button">Donate now</router-link>
                     </div>
                 </div>
 
@@ -129,7 +129,7 @@
                             <h3><a href="">Lorem Ipsum is that</a></h3>
                         </div>
                         <p>Wandered or strictly raillery stanhill as. Jennings appetite disposed me an at subjects an.</p>
-                        <a href="" class="bttn-small btn-wht">Donate now</a>
+                        <router-link class="bttn-small btn-wht" :to="{ name: 'causes-details'}" tag="button">Donate now</router-link>
                     </div>
                 </div>
             </div>

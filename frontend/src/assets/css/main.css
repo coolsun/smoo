@@ -2824,20 +2824,29 @@ Hero Area
 
 /* Donation History */
 .donation-table {
-    margin-left: 10rem;
-    margin-right: 10rem;
-    margin-top: 5rem;
-    margin-bottom: 10rem;
+    background: #23A875;
 }
 
 .donation-table h2 {
     padding-bottom: 3rem;
 }
 
-.donation-table .table .btn-edit {
+.btn-edit {
     background: #5de3a0;
+    color: #fff;
     margin: 0.5rem;
 }
+
+.btn-outline-1 {
+    color: #23A875;
+    border: 2px solid #23A875 !important
+}
+
+.btn-donors {
+    background: #23A875;
+    color: #fff;
+}
+
 .donation-table .table .btn-cancel {
     background: #ff828a;
 }

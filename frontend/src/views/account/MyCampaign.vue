@@ -1,72 +1,136 @@
 <template>
-    <!--DonationHistory Section-->
-    <section class="donation-history-section">
-        <div class="donation-table">
-            <h2>{{ $t('header.my-campaign') }}</h2>
-            <div class="table-container">
-                <table class="table table-striped table-bordered">
-                    <thead>
-                        <tr>
-                            <th>Establishment Date</th>
-                            <th>Start Date</th>
-                            <th>Deadline</th>
-                            <th>Campaign</th>
-                            <th>Fundraised Amount</th>
-                            <th>Sponsors</th>
-                            <th>Notes</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>2019/06/14</td>
-                            <td>2019/06/15</td>
-                            <td>2019/07/01</td>
-                            <td>Campaign 1</td>
-                            <td>$855</td>
-                            <td>Sponsor 1</td>
-                            <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, asperiores repellat adipisci quisquam rerum eius explicabo esse alias incidunt nemo iste quia aperiam, sunt illo quod voluptate ea pariatur in.</td>
-                            <td>
-                                <button type="button" class="btn btn-primary btn-edit"><i class="fa fa-edit"></i></button>
-                                <button type="button" class="btn btn-primary btn-cancel"><i class="fa fa-times-circle"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2019/07/01</td>
-                            <td>2019/07/02</td>
-                            <td>2019/09/30</td>
-                            <td>Campaign 2</td>
-                            <td>$856</td>
-                            <td>Sponsor 2</td>
-                            <td>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim recusandae vel quia eum quidem! Amet, quas qui. Laborum, dolorem praesentium quae modi, voluptatem quos voluptate ad, quod exercitationem ipsum numquam?</td>
-                            <td>
-                                <button type="button" class="btn btn-primary btn-edit"><i class="fa fa-edit"></i></button>
-                                <button type="button" class="btn btn-primary btn-cancel"><i class="fa fa-times-circle"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2019/09/30</td>
-                            <td>2019/10/01</td>
-                            <td>2019/11/30</td>
-                            <td>Campaign 3</td>
-                            <td>$827</td>
-                            <td>Sponsor 3</td>
-                            <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque asperiores totam ea, nobis alias repellendus repudiandae quis optio deleniti, nihil quod commodi nisi dolore sint doloremque, earum unde facere dolorum?</td>
-                            <td>
-                                <button type="button" class="btn btn-primary btn-edit"><i class="fa fa-edit"></i></button>
-                                <button type="button" class="btn btn-primary btn-cancel"><i class="fa fa-times-circle"></i></button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+    <!--Causes Area -->
+    <section class="explore-area section-padding-2">
+        <div class="container">
+            <h2>{{ $t('header.my-donation') }}</h2>
+            <div class="explore-search row">
+                <div class="col-sm">
+                    <input type="text" placeholder="Category">
+                </div>
+                <div class="col-sm">
+                    <input type="text" placeholder="Start date">
+                </div>
+                <div class="col-sm">
+                    <input type="text" placeholder="End date">
+                </div>
+                <div class="col-">
+                        <button type="submit" class="bttn-mid btn-fill-2">Search</button>                   
+                </div>
+            </div>
+
+            <div class="row portfolio portfolio-gallery column-3 gutter wow fadeInUp" data-wow-delay="0.5s">
+
+                <div class="portfolio-item cat1 cat3">
+                    <div class="item-thumb">
+                        <img src="@/assets/images/portfolios/7.jpg" alt="">
+                    </div>
+                    <div class="item-details">
+                        <div class="item-meta">
+        
+                        </div>
+                        <p>Start raising money now!</p>
+                        <router-link class="bttn-small btn-wht" :to="{ name: 'start-a-project'}" tag="button">Start New Campaign</router-link>
+                    </div>
+                </div>
+
+                <div class="portfolio-item cat2 cat4 ">
+                    <div class="item-thumb">
+                        <img src="@/assets/images/portfolios/8.jpg" alt="">
+                        <div class="item-tag">By Petey Cruiser</div>
+                        <div class="progress light-blue-bg">
+                            <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"><span>75%</span></div>
+                        </div>
+                    </div>
+                    <div class="item-details">
+                        <div class="item-meta">
+                            <span>$450 Pledged</span>
+                            <span>5 Days ago</span>
+                            <span>45% Funded</span>
+                        </div>
+                        <div class="item-title">
+                            <h3><a href="">Anything embarrassing hidden</a></h3>
+                        </div>
+                        <p>Wandered or strictly raillery stanhill as. Jennings appetite disposed me an at subjects an.</p>
+                        <router-link class="btn btn-edit px-3" :to="{ name: 'my-donation'}" tag="button"><i class="fas fa-edit" aria-hidden="true"></i></router-link>
+                        <button type="button" class="btn btn-danger px-3"><i class="fas fa-times-circle" aria-hidden="true"></i></button>
+                        <button type="button" class="btn btn-donors px-3"><i class="fas fa-user-friends" aria-hidden="true"></i></button>                   
+                      </div>
+                  </div>
+                  <div class="portfolio-item cat3 cat4 ">
+                      <div class="item-thumb">
+                          <img src="@/assets/images/portfolios/12.jpg" alt="">
+                          <div class="item-tag">By Petey Cruiser</div>
+                          <div class="progress light-blue-bg">
+                              <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"><span>75%</span></div>
+                          </div>
+                      </div>
+                      <div class="item-details">
+                          <div class="item-meta">
+                              <span>$450 Pledged</span>
+                              <span>5 Days ago</span>
+                              <span>45% Funded</span>
+                          </div>
+                          <div class="item-title">
+                              <h3><a href="">Lorem Ipsum is that</a></h3>
+                          </div>
+                          <p>Wandered or strictly raillery stanhill as. Jennings appetite disposed me an at subjects an.</p>
+                          <router-link class="btn btn-edit px-3" :to="{ name: 'my-donation'}" tag="button"><i class="fas fa-edit" aria-hidden="true"></i></router-link>
+                          <button type="button" class="btn btn-danger px-3"><i class="fas fa-times-circle" aria-hidden="true"></i></button>
+                          <button type="button" class="btn btn-donors px-3"><i class="fas fa-user-friends" aria-hidden="true"></i></button>    
+                      </div>
+                  </div>
+                  <div class="portfolio-item cat2 cat4 ">
+                      <div class="item-thumb">
+                          <img src="@/assets/images/portfolios/8.jpg" alt="">
+                          <div class="item-tag">By Petey Cruiser</div>
+                          <div class="progress light-blue-bg">
+                              <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"><span>75%</span></div>
+                          </div>
+                      </div>
+                      <div class="item-details">
+                          <div class="item-meta">
+                              <span>$450 Pledged</span>
+                              <span>5 Days ago</span>
+                              <span>45% Funded</span>
+                          </div>
+                          <div class="item-title">
+                              <h3><a href="">Anything embarrassing hidden</a></h3>
+                          </div>
+                          <p>Wandered or strictly raillery stanhill as. Jennings appetite disposed me an at subjects an.</p>
+                          <router-link class="btn btn-edit px-3" :to="{ name: 'my-donation'}" tag="button"><i class="fas fa-edit" aria-hidden="true"></i></router-link>
+                          <button type="button" class="btn btn-danger px-3"><i class="fas fa-times-circle" aria-hidden="true"></i></button>
+                          <button type="button" class="btn btn-donors px-3"><i class="fas fa-user-friends" aria-hidden="true"></i></button>    
+                      </div>
+                  </div>
+                  <div class="portfolio-item cat2 cat4 ">
+                    <div class="item-thumb">
+                        <img src="@/assets/images/portfolios/8.jpg" alt="">
+                        <div class="item-tag">By Petey Cruiser</div>
+                        <div class="progress light-blue-bg">
+                            <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"><span>75%</span></div>
+                        </div>
+                    </div>
+                    <div class="item-details">
+                        <div class="item-meta">
+                            <span>$450 Pledged</span>
+                            <span>5 Days ago</span>
+                            <span>45% Funded</span>
+                        </div>
+                        <div class="item-title">
+                            <h3><a href="">Anything embarrassing hidden</a></h3>
+                        </div>
+                        <p>Wandered or strictly raillery stanhill as. Jennings appetite disposed me an at subjects an.</p>
+                        <router-link class="btn btn-edit px-3" :to="{ name: 'my-donation'}" tag="button"><i class="fas fa-edit" aria-hidden="true"></i></router-link>
+                        <button type="button" class="btn btn-danger px-3"><i class="fas fa-times-circle" aria-hidden="true"></i></button>
+                        <button type="button" class="btn btn-donors px-3"><i class="fas fa-user-friends" aria-hidden="true"></i></button>    
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-    <!--/DonationHistory Section-->
+    <!--/Causes Area -->
 </template>
-
 <script>
-
 export default {
   name: "DonationHistory",
   components: {
