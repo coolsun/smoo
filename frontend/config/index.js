@@ -33,9 +33,9 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-      '/apis': {
+      '/': {
         // yarn start的時候送出apis會指到的url
-        target: process.env.SCLOUD_URL || 'http://localhost:3000',
+        target: process.env.SCLOUD_URL || 'http://127.0.0.1:3000',
         changeOrigin: true
       }
     },

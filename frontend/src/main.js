@@ -18,6 +18,9 @@ import axios from 'axios';
 
 //Vue.use(Vue2TouchEvents);
 //Vue.use(LoadScript);
+
+axios.defaults.baseURL = 'http://localhost:3000';
+axios.defaults.port = 3000;
 Vue.prototype.$axios = axios;
 
 Vue.config.productionTip = false;

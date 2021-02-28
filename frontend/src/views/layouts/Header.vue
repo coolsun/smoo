@@ -15,8 +15,8 @@
         </mdb-tab-item>
       </mdb-tab>
       <mdb-modal-body class="mx-3">
-        <mdb-input class="mb-5" :label="$t('sign_in.your_email')" icon="envelope" type="email" v-model="email"/>
-        <mdb-input :label="$t('sign_in.your_password')" icon="lock" type="password" v-model="password"/>
+        <mdb-input class="mb-5" :label="$t('sign_in.your_email')" icon="envelope" type="email"/>
+        <mdb-input :label="$t('sign_in.your_password')" icon="lock" type="password"/>
         <div class="options" style="text-align: right;">
           <p><router-link to="#" @click="forgetPassword">{{ $t('sign_in.forget_password') }} ?</router-link></p>
         </div>
@@ -56,20 +56,9 @@
                     <div class="single-header-top last">
                         <ul>
                           <mdb-btn v-if="!$store.state.isLoggedIn" class="btn-sm btn-emt" @click.native="modal = true">{{ $t('app.sign_in') }}</mdb-btn>
+                          <li v-if="$store.state.isLoggedIn">Welcome user!</li>
+                          
                           <li><router-link to=""><i class="fa fa-search"></i></router-link></li>
-                          <input class="form-control" type="text" placeholder="Search" aria-label="Search" style="display: inline; width: 45%; margin-left: 4%;"/>
-                          <li v-if="$store.state.isLoggedIn" style="vertical-align: middle; margin-left: 0;">
-                            <mdb-dropdown v-if="$store.state.isLoggedIn" tag="li" class="nav-item nav-link">
-                              <mdb-dropdown-toggle tag="a" navLink color="primary-bg" slot="toggle" waves-fixed>
-                                  <img src="@/assets/images/commenter3.png" alt="" style="width: 2rem; margin: .2rem; border-radius: 50px;"/>
-                              </mdb-dropdown-toggle>
-                              <mdb-dropdown-menu color="primary-bg">
-                                <mdb-dropdown-item router to="/my-account">{{ $t('header.my-account') }}</mdb-dropdown-item>
-                                <mdb-dropdown-item router to="/my-donation">{{ $t('header.my-donation') }}</mdb-dropdown-item>
-                                <mdb-dropdown-item router to="/my-campaign">{{ $t('header.my-campaign') }}</mdb-dropdown-item>
-                              </mdb-dropdown-menu>
-                            </mdb-dropdown> 
-                          </li>
                         </ul>
                     </div>
                 </div>
@@ -101,7 +90,21 @@
                     <mdb-dropdown-item router to="/medical">{{ $t('header.medical') }}</mdb-dropdown-item>
                     <mdb-dropdown-item router to="/charity">{{ $t('header.charity') }}</mdb-dropdown-item>
                   </mdb-dropdown-menu>
-                </mdb-dropdown>               
+                </mdb-dropdown>
+                <mdb-dropdown v-if="$store.state.isLoggedIn" tag="li" class="nav-item nav-link">
+                  <mdb-dropdown-toggle
+                    tag="a"
+                    navLink
+                    color="primary-bg"
+                    slot="toggle"
+                    waves-fixed
+                    >{{ $t('header.account') }}</mdb-dropdown-toggle>
+                  <mdb-dropdown-menu color="primary-bg">
+                    <mdb-dropdown-item router to="/my-account">{{ $t('header.my-account') }}</mdb-dropdown-item>
+                    <mdb-dropdown-item router to="/my-donation">{{ $t('header.my-donation') }}</mdb-dropdown-item>
+                    <mdb-dropdown-item router to="/my-campaign">{{ $t('header.my-campaign') }}</mdb-dropdown-item>
+                  </mdb-dropdown-menu>
+                </mdb-dropdown>                
                 <mdb-nav-item router to="contact" waves-fixed class="nav-item nav-link">{{ $t('header.contact') }}</mdb-nav-item>
               </mdb-navbar-nav>
             </mdb-navbar-toggler>
@@ -152,7 +155,9 @@ import {
   },
     data() {
       return {
-        modal: false
+        modal: false,
+        email: null,
+        password: null
       };
     },
     methods: {
@@ -165,8 +170,28 @@ import {
         console.log("changeLang()");
       },
       signIn() {
-        this.$store.state.isLoggedIn = true;
-        this.modal = false;
+        let signInData = {
+          user: {
+            //email: this.email,
+            //password: this.password
+            email: "aa",
+            password: "bb"
+          }
+        }
+        console.log('email:'+this.email+', password:'+this.password)
+        this.$axios.post('/api/login', signInData)
+        .then(() => {
+          // alert: success
+          this.$store.state.isLoggedIn = true;
+        })
+        .catch(error => {
+          // alert: error
+          console.log(error.message)
+        })
+        .finally( () => {
+          this.modal = false;
+        })
+        
       },
       goToExplore() {
         this.$router.push({ name: 'explore'});

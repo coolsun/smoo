@@ -13,7 +13,7 @@
                             <h3>*Username</h3>
                             <textarea name="username" rows="1" placeholder=""></textarea><br>
                             <h3>*Name</h3>
-                            <textarea name="name" rows="1" placeholder="John Smith"></textarea><br>
+                            <textarea name="password" rows="1" placeholder="**********"></textarea><br>
                             <h3>*Country</h3>
                             <div class="form-select">
                                 <select name="project-select">
@@ -45,7 +45,7 @@
                                         <span class="fill-control-description">I have a debit and/or credit card.</span>
                                 </label>  
                             </div>
-                            <button class="bttn-mid btn-fill" type="submit">{{ $t('sign_in.sign_up') }}</button>
+                            <button class="bttn-mid btn-fill" type="submit" @click="signUp">{{ $t('sign_in.sign_up') }}</button>
                         </form>
                     </div>
                 </div>
@@ -65,5 +65,27 @@ export default {
     return {
     };
   },
+  methods: {
+    signUp() {
+        let signUpData = {
+            user: {
+                //email: this.email,
+                //password: this.password
+                email: "aa",
+                password: "bb"
+            }
+        }
+        this.$axios.post('/api/signup', signUpData)
+        .then(() => {
+        // alert: success
+        console.log(this.email + " signed up successfully!")
+        })
+        .catch(error => {
+        // alert: error
+        console.log(error.message)
+        })
+        
+    }
+  }
 };
 </script>
