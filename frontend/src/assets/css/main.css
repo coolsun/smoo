@@ -1178,6 +1178,7 @@ li.nav-item.dropdown:before {
 
 .dropdown:hover .dropdown-menu {
     opacity: 1;
+    background-color: #fff;
     visibility: visible;
     transform: translate3d(0, -5px, 0);
 }
