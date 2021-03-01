@@ -15,8 +15,8 @@
         </mdb-tab-item>
       </mdb-tab>
       <mdb-modal-body class="mx-3">
-        <mdb-input class="mb-5" :label="$t('sign_in.your_email')" icon="envelope" type="email"/>
-        <mdb-input :label="$t('sign_in.your_password')" icon="lock" type="password"/>
+        <mdb-input class="mb-5" :label="$t('sign_in.your_email')" icon="envelope" type="email" v-model="email"/>
+        <mdb-input :label="$t('sign_in.your_password')" icon="lock" type="password" v-model="password"/>
         <div class="options" style="text-align: right;">
           <p><router-link to="#" @click="forgetPassword">{{ $t('sign_in.forget_password') }} ?</router-link></p>
         </div>
@@ -69,6 +69,7 @@
                                 <mdb-dropdown-item router to="/my-account">{{ $t('header.my-account') }}</mdb-dropdown-item>
                                 <mdb-dropdown-item router to="/my-donation">{{ $t('header.my-donation') }}</mdb-dropdown-item>
                                 <mdb-dropdown-item router to="/my-campaign">{{ $t('header.my-campaign') }}</mdb-dropdown-item>
+                                <mdb-dropdown-item @click.native="signOut">{{ $t('app.sign_out') }}</mdb-dropdown-item>
                               </mdb-dropdown-menu>
                             </mdb-dropdown> 
                           </li>
@@ -171,10 +172,10 @@ import {
       signIn() {
         let signInData = {
           user: {
-            //email: this.email,
-            //password: this.password
-            email: "aa",
-            password: "bb"
+            email: this.email,
+            password: this.password
+            //email: "aa",
+            //password: "bb"
           }
         }
         console.log('email:'+this.email+', password:'+this.password)
@@ -193,6 +194,11 @@ import {
           this.modal = false;
         })
         
+      },
+      signOut() {
+          this.$store.state.isLoggedIn = true;
+          this.$router.push({ name: 'home'});
+          window.location.reload();
       },
       goToExplore() {
         this.$router.push({ name: 'explore'});
