@@ -66,10 +66,10 @@ export default {
     signUp() {
         let signUpData = {
             user: {
-                //email: this.email,
-                //password: this.password
-                email: "aa",
-                password: "bb"
+                email: this.email,
+                password: this.password
+                //email: "aa",
+                //password: "bb"
             }
         }
         this.$axios.post('/api/signup', signUpData)
