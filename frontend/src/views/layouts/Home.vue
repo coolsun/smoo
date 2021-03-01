@@ -1,5 +1,12 @@
 <template>
   <div>
+    <mdb-carousel
+    :interval="8000"
+    slide
+    :items="items"
+    indicators
+    controlls
+    ></mdb-carousel>
     <section class="hero-section">
         <div class="hero-area-1 owl-carousel" id="hero-slideshow" ref="hero-slideshow">
             <div class="single-hero dark-overlay" :style="{'background-image': 'url(' + require('@/assets/images/hero-1.jpg') + ') no-repeat'}">
@@ -629,13 +636,13 @@
 
 <script src="@/assets/js/script.js"></script>
 <script>
-
 import {
   mdbNavbar,
   mdbNavbarBrand,
   mdbNavbarNav,
   mdbCard,
   mdbCardBody,
+  mdbCarousel,
   mdbCollapse,
   mdbDropdown,
   mdbDropdownToggle,
@@ -661,6 +668,7 @@ export default {
     mdbNavbarNav,
     mdbCard,
     mdbCardBody,
+    mdbCarousel,
     mdbCollapse,
     mdbDropdown,
     mdbDropdownToggle,
@@ -678,6 +686,36 @@ export default {
   },
   data() {
     return {
+      items: [
+        {
+          img: true,
+          src:
+            "https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg",
+          mask: "black-light",
+          alt: "First Slide",
+          caption: {
+            title: "First slide"
+          }
+        },
+        {
+          img: true,
+          src:
+            "https://mdbootstrap.com/img/Photos/Slides/img%20(6).jpg",
+          mask: "black-strong",
+          caption: {
+            title: "Second slide"
+          }
+        },
+        {
+          img: true,
+          src:
+            "https://mdbootstrap.com/img/Photos/Slides/img%20(9).jpg",
+          mask: "black-slight",
+          caption: {
+            title: "Third slide"
+          }
+        }
+      ]
     };
   },
   created() {

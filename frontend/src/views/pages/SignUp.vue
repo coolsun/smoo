@@ -8,13 +8,9 @@
                     <div class="donate-project-content">
                         <h2>{{ $t('sign_in.sign_up') }}</h2><br>
                         <form action="#">
-                            <h3>*Email</h3>
-                            <textarea name="email" rows="1" placeholder="abc@gmail.com"></textarea><br>
-                            <h3>*Username</h3>
-                            <textarea name="username" rows="1" placeholder=""></textarea><br>
-                            <h3>*Name</h3>
-                            <textarea name="password" rows="1" placeholder="**********"></textarea><br>
-                            <h3>*Country</h3>
+                            <mdb-input :label="$t('sign_in.your_email')" class="mb-5" type="email" v-model="email"/>
+                            <mdb-input :label="$t('sign_in.your_password')" type="password" v-model="password"/><br>
+                            <h5>*Country</h5>
                             <div class="form-select">
                                 <select name="project-select">
                                     <option value="">Select your country</option>
@@ -24,8 +20,7 @@
                                     <option value="">Select your country</option>
                                 </select>
                             </div>
-                            <h3>Zipcode</h3>
-                            <textarea name="zipcode" rows="1"></textarea><br>
+                            <mdb-input label="Zipcode"/><br>
                             <br><br>
                             <h6>Please verify the following:</h6>
                             <div class="form-tick">
@@ -56,10 +51,12 @@
 </template>
 
 <script>
+import { mdbInput } from 'mdbvue'
 
 export default {
   name: "DonationNow",
   components: {
+      mdbInput
   },
   data() {
     return {
