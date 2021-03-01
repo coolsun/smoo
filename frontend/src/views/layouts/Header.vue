@@ -181,7 +181,7 @@ import {
         this.$axios.post('/api/login', signInData)
         .then((res) => {
           // alert: success
-          this.$store.state.authToken = res.headers['Authorization'];
+          this.$store.commit('setAuthToken', res.headers['authorization']);
           this.$store.state.isLoggedIn = true;
           this.modal = false;
         })

@@ -170,7 +170,27 @@ export default {
   },
   data() {
     return {
+        campaigns: null
     };
   },
+  created() {
+      this.campaign();
+  },
+  methods: {
+    campaign() {
+        console.log("this.campaigns authToken:"+this.$store.state.authToken)
+        this.$axios.get('/api/campaigns', { headers: { 'Authorization': this.$store.state.authToken}})
+        .then((res) => {
+            // alert: success
+            this.campaigns = res.data.campaigns;
+            console.log("this.campaigns:"+this.campaigns)
+        })
+        .catch(error => {
+            // alert: error
+            console.log(error.message)
+        })
+        
+    }
+  }
 };
 </script>
