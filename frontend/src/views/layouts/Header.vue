@@ -44,7 +44,7 @@
                         <ul>                        
                             <!--li><mdb-btn class="btn-sm btn-emt" @click.native="goToExplore"><router-link to="explore">{{ $t('header.explore') }}</router-link></mdb-btn></li>
                             <li><mdb-btn class="btn-sm btn-emt" @click.native="goToStartProject">{{ $t('header.start_project') }}</mdb-btn></li-->
-                            <li><mdb-btn class="btn-sm btn-emt" @click.native="goToExplore">{{ $t('header.explore') }}</mdb-btn></li>
+                            <li><mdb-btn class="btn-sm btn-emt" ><router-link to="explore">{{ $t('header.explore') }}</router-link></mdb-btn></li>
                             <li><mdb-btn class="btn-sm btn-emt" @click.native="goToStartProject">{{ $t('header.start_project') }}</mdb-btn></li>
                         </ul>
                     </div>
@@ -182,6 +182,7 @@ import {
         this.$axios.post('/api/login', signInData)
         .then((res) => {
           // alert: success
+          console.log("setAuthToken:"+res.headers['authorization'])
           this.$store.commit('setAuthToken', res.headers['authorization']);
           this.$store.state.isLoggedIn = true;
           this.modal = false;
