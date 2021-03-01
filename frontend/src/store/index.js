@@ -18,6 +18,9 @@ export default new Vuex.Store({
             state.currentUserName = userName;
             state.currentUserEmail = userEmail;
             state.authToken = authToken;
+        },
+        setAuthToken(state, authToken) {
+            state.authToken = authToken;
         }
     },
     actions: {
