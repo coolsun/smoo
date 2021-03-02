@@ -88,6 +88,9 @@
     "already_have_an_account": "已經擁有帳號?",
     "close": "關閉"
   },
+  "explore": {
+    "search": "Search-C"
+  },
   "layouts": {
     "hello": "歡迎!",
     "not_found_page": "沒有此頁面"

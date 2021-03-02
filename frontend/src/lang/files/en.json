@@ -82,6 +82,9 @@
     "already_have_an_account": "Already have an account?",
     "close": "Close"
   },
+  "explore": {
+    "search": "Search"
+  },
   "layouts": {
     "hello": "Welcome!",
     "not_found_page": "Not Found Page"

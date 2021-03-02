@@ -13,13 +13,13 @@
                     <input type="text" placeholder="End date">
                 </div>
                 <div class="col-">
-                        <button type="submit" class="bttn-mid btn-fill-2">Search</button>                   
+                    <button type="submit" class="bttn-mid btn-fill-2">{{ $t('explore.search') }}</button>                   
                 </div>
             </div>
 
             <div class="row portfolio portfolio-gallery column-3 gutter wow fadeInUp" data-wow-delay="0.5s">
 
-                <div class="portfolio-item cat1 cat3">
+                <div v-for="campaign in campaigns" :key="campaign" class="portfolio-item">
                     <div class="item-thumb">
                         <img src="@/assets/images/portfolios/7.jpg" alt="">
                         <div class="item-tag">By Petey Cruiser</div>
@@ -34,128 +34,12 @@
                             <span>45% Funded</span>
                         </div>
                         <div class="item-title">
-                            <h3><a href="">Denote Simple Fat Denied</a></h3>
+                            <h3><a href="">{{ campaign.name }}</a></h3>
                         </div>
-                        <p>Wandered or strictly raillery stanhill as. Jennings appetite disposed me an at subjects an.</p>
-                        
-                        <a href="" class="bttn-small btn-wht">Donate now</a>
+                        <p class="text-truncate" style="max-width: 100%">{{ campaign.description }}</p>
+                        <a href="" class="bttn-small btn-wht">{{ $t('header.donate_now') }}</a>
                     </div>
-                </div>
-
-                <div class="portfolio-item cat2 cat4 ">
-                    <div class="item-thumb">
-                        <img src="@/assets/images/portfolios/8.jpg" alt="">
-                        <div class="item-tag">By Petey Cruiser</div>
-                        <div class="progress light-blue-bg">
-                            <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"><span>75%</span></div>
-                        </div>
-                    </div>
-                    <div class="item-details">
-                        <div class="item-meta">
-                            <span>$450 Pledged</span>
-                            <span>5 Days ago</span>
-                            <span>45% Funded</span>
-                        </div>
-                        <div class="item-title">
-                            <h3><a href="">Anything embarrassing hidden</a></h3>
-                        </div>
-                        <p>Wandered or strictly raillery stanhill as. Jennings appetite disposed me an at subjects an.</p>
-                        
-                        <a href="" class="bttn-small btn-wht">Donate now</a>
-                    </div>
-                </div>
-
-                <div class="portfolio-item cat1 cat5 ">
-                    <div class="item-thumb">
-                        <img src="@/assets/images/portfolios/9.jpg" alt="">
-                        <div class="item-tag">By Petey Cruiser</div>
-                        <div class="progress light-blue-bg">
-                            <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"><span>75%</span></div>
-                        </div>
-                    </div>
-                    <div class="item-details">
-                        <div class="item-meta">
-                            <span>$450 Pledged</span>
-                            <span>5 Days ago</span>
-                            <span>45% Funded</span>
-                        </div>
-                        <div class="item-title">
-                            <h3><a href="">Latin literature from 45</a></h3>
-                        </div>
-                        <p>Wandered or strictly raillery stanhill as. Jennings appetite disposed me an at subjects an.</p>
-                        
-                        <a href="" class="bttn-small btn-wht">Donate now</a>
-                    </div>
-                </div>
-
-                <div class="portfolio-item cat3 ">
-                    <div class="item-thumb">
-                        <img src="@/assets/images/portfolios/10.jpg" alt="">
-                        <div class="item-tag">By Petey Cruiser</div>
-                        <div class="progress light-blue-bg">
-                            <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"><span>75%</span></div>
-                        </div>
-                    </div>
-                    <div class="item-details">
-                        <div class="item-meta">
-                            <span>$450 Pledged</span>
-                            <span>5 Days ago</span>
-                            <span>45% Funded</span>
-                        </div>
-                        <div class="item-title">
-                            <h3><a href="">Many desktop publishing</a></h3>
-                        </div>
-                        <p>Wandered or strictly raillery stanhill as. Jennings appetite disposed me an at subjects an.</p>
-                        
-                        <a href="" class="bttn-small btn-wht">Donate now</a>
-                    </div>
-                </div>
-
-                <div class="portfolio-item cat1 cat2 ">
-                    <div class="item-thumb">
-                        <img src="@/assets/images/portfolios/11.jpg" alt="">
-                        <div class="item-tag">By Petey Cruiser</div>
-                        <div class="progress light-blue-bg">
-                            <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"><span>75%</span></div>
-                        </div>
-                    </div>
-                    <div class="item-details">
-                        <div class="item-meta">
-                            <span>$450 Pledged</span>
-                            <span>5 Days ago</span>
-                            <span>45% Funded</span>
-                        </div>
-                        <div class="item-title">
-                            <h3><a href="">Anticipate for generation</a></h3>
-                        </div>
-                        <p>Wandered or strictly raillery stanhill as. Jennings appetite disposed me an at subjects an.</p>
-                        
-                        <a href="" class="bttn-small btn-wht">Donate now</a>
-                    </div>
-                </div>
-
-                <div class="portfolio-item cat3 cat4 ">
-                    <div class="item-thumb">
-                        <img src="@/assets/images/portfolios/12.jpg" alt="">
-                        <div class="item-tag">By Petey Cruiser</div>
-                        <div class="progress light-blue-bg">
-                            <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"><span>75%</span></div>
-                        </div>
-                    </div>
-                    <div class="item-details">
-                        <div class="item-meta">
-                            <span>$450 Pledged</span>
-                            <span>5 Days ago</span>
-                            <span>45% Funded</span>
-                        </div>
-                        <div class="item-title">
-                            <h3><a href="">Lorem Ipsum is that</a></h3>
-                        </div>
-                        <p>Wandered or strictly raillery stanhill as. Jennings appetite disposed me an at subjects an.</p>
-                        
-                        <a href="" class="bttn-small btn-wht">Donate now</a>
-                    </div>
-                </div>
+                </div>                
             </div>
         </div>
     </section>
@@ -170,7 +54,7 @@ export default {
   },
   data() {
     return {
-        campaigns: null
+        campaigns: []
     };
   },
   created() {
@@ -182,8 +66,8 @@ export default {
         this.$axios.get('/api/campaigns', { headers: { 'Authorization': this.$store.state.authToken}})
         .then((res) => {
             // alert: success
-            this.campaigns = res.data.campaigns;
-            console.log("this.campaigns:"+this.campaigns)
+            this.campaigns = res.data;
+            console.log("this.campaigns:"+this.campaigns);
         })
         .catch(error => {
             // alert: error
