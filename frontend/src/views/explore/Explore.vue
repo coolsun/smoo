@@ -19,7 +19,7 @@
 
             <div class="row portfolio portfolio-gallery column-3 gutter wow fadeInUp" data-wow-delay="0.5s">
 
-                <div v-for="campaign in campaigns" :key="campaign" class="portfolio-item">
+                <div v-for="campaign in campaigns" :key="campaign.id" class="portfolio-item">
                     <div class="item-thumb">
                         <img src="@/assets/images/portfolios/7.jpg" alt="">
                         <div class="item-tag">By Petey Cruiser</div>

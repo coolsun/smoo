@@ -720,14 +720,14 @@ export default {
   },
   created() {
     this.$notify.info({message: 'Welcome to 101Moo!', position: 'top center', timeOut: 5000});
-  },
-  mounted() {
+  }
+  /*mounted() {
     this.$refs.hero-slideshow.owlCarousel({
     //Autoplay
     autoplay : 5000,
     stopOnHover : false
     });
-  }
+  }*/
 };
 
 </script>

@@ -31,7 +31,7 @@
                             </div>
                             <br>
                             <h2>{{ $t('campaign_details.comments') }}</h2>
-                            <div v-for="comment in comments" :key="comment" class="blog-all-comments">
+                            <div v-for="comment in comments" :key="comment.id" class="blog-all-comments">
                                 <div class="blog-comments wow fadeInUp" data-wow-delay="0.3s">
                                     <div class="author-thumb">
                                         <img src="@/assets/images/commenter1.png" alt="" />

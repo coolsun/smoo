@@ -201,6 +201,9 @@ import {
           this.$router.push({ name: 'home'});
           window.location.reload();
       },
+      forgetPassword() {
+          console.log('Forget password');
+      },
       goToExplore() {
         this.$router.push({ name: 'explore'});
       },
