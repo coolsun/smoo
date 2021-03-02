@@ -85,6 +85,12 @@
   "explore": {
     "search": "Search"
   },
+  "campaign_details": {
+    "comments": "Comments",
+    "share": "Share",
+    "leave_comment": "Leave a comment",
+    "post_comment": "Post comment"
+  },
   "layouts": {
     "hello": "Welcome!",
     "not_found_page": "Not Found Page"

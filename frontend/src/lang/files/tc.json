@@ -91,6 +91,12 @@
   "explore": {
     "search": "Search-C"
   },
+  "campaign_details": {
+    "comments": "Comments-C",
+    "share": "Share-C",
+    "leave_comment": "Leave a comment-C",
+    "post_comment": "Post comment-C"
+  },
   "layouts": {
     "hello": "歡迎!",
     "not_found_page": "沒有此頁面"

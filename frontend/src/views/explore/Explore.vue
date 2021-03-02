@@ -37,7 +37,7 @@
                             <h3><a href="">{{ campaign.name }}</a></h3>
                         </div>
                         <p class="text-truncate" style="max-width: 100%">{{ campaign.description }}</p>
-                        <a href="" class="bttn-small btn-wht">{{ $t('header.donate_now') }}</a>
+                        <router-link class="bttn-small btn-wht" :to="{ name: 'causes-details'}" tag="button">{{ $t('header.donate_now') }}</router-link>
                     </div>
                 </div>                
             </div>
