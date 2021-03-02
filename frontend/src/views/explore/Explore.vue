@@ -63,7 +63,8 @@ export default {
   methods: {
     campaign() {
         console.log("this.campaigns authToken:"+this.$store.state.authToken)
-        this.$axios.get('/api/campaigns', { headers: { 'Authorization': this.$store.state.authToken}})
+        // this.$axios.get('/api/campaigns', { headers: { 'Authorization': this.$store.state.authToken}})
+        this.$axios.get('/api/campaigns/all_campaigns')
         .then((res) => {
             // alert: success
             this.campaigns = res.data;
