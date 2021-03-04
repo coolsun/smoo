@@ -5,7 +5,7 @@
             <div class="row justify-content-center">
                 <div class="col-xl-7 col-lg-7 col-md-12 col-sm-12">
                     <div class="start-project-content">
-                        <h2>Enter your Campaign Goal</h2><br>
+                        <h2>{{$t('campaign.Enter your Campaign Goal')}}</h2><br>
                         <div class="input-group input-group-lg">
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="inputGroup-sizing-lg">$</span>
@@ -13,27 +13,19 @@
                             <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
                         </div><br>
                         <form action="#">
-                            <textarea v-model="projectName" name="project-name" rows="1" placeholder="My Campaign"></textarea>
-                            <textarea v-model="projectDescription" name="message" rows="5" placeholder="My campaign is for..."></textarea>
+                            <textarea name="project-name" rows="1" :placeholder="$t('campaign.My campaign')"></textarea>
                             <div class="form-select">
                                 <select name="project-select">
-                                    <option value="">Choose a category</option>
-                                    <option value="">1</option>
-                                    <option value="">2</option>
-                                    <option value="">3</option>
-                                    <option value="">4</option>
+                                    <option value="">{{ $t('campaign.Choose a category') }}</option>
+                                    <option value="">Select your project</option>
+                                    <option value="">Select your project</option>
+                                    <option value="">Select your project</option>
+                                    <option value="">Select your project</option>
                                 </select>
                             </div>
-                            <div class="form-select">
-                                <select name="project-select">
-                                    <option value="">Select your country</option>
-                                    <option value="">Select your country</option>
-                                    <option value="">Select your country</option>
-                                    <option value="">Select your country</option>
-                                    <option value="">Select your country</option>
-                                </select>
-                            </div>
-                            <div class="upload-img">
+                            <textarea name="message" rows="5" :placeholder="$t('campaign.My campaign is for')"></textarea>
+
+                            <!--div class="upload-img">
                                 <span>Upload campaign image</span>
                                 <div class="file-field">
                                     <div class="btn btn-primary btn-sm">
@@ -59,7 +51,9 @@
                                         <span class="fill-control-description">I have a debit and/or credit card.</span>
                                 </label>  
                             </div>
-                            <button class="bttn-mid btn-fill" type="submit" @click="startProject">Create Campaign</button>
+                            <button class="bttn-mid btn-fill" type="submit" >Create Campaign</button>
+                            </div-->
+                            <button class="bttn-mid btn-fill" type="submit" @click="startProject">{{ $t('campaign.Create Campaign') }}</button>
                         </form>
                     </div>
                 </div>

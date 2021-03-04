@@ -88,7 +88,7 @@
             <mdb-navbar-toggler>
               <mdb-navbar-nav right>
                 <mdb-nav-item router to="/" waves-fixed class="nav-item nav-link">{{ $t('header.101moo') }}</mdb-nav-item>
-                <mdb-nav-item router to="about" waves-fixed class="nav-item nav-link">{{ $t('header.about') }}</mdb-nav-item>
+                <mdb-nav-item router to="/about" waves-fixed class="nav-item nav-link">{{ $t('header.about') }}</mdb-nav-item>
                 <mdb-dropdown tag="li" class="nav-item nav-link">
                   <mdb-dropdown-toggle
                     tag="a"

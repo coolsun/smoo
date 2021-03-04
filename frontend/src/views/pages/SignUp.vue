@@ -8,9 +8,11 @@
                     <div class="donate-project-content">
                         <h2>{{ $t('sign_in.sign_up') }}</h2><br>
                         <form action="#">
-                            <mdb-input :label="$t('sign_in.your_email')" class="mb-5" type="email" v-model="email"/>
-                            <mdb-input :label="$t('sign_in.your_password')" type="password" v-model="password"/><br>
-                            <h5>*Country</h5>
+                            <mdb-input :label="'* '+$t('sign_in.your_email')" class="mb-5" type="email" v-model="email"/>
+                            <mdb-input :label="'* '+$t('sign_in.your_password')" type="password" v-model="password"/><br>
+                            <mdb-input :label="'* '+$t('sign_in.first_name')" type="text" v-model="firstName"/><br>
+                            <mdb-input :label="'* '+$t('sign_in.last_name')" type="text" v-model="lastName"/><br>
+                            <!--h5>*Country</h5>
                             <div class="form-select">
                                 <select name="project-select">
                                     <option value="">Select your country</option>
@@ -19,28 +21,29 @@
                                     <option value="">Select your country</option>
                                     <option value="">Select your country</option>
                                 </select>
-                            </div>
-                            <mdb-input label="Zipcode"/><br>
-                            <br><br>
-                            <h6>Please verify the following:</h6>
+                            </div-->
+                            <!--mdb-input label="Zipcode"/-->
+                            <br>
+                            <br>
+                            <h6>{{$t('sign_in.Please verify the following:')}}</h6>
                             <div class="form-tick">
                                 <label class="custom-control fill-checkbox">
                                     <input type="checkbox" class="fill-control-input">
                                     <span class="fill-control-indicator"></span>
-                                    <span class="fill-control-description">I am at least 18 years old.</span>
+                                    <span class="fill-control-description">{{'* '+$t('sign_in.I am at least 18 years old')}}</span>
                                 </label>  
                                 <label class="custom-control fill-checkbox">
                                         <input type="checkbox" class="fill-control-input">
                                         <span class="fill-control-indicator"></span>
-                                        <span class="fill-control-description">I can verify a bank account and government-issued ID.</span>
+                                        <span class="fill-control-description">{{'* '+$t('sign_in.I can verify a bank account and government-issued ID')}}</span>
                                 </label>
                                 <label class="custom-control fill-checkbox">
                                         <input type="checkbox" class="fill-control-input">
                                         <span class="fill-control-indicator"></span>
-                                        <span class="fill-control-description">I have a debit and/or credit card.</span>
+                                        <span class="fill-control-description">{{'* '+$t('sign_in.I have a debit and/or credit card')}}</span>
                                 </label>  
                             </div>
-                            <button class="bttn-mid btn-fill" type="submit" @click="signUp">{{ $t('sign_in.sign_up') }}</button>
+                            <button class="bttn-mid btn-fill" type="submit" @click="signUp">{{ $t('sign_in.submit') }}</button>
                         </form>
                     </div>
                 </div>

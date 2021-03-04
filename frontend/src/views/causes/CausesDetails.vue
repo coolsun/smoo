@@ -83,11 +83,11 @@
                             <div class="thumb">
                                 <img src="@/assets/images/author.png" alt="">
                             </div>
-                            <h4>Joshua Johnson</h4>
+                            <h4>發起人</h4>
                             <p>Those an equal point no years do. Depend warmth fat but her but played. Shy and subjects wondered trifling pleasant.</p>
                         </div>
                         <form action="#">
-                            <input type="email" placeholder="Subscribe" required>
+                            <input type="email" :placeholder="$t('campaign_details.Subscribe')" required>
                             <button type="submit"><i class="flaticon-paper-plane"></i></button>
                         </form>
                     </div>

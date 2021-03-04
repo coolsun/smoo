@@ -49,7 +49,8 @@
     "my-account": "My Account",
     "donation-history": "Donation History",
     "my-donation": "My Donation",
-    "my-campaign": "My Campaign"
+    "my-campaign": "My Campaign",
+    "sign_up": "Sign up"
   },
   "footer": {
     "101moo": "101Moo",
@@ -80,16 +81,31 @@
     "forget_password": "Forget password?",
     "reset_password": "Reset Password",
     "already_have_an_account": "Already have an account?",
-    "close": "Close"
+    "close": "Close",
+    "first_name": "First Name",
+    "last_name": "Last Name",
+    "Please verify the following:": "Please verify the following:",
+    "I am at least 18 years old.": "I am at least 18 years old.",
+    "I can verify a bank account and government-issued ID.": "I can verify a bank account and government-issued ID.",
+    "I have a debit and/or credit card.": "I have a debit and/or credit card.",
+    "submit": "Submit"
   },
   "explore": {
     "search": "Search"
+  },
+  "campaign": {
+    "Enter your Campaign Goal": "Enter your Campaign Goal",
+    "My campaign": "My campaign",
+    "My campaign is for": "My campaign is for",
+    "Choose a category":"Choose a category",
+    "Create Campaign": "Create Campaign"
   },
   "campaign_details": {
     "comments": "Comments",
     "share": "Share",
     "leave_comment": "Leave a comment",
-    "post_comment": "Post comment"
+    "post_comment": "Post comment",
+    "subscribe": "Subscribe"
   },
   "layouts": {
     "hello": "Welcome!",

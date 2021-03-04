@@ -18,8 +18,8 @@
                     <div class="footer-nav">
                         <h3>{{ $t('footer.home') }}</h3>
                         <ul>
-                            <li><router-link to="home">{{ $t('footer.101moo') }}</router-link></li>
-                            <li><router-link to="about">{{ $t('footer.about') }}</router-link></li>
+                            <li><router-link to="/">{{ $t('footer.101moo') }}</router-link></li>
+                            <li><router-link to="/about">{{ $t('footer.about') }}</router-link></li>
                         </ul>
                     </div>
                 </div>
@@ -27,10 +27,10 @@
                     <div class="footer-nav">
                         <h3>{{ $t('footer.featured') }}</h3>
                         <ul>
-                            <li><router-link to="medical">{{ $t('footer.medical') }}</router-link></li>
-                            <li><router-link to="memorial">{{ $t('footer.memorial') }}</router-link></li>
-                            <li><router-link to="emergency">{{ $t('footer.emergency') }}</router-link></li>
-                            <li><router-link to="animal-rescue">{{ $t('footer.animal-rescue') }}</router-link></li>
+                            <li><router-link to="/medical">{{ $t('footer.medical') }}</router-link></li>
+                            <li><router-link to="/memorial">{{ $t('footer.memorial') }}</router-link></li>
+                            <li><router-link to="/emergency">{{ $t('footer.emergency') }}</router-link></li>
+                            <li><router-link to="/animal-rescue">{{ $t('footer.animal-rescue') }}</router-link></li>
                         </ul>
                     </div>
                 </div>
@@ -38,7 +38,7 @@
                     <div class="footer-nav">
                         <h3>{{ $t('footer.more_featured') }}</h3>
                         <ul>
-                            <li><router-link to="charity">{{ $t('footer.charity') }}</router-link></li>
+                            <li><router-link to="/charity">{{ $t('footer.charity') }}</router-link></li>
                         </ul>
                     </div>
                 </div>
@@ -46,7 +46,7 @@
                     <div class="footer-nav">
                         <h3>{{ $t('footer.help_or_question') }}</h3>
                         <ul>
-                            <li><router-link to="contact">{{ $t('footer.contact') }}</router-link></li>
+                            <li><router-link to="/contact">{{ $t('footer.contact') }}</router-link></li>
                         </ul>
                     </div>
                 </div>

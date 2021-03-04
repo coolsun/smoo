@@ -52,7 +52,8 @@
     "my-account": "我的帳號",
     "donation-history": "協助紀錄",
     "my-donation": "我的協助紀錄",
-    "my-campaign": "我的募款紀錄"
+    "my-campaign": "我的募款紀錄",
+    "sign_up": "註冊"
   },
   "footer": {
     "101moo": "一日一募",
@@ -86,16 +87,31 @@
     "forget_password": "忘記密碼",
     "reset_password": "重設密碼",
     "already_have_an_account": "已經擁有帳號?",
-    "close": "關閉"
+    "close": "關閉",
+    "first_name": "您的名字",
+    "last_name": "您的姓氏",
+    "Please verify the following:": "請點選下列條件選項：",
+    "I am at least 18 years old": "我已經18歲或以上",
+    "I can verify a bank account and government-issued ID": "我有身分證件和銀行帳號",
+    "I have a debit and/or credit card": "我有信用卡",
+    "submit": "送出"
   },
   "explore": {
-    "search": "Search-C"
+    "search": "搜尋"
+  },
+  "campaign": {
+    "Enter your Campaign Goal": "協助目標款項",
+    "My campaign": "我的募款名稱",
+    "My campaign is for": "我的募款目的。。。",
+    "Choose a category": "選擇募款類別",
+    "Create Campaign": "發起募款"
   },
   "campaign_details": {
-    "comments": "Comments-C",
-    "share": "Share-C",
-    "leave_comment": "Leave a comment-C",
-    "post_comment": "Post comment-C"
+    "comments": "留言紀錄：",
+    "share": "分享",
+    "leave_comment": "我要留言",
+    "post_comment": "送出留言",
+    "subscribe": "訂閱通知"
   },
   "layouts": {
     "hello": "歡迎!",
