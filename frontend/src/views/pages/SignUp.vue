@@ -54,7 +54,7 @@
 </template>
 
 <script>
-import { mdbInput } from 'mdbvue'
+import { mdbInput } from 'mdbvue';
 
 export default {
   name: "DonationNow",

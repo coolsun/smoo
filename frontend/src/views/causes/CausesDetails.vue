@@ -13,17 +13,17 @@
                                 <h3>{{ $t('campaign_details.leave_comment') }}</h3>
                                 <form action="#">
                                     <div class="row">
-                                        <div class="col-md-6">
-                                            <input type="text" placeholder="Name*" required />
+                                        <div v-if="!$store.state.isLoggedIn" class="col-md-6">
+                                            <mdb-input type="text" placeholder="Name*" v-model="name" required />
                                         </div>
-                                        <div class="col-md-6">
-                                            <input type="email" placeholder="Email*" required />
-                                        </div>
-                                        <div class="col-md-12">
-                                            <textarea rows="6" placeholder="Message"></textarea>
+                                        <div v-if="!$store.state.isLoggedIn" class="col-md-6">
+                                            <mdb-input type="email" placeholder="Email*" v-model="email" required />
                                         </div>
                                         <div class="col-md-12">
-                                            <button class="bttn-mid btn-fill" type="submit">{{ $t('campaign_details.post_comment') }}</button>
+                                            <mdb-textarea rows="6" placeholder="Message" v-model="message"></mdb-textarea>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <button class="bttn-mid btn-fill" type="submit" @click="postComment">{{ $t('campaign_details.post_comment') }}</button>
                                         </div>
                                     </div>
                                 </form>
@@ -99,18 +99,25 @@
 </template>
 
 <script>
+import { mdbInput, mdbTextarea } from 'mdbvue'
 export default {
   name: "causes-details",
   components: {
+      mdbInput,
+      mdbTextarea
   },
   props: {
     campaignID: Number
   },
   data() {
     return {
-      campaign: [],
-      comments: [],
-      campaignNum: this.$props.campaignID
+        email: '',
+        name: '',
+        message: '',
+
+        campaign: [],
+        comments: [],
+        campaignNum: this.$props.campaignID
     };
   },
   created() {
@@ -130,6 +137,24 @@ export default {
             console.log("this.campaign:"+this.campaign);
             this.comments = res.data.comments;
             console.log("this.comments:"+this.comments);
+        })
+        .catch(error => {
+            // alert: error
+            console.log(error.message)
+        }) 
+    },
+    postComment() {
+        let campaign = {
+            campaign_id: this.campaignNum,
+            user_id: this.$store.state.currentUserID,
+            content:this.message,
+        }
+        this.$axios.post('/api/campaigns/create_comment', 
+            {comment: campaign},
+            {headers: { 'Authorization': this.$store.state.authToken }})
+        .then(() => {
+            // alert: success
+            console.log("post comment succeeded!")
         })
         .catch(error => {
             // alert: error

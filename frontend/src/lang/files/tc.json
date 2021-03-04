@@ -104,14 +104,15 @@
     "My campaign": "我的募款名稱",
     "My campaign is for": "我的募款目的。。。",
     "Choose a category": "選擇募款類別",
-    "Create Campaign": "發起募款"
+    "Create Campaign": "發起募款",
+    "subscribe": "訂閱電郵通知"
   },
   "campaign_details": {
     "comments": "留言紀錄：",
     "share": "分享",
     "leave_comment": "我要留言",
     "post_comment": "送出留言",
-    "subscribe": "訂閱通知"
+    "subscribe": "訂閱電郵通知"
   },
   "layouts": {
     "hello": "歡迎!",
