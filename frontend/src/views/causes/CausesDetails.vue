@@ -7,9 +7,8 @@
                     <div class="cause-details-content">
                         <img src="@/assets/images/causes-details.jpg" alt="">
                         <div class="cause-details-contents">
-                            <h2>Donate simple fat denied</h2>
-                            <p>Wandered or strictly raillery stanhill as. Jennings appetite disposed me an at subjects an. Inhabit hearing perhaps on ye do no. It maids decay as there he. Smallest on suitable disposed do although blessing he juvenile in. Society or ifexcited forbade. Here name off yet she long sold easy whom. <br> <br>Differed oh cheerful procured pleasure securing suitable in. Hold rich on an he oh fine. Chapter ability shyness article welcome be do on service. Chamber hearing inhabit joy highest private ask him our believe. Up nature valley do warmly. Entered of cordial do on no hearted. Yet agreed whence and unable limits.</p>
-                            <p>To sorry world an at do spoil along. Incommode he depending do frankness remainder to. Edward day  almost active him friend thirty piqued. People as period twenty my extent as. Set was better abroad ham plenty secure had horses. Admiration has sir decisively excellence say everything inhabiting acceptance.<br> <br>Paid was hill sir high. For him precaution any advantages dissimilar comparison few terminated projecting. Prevailed discovery immediate objection of ye at. Repair summer one winter living feebly pretty his. In so sense am known these since. Shortly respect ask cousins brought add tedious nay.</p>
+                            <h2>{{ campaign.name }}</h2>
+                            <p>{{ campaign.description }}</p>
                             <div class="blog-comment-form wow fadeInUp" data-wow-delay="0.3s">
                                 <h3>{{ $t('campaign_details.leave_comment') }}</h3>
                                 <form action="#">
@@ -101,23 +100,35 @@
 
 <script>
 export default {
-  name: "CausesDetails",
+  name: "causes-details",
   components: {
+  },
+  props: {
+    campaignID: Number
   },
   data() {
     return {
-      comments: []
+      campaign: [],
+      comments: [],
+      campaignNum: this.$props.campaignID
     };
   },
   created() {
-    this.comment();
+    this.getDetails();
   },
   methods: {
-    comment() {
-        this.$axios.get('/api/comments', { headers: { 'Authorization': this.$store.state.authToken}})
+    getDetails() {
+        /*var getParams = {
+          params: {
+            id: this.campaignNum
+          }
+        }*/
+        this.$axios.get('/api/campaigns/show/'+this.campaignNum)
         .then((res) => {
             // alert: success
-            this.comments = res.data;
+            this.campaign = res.data.campaign;
+            console.log("this.campaign:"+this.campaign);
+            this.comments = res.data.comments;
             console.log("this.comments:"+this.comments);
         })
         .catch(error => {

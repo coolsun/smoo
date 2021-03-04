@@ -13,15 +13,15 @@
                             <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
                         </div><br>
                         <form action="#">
-                            <textarea name="project-name" rows="1" placeholder="My Campaign"></textarea>
-                            <textarea name="message" rows="5" placeholder="My campaign is for..."></textarea>
+                            <textarea v-model="projectName" name="project-name" rows="1" placeholder="My Campaign"></textarea>
+                            <textarea v-model="projectDescription" name="message" rows="5" placeholder="My campaign is for..."></textarea>
                             <div class="form-select">
                                 <select name="project-select">
                                     <option value="">Choose a category</option>
-                                    <option value="">Select your project</option>
-                                    <option value="">Select your project</option>
-                                    <option value="">Select your project</option>
-                                    <option value="">Select your project</option>
+                                    <option value="">1</option>
+                                    <option value="">2</option>
+                                    <option value="">3</option>
+                                    <option value="">4</option>
                                 </select>
                             </div>
                             <div class="form-select">
@@ -59,7 +59,7 @@
                                         <span class="fill-control-description">I have a debit and/or credit card.</span>
                                 </label>  
                             </div>
-                            <button class="bttn-mid btn-fill" type="submit">Create Campaign</button>
+                            <button class="bttn-mid btn-fill" type="submit" @click="startProject">Create Campaign</button>
                         </form>
                     </div>
                 </div>
@@ -77,7 +77,15 @@ export default {
   },
   data() {
     return {
+        projectName: "",
+        projectDescription: ""
     };
   },
+  methods: {
+    startProject() {
+        console.log("Project name: " + this.projectName);
+        console.log("Project description: " + this.projectDescription);
+    }
+  }
 };
 </script>

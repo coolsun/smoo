@@ -33,12 +33,12 @@
                     </div>
                 </div>
 
-                <div class="portfolio-item cat2 cat4 ">
+                <div v-for="my_campaign in my_campaigns" :key="my_campaign.id" class="portfolio-item">
                     <div class="item-thumb">
-                        <img src="@/assets/images/portfolios/8.jpg" alt="">
+                        <img src="@/assets/images/portfolios/7.jpg" alt="">
                         <div class="item-tag">By Petey Cruiser</div>
                         <div class="progress light-blue-bg">
-                            <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"><span>75%</span></div>
+                            <div class="progress-bar" role="progressbar" style="width: 45%;" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"><span>45%</span></div>
                         </div>
                     </div>
                     <div class="item-details">
@@ -48,83 +48,12 @@
                             <span>45% Funded</span>
                         </div>
                         <div class="item-title">
-                            <h3><a href="">Anything embarrassing hidden</a></h3>
+                            <h3><a href="">{{ my_campaign.name }}</a></h3>
                         </div>
-                        <p>Wandered or strictly raillery stanhill as. Jennings appetite disposed me an at subjects an.</p>
-                        <router-link class="btn btn-edit px-3" :to="{ name: 'my-donation'}" tag="button"><i class="fas fa-edit" aria-hidden="true"></i></router-link>
-                        <button type="button" class="btn btn-danger px-3"><i class="fas fa-times-circle" aria-hidden="true"></i></button>
-                        <button type="button" class="btn btn-donors px-3"><i class="fas fa-user-friends" aria-hidden="true"></i></button>                   
-                      </div>
-                  </div>
-                  <div class="portfolio-item cat3 cat4 ">
-                      <div class="item-thumb">
-                          <img src="@/assets/images/portfolios/12.jpg" alt="">
-                          <div class="item-tag">By Petey Cruiser</div>
-                          <div class="progress light-blue-bg">
-                              <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"><span>75%</span></div>
-                          </div>
-                      </div>
-                      <div class="item-details">
-                          <div class="item-meta">
-                              <span>$450 Pledged</span>
-                              <span>5 Days ago</span>
-                              <span>45% Funded</span>
-                          </div>
-                          <div class="item-title">
-                              <h3><a href="">Lorem Ipsum is that</a></h3>
-                          </div>
-                          <p>Wandered or strictly raillery stanhill as. Jennings appetite disposed me an at subjects an.</p>
-                          <router-link class="btn btn-edit px-3" :to="{ name: 'my-donation'}" tag="button"><i class="fas fa-edit" aria-hidden="true"></i></router-link>
-                          <button type="button" class="btn btn-danger px-3"><i class="fas fa-times-circle" aria-hidden="true"></i></button>
-                          <button type="button" class="btn btn-donors px-3"><i class="fas fa-user-friends" aria-hidden="true"></i></button>    
-                      </div>
-                  </div>
-                  <div class="portfolio-item cat2 cat4 ">
-                      <div class="item-thumb">
-                          <img src="@/assets/images/portfolios/8.jpg" alt="">
-                          <div class="item-tag">By Petey Cruiser</div>
-                          <div class="progress light-blue-bg">
-                              <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"><span>75%</span></div>
-                          </div>
-                      </div>
-                      <div class="item-details">
-                          <div class="item-meta">
-                              <span>$450 Pledged</span>
-                              <span>5 Days ago</span>
-                              <span>45% Funded</span>
-                          </div>
-                          <div class="item-title">
-                              <h3><a href="">Anything embarrassing hidden</a></h3>
-                          </div>
-                          <p>Wandered or strictly raillery stanhill as. Jennings appetite disposed me an at subjects an.</p>
-                          <router-link class="btn btn-edit px-3" :to="{ name: 'my-donation'}" tag="button"><i class="fas fa-edit" aria-hidden="true"></i></router-link>
-                          <button type="button" class="btn btn-danger px-3"><i class="fas fa-times-circle" aria-hidden="true"></i></button>
-                          <button type="button" class="btn btn-donors px-3"><i class="fas fa-user-friends" aria-hidden="true"></i></button>    
-                      </div>
-                  </div>
-                  <div class="portfolio-item cat2 cat4 ">
-                    <div class="item-thumb">
-                        <img src="@/assets/images/portfolios/8.jpg" alt="">
-                        <div class="item-tag">By Petey Cruiser</div>
-                        <div class="progress light-blue-bg">
-                            <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"><span>75%</span></div>
-                        </div>
+                        <p class="text-truncate" style="max-width: 100%">{{ my_campaign.description }}</p>
+                        <router-link class="bttn-small btn-wht" :to="{ name: 'causes-details'}" tag="button">{{ $t('header.donate_now') }}</router-link>
                     </div>
-                    <div class="item-details">
-                        <div class="item-meta">
-                            <span>$450 Pledged</span>
-                            <span>5 Days ago</span>
-                            <span>45% Funded</span>
-                        </div>
-                        <div class="item-title">
-                            <h3><a href="">Anything embarrassing hidden</a></h3>
-                        </div>
-                        <p>Wandered or strictly raillery stanhill as. Jennings appetite disposed me an at subjects an.</p>
-                        <router-link class="btn btn-edit px-3" :to="{ name: 'my-donation'}" tag="button"><i class="fas fa-edit" aria-hidden="true"></i></router-link>
-                        <button type="button" class="btn btn-danger px-3"><i class="fas fa-times-circle" aria-hidden="true"></i></button>
-                        <button type="button" class="btn btn-donors px-3"><i class="fas fa-user-friends" aria-hidden="true"></i></button>    
-                    </div>
-                </div>
+                </div>    
             </div>
         </div>
     </section>
@@ -132,12 +61,30 @@
 </template>
 <script>
 export default {
-  name: "DonationHistory",
+  name: "MyCampaign",
   components: {
   },
   data() {
-    return {
+    return { 
+      my_campaigns: []
     };
   },
+  created() {
+    this.my_campaign();
+  },
+  methods: {
+    my_campaign() {
+        this.$axios.get('/api/campaigns/my_campaigns', { headers: { 'Authorization': this.$store.state.authToken}})
+        .then((res) => {
+            // alert: success
+            this.my_campaigns = res.data;
+            console.log("this.my_campaigns:"+this.my_campaigns);
+        })
+        .catch(error => {
+            // alert: error
+            console.log(error.message)
+        }) 
+    }
+  }
 };
 </script>

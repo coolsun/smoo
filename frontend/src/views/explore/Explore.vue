@@ -17,7 +17,7 @@
                 </div>
             </div>
 
-            <div class="row portfolio portfolio-gallery column-3 gutter wow fadeInUp" data-wow-delay="0.5s">
+            <div v-if="isLoaded" class="row portfolio portfolio-gallery column-3 gutter wow fadeInUp" data-wow-delay="0.5s">
 
                 <div v-for="campaign in campaigns" :key="campaign.id" class="portfolio-item">
                     <div class="item-thumb">
@@ -37,7 +37,7 @@
                             <h3><a href="">{{ campaign.name }}</a></h3>
                         </div>
                         <p class="text-truncate" style="max-width: 100%">{{ campaign.description }}</p>
-                        <router-link class="bttn-small btn-wht" :to="{ name: 'causes-details'}" tag="button">{{ $t('header.donate_now') }}</router-link>
+                        <router-link class="bttn-small btn-wht" :to="{ name: 'causes-details', params: { campaignID: 1 }}" tag="button">{{ $t('header.donate_now') }}</router-link>
                     </div>
                 </div>                
             </div>
@@ -54,7 +54,9 @@ export default {
   },
   data() {
     return {
-        campaigns: []
+        campaigns: [],
+        isLoaded: false,
+        campaignID: '1'
     };
   },
   created() {
@@ -69,12 +71,12 @@ export default {
             // alert: success
             this.campaigns = res.data;
             console.log("this.campaigns:"+this.campaigns);
+            this.isLoaded = true;
         })
         .catch(error => {
             // alert: error
             console.log(error.message)
         })
-        
     }
   }
 };

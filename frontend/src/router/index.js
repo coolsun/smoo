@@ -102,9 +102,10 @@ export default new Router({
       component: Causes2
     },
     {
-      path: '/causes-details',
+      path: '/causes-details/:campaignID',
       name: 'causes-details',
-      component: CausesDetails
+      component: CausesDetails,
+      props: true
     },
     {
       path: '/explore',
