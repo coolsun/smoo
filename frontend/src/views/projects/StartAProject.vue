@@ -10,21 +10,14 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="inputGroup-sizing-lg">$</span>
                             </div>
-                            <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
+                            <input v-model="projectGoal" type="number" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
                         </div><br>
                         <form action="#">
-                            <textarea name="project-name" rows="1" :placeholder="$t('campaign.My campaign')"></textarea>
-                            <div class="form-select">
-                                <select name="project-select">
-                                    <option value="">{{ $t('campaign.Choose a category') }}</option>
-                                    <option value="">Select your project</option>
-                                    <option value="">Select your project</option>
-                                    <option value="">Select your project</option>
-                                    <option value="">Select your project</option>
-                                </select>
-                            </div>
-                            <textarea name="message" rows="5" :placeholder="$t('campaign.My campaign is for')"></textarea>
+                            <textarea v-model="projectName" rows="1" :placeholder="$t('campaign.My campaign')"></textarea>
+                            <textarea v-model="projectDescription" rows="5" :placeholder="$t('campaign.My campaign is for')"></textarea>
+                            <mdb-select :options="campaignCategory.options" :value.sync="campaignCategory.value" :label="$t('campaign.Choose a category')"
 
+                            />
                             <!--div class="upload-img">
                                 <span>Upload campaign image</span>
                                 <div class="file-field">
@@ -64,21 +57,55 @@
 </template>
 
 <script>
-
+import { mdbSelect } from "mdbvue";
 export default {
   name: "StartAProject",
   components: {
+      mdbSelect,
   },
   data() {
     return {
         projectName: "",
-        projectDescription: ""
+        projectDescription: "",
+        categoryID: "1",
+        projectGoal: "",
+        campaignCategory: {
+          value: '1',
+          options: [
+            { text: this.$t('header.emergency'), value: 1, selected: true },
+            { text: this.$t('header.memorial'), value: 2 },
+            { text: this.$t('header.animal-rescue'), value: 3 },
+            { text: this.$t('header.medical'), value: 4 },
+            { text: this.$t('header.charity'), value: 5 }
+          ]
+        }
     };
   },
   methods: {
+
     startProject() {
-        console.log("Project name: " + this.projectName);
-        console.log("Project description: " + this.projectDescription);
+        console.log("name: " + this.projectName);
+        console.log("desc: " + this.projectDescription);
+        console.log("goal: " + this.goal);
+        let newCampaign = {
+            user_id: this.$store.state.currentUserID,
+            category_id: this.categoryID,
+            name: this.projectName,
+            description: this.projectDescription,
+            goal: this.projectGoal
+        }
+        this.$axios.post('/api/campaigns', 
+            {campaign: newCampaign},
+            {headers: { 'Authorization': this.$store.state.authToken }})
+        .then(() => {
+            // alert: success
+            console.log("post campaign succeeded!")
+            this.$notify.info({message: 'Successfully posted campaign!', position: 'top center', timeOut: 3000});
+        })
+        .catch(error => {
+            // alert: error
+            console.log(error.message)
+        }) 
     }
   }
 };
