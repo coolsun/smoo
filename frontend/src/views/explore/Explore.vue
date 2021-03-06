@@ -4,7 +4,8 @@
         <div class="container">
             <div class="explore-search row">
                 <div class="col-sm">
-                    <input type="text" placeholder="Category">
+                    <mdb-select :options="campaignCategory.options" :value.sync="campaignCategory.value" :label="$t('campaign.Choose a category')"
+                    />
                 </div>
                 <div class="col-sm">
                     <input type="text" placeholder="Start date">
@@ -47,16 +48,27 @@
 </template>
 
 <script>
-
+import { mdbSelect } from "mdbvue";
 export default {
   name: "Explore",
   components: {
+      mdbSelect
   },
   data() {
     return {
         campaigns: [],
         isLoaded: false,
-        campaignID: '1'
+        campaignID: '1',
+        campaignCategory: {
+          value: '1',
+          options: [
+            { text: this.$t('header.emergency'), value: 1, selected: true },
+            { text: this.$t('header.memorial'), value: 2 },
+            { text: this.$t('header.animal-rescue'), value: 3 },
+            { text: this.$t('header.medical'), value: 4 },
+            { text: this.$t('header.charity'), value: 5 }
+          ]
+        }
     };
   },
   created() {
