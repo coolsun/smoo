@@ -23,7 +23,7 @@
                                             <mdb-textarea rows="6" placeholder="Message" v-model="message"></mdb-textarea>
                                         </div>
                                         <div class="col-md-12">
-                                            <button class="bttn-mid btn-fill" type="submit" @click="postComment">{{ $t('campaign_details.post_comment') }}</button>
+                                            <button class="bttn-mid btn-fill" @click="postComment">{{ $t('campaign_details.post_comment') }}</button>
                                         </div>
                                     </div>
                                 </form>
@@ -38,9 +38,6 @@
                                     <div class="author-comments">
                                         <div class="author-details">                                
                                             <h4>Will Marvin</h4>
-                                            <div class="comment-reply-btn">
-                                                <a href=""><i class="fa fa-share"></i></a>
-                                            </div>
                                         </div>
                                         <div class="author-designation">
                                             1 day ago
@@ -114,7 +111,6 @@ export default {
         email: '',
         name: '',
         message: '',
-
         campaign: [],
         comments: [],
         campaignNum: this.$props.campaignID
@@ -144,22 +140,27 @@ export default {
         }) 
     },
     postComment() {
-        let campaign = {
-            campaign_id: this.campaignNum,
-            user_id: this.$store.state.currentUserID,
-            content:this.message,
+        if (this.$store.state.isLoggedIn) {
+          let campaign = {
+              campaign_id: this.campaignNum,
+              user_id: this.$store.state.currentUserID,
+              content:this.message,
+          }
+          this.$axios.post('/api/campaigns/create_comment', 
+              {comment: campaign},
+              {headers: { 'Authorization': this.$store.state.authToken }})
+          .then(() => {
+              // alert: success
+              console.log("post comment succeeded!")
+          })
+          .catch(error => {
+              // alert: error
+              console.log(error.message)
+          }) 
+        } else {
+            this.$router.push({ name: 'home'});
+            this.$notify.info({message: 'Please login to comment', position: 'top center', timeOut: 5000});
         }
-        this.$axios.post('/api/campaigns/create_comment', 
-            {comment: campaign},
-            {headers: { 'Authorization': this.$store.state.authToken }})
-        .then(() => {
-            // alert: success
-            console.log("post comment succeeded!")
-        })
-        .catch(error => {
-            // alert: error
-            console.log(error.message)
-        }) 
     }
   }
 };

@@ -199,7 +199,7 @@ import {
         
       },
       signOut() {
-          this.$store.state.isLoggedIn = true;
+          this.$store.state.isLoggedIn = false;
           this.$router.push({ name: 'home'});
           window.location.reload();
       },
