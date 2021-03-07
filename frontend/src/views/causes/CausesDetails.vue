@@ -11,7 +11,7 @@
                             <p>{{ campaign.description }}</p>
                             <div class="blog-comment-form wow fadeInUp" data-wow-delay="0.3s">
                                 <h3>{{ $t('campaign_details.leave_comment') }}</h3>
-                                <form action="#">
+                                <form action="#" v-on:submit.prevent>
                                     <div class="row">
                                         <div v-if="!$store.state.isLoggedIn" class="col-md-6">
                                             <mdb-input type="text" placeholder="Name*" v-model="name" required />
@@ -158,7 +158,6 @@ export default {
               console.log(error.message)
           }) 
         } else {
-            this.$router.push({ name: 'home'});
             this.$notify.info({message: 'Please login to comment', position: 'top center', timeOut: 5000});
         }
     }
