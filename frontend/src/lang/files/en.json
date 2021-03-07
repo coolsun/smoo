@@ -21,7 +21,20 @@
     "settings": "Settings",
     "company": "Company",
     "t_chinese": "Chinese(Traditional)",
-    "english": "English"
+    "english": "English",
+    "Our Services":"Our Services",
+    "Easy Setup":"Easy Setup",
+    "Easy Setup Content":"Set up in a few minutes to start the funding campaign",
+    "Credibility":"Credibility",
+    "Credibility Content":"Credibility Content",
+    "Easy Donation":"Easy Donation",
+    "Easy Donation Content":"Easy Donation Content",
+    "Donation List":"Donation List",
+    "Donation List Content":"Donation List Content",
+    "Receipt Download":"Receipt Download",
+    "Receipt Download Content":"Receipt Download Content",
+    "Quick Search":"Quick Search",
+    "Quick Search Content":"Quick Search Content"
   },
   "header": {
     "101moo": "101moo",

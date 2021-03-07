@@ -67,7 +67,7 @@
     </section><!--/Hero Area-->
 
     <!--Causes Area -->
-    <section class="causes-area section-padding-2 white-bg">
+    <!--section class="causes-area section-padding-2 white-bg">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col centered wow fadeInUp" data-wow-delay="0.3s">
@@ -217,7 +217,8 @@
                 </div>
             </div>
         </div>
-    </section><!--/Causes Area -->
+    </section-->
+    <!--/Causes Area -->
 
     <!-- Services Area -->
     <section class="services-area section-padding-2 light-overlay"  :style="{'background-image': 'url(' + require('@/assets/images/hero-4.jpg') + ') no-repeat'}">
@@ -225,59 +226,54 @@
             <div class="row justify-content-center">
                 <div class="col centered wow fadeInUp" data-wow-delay="0.3s">
                     <div class="section-title">
-                        <h2>Our Services</h2>
+                        <h2>{{ $t('app.Our Services') }}</h2>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay="0.4s">
                     <div class="single-service">
-                        <i class="flaticon-settings"></i>
-                        <h3>Easy Setup</h3>
-                        <p>Do an high room so in paid. Up on cousin ye dinner should in. Stood tried walls manor truth shy</p>
+                        <i class="fa fa-cog"></i>
+                        <h3>{{ $t('app.Easy Setup') }}</h3>
+                        <p>{{ $t('app.Easy Setup Content') }}</p>
                     </div>
                 </div>
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="single-service">
-                        <i class="flaticon-like"></i>
-                        <h3>Credibility</h3>
-                        <p>Do an high room so in paid. Up on cousin ye dinner should in. Stood tried walls manor truth shy</p>
-                    </div>
+                        <i class="fa fa-thumbs-up"></i>
+                        <h3>{{ $t('app.Credibility') }}</h3>
+                         <p>{{ $t('app.Credibility Content') }}</p>                    </div>
                 </div>
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay="0.6s">
                     <div class="single-service">
                         <i class="fa fa-dollar"></i>
-                        <h3>Easy Donate</h3>
-                        <p>Do an high room so in paid. Up on cousin ye dinner should in. Stood tried walls manor truth shy</p>
-                    </div>
+                        <h3>{{ $t('app.Easy Donation') }}</h3>
+                        <p>{{ $t('app.Easy Donation Content') }}</p>                    </div>
                 </div>
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
                     <div class="single-service">
                         <i class="fa fa-search"></i>
-                        <h3>Check Balance</h3>
-                        <p>Do an high room so in paid. Up on cousin ye dinner should in. Stood tried walls manor truth shy</p>
-                    </div>
+                        <h3>{{ $t('app.Donation List') }}</h3>
+                        <p>{{ $t('app.Donation List Content') }}</p>                    </div>
                 </div>
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay="0.8s">
                     <div class="single-service">
                         <i class="fa fa-cloud-download"></i>
-                        <h3>Receipt Download</h3>
-                        <p>Do an high room so in paid. Up on cousin ye dinner should in. Stood tried walls manor truth shy</p>
-                    </div>
+                        <h3>{{ $t('app.Receipt Download') }}</h3>
+                        <p>{{ $t('app.Receipt Download Content') }}</p>                    </div>
                 </div>
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay="0.9s">
                     <div class="single-service">
                         <i class="fa fa-fighter-jet"></i>
-                        <h3>Quick Search</h3>
-                        <p>Do an high room so in paid. Up on cousin ye dinner should in. Stood tried walls manor truth shy</p>
-                    </div>
+                        <h3>{{ $t('app.Quick Search') }}</h3>
+                        <p>{{ $t('app.Quick Search Content') }}</p>                    </div>
                 </div>
             </div>
         </div>
     </section><!-- /Services Area -->
 
     <!--Features Area -->
-    <section class="features-area section-padding-2 gray-bg">
+    <!--section class="features-area section-padding-2 gray-bg">
         <div class="container">
             <div class="row">
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
@@ -300,9 +296,10 @@
                 </div>
             </div>   
         </div>
-    </section><!--/Features Area -->
+    </section-->
+    <!--/Features Area -->
 
-    <!--Causes Area -->
+    <!--Featured Causes Area -->
     <section class="causes-area section-padding-2">
         <div class="container">
             <div class="row justify-content-center">
@@ -454,10 +451,11 @@
                 </div>
             </div>
         </div>
-    </section><!--/Causes Area -->
+    </section>
+    <!--/FeaturedCauses Area -->
 
     <!--About Section-->
-    <section class="about-area bg-white">
+    <!--section class="about-area bg-white">
         <div class="about-content mid-bg-gray wow fadeInUp" data-wow-delay="0.4s">
             <div class="about-content-inner-2">
                 <div class="section-title">
@@ -472,9 +470,7 @@
                 </ul>                
             </div>
         </div>
-        <!--
-        <div class="about-left dark-overlay wow fadeInUp" data-wow-delay="0.4s" style="background: url('@/assets/images/about-bg.jpg') no-repeat center / cover;">
-        -->
+        <!- -div class="about-left dark-overlay wow fadeInUp" data-wow-delay="0.4s" style="background: url('@/assets/images/about-bg.jpg') no-repeat center / cover;" - ->
         <div class="about-left dark-overlay wow fadeInUp" data-wow-delay="0.4s" :style="{'background-image': 'url(' + require('@/assets/images/about-bg.jpg') + ') no-repeat center / cover'}">
         
         
@@ -482,11 +478,12 @@
                 <a href="https://www.youtube.com/watch?v=GT6-H4BRyqQ" class="video-popup"><img src="@/assets/images/play-button.png" alt=""></a>
             </div>
         </div>
-    </section><!--/About Section-->
+    </section-->
+    <!--/About Section-->
 
 
     <!-- Review Area -->
-    <section class="review-area section-padding-2 white-bg">
+    <!--section class="review-area section-padding-2 white-bg">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col centered wow fadeInUp" data-wow-delay="0.3s">
@@ -526,10 +523,11 @@
                 </div>
             </div>
         </div>
-    </section><!-- /Review Area -->
+    </section-->
+    <!-- /Review Area -->
 
     <!-- Counter Area -->
-    <section class="counter-area section-padding-3 gray-bg">
+    <!--section class="counter-area section-padding-3 gray-bg">
         <div class="container">
             <div class="row">
                 <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
@@ -562,10 +560,11 @@
                 </div>
             </div>
         </div>
-    </section><!-- /Counter Area -->  
+    </section-->
+    <!-- /Counter Area -->  
 
-    <!-- Blog Area -->
-    <section class="blog-area section-padding-2">
+    <!-- Latest Update Area -->
+    <!--section class="blog-area section-padding-2">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col centered wow fadeInUp" data-wow-delay="0.3s">
@@ -613,7 +612,7 @@
                 </div>
             </div>
         </div>
-    </section><!-- /Blog Area -->
+    </section--><!-- /Latest Update Area -->
   </div>
 </template>
 
