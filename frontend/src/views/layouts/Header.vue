@@ -96,11 +96,11 @@
                     waves-fixed
                     >{{ $t('header.featured') }}</mdb-dropdown-toggle>
                   <mdb-dropdown-menu color="primary-bg">
-                    <mdb-dropdown-item @click="goToEmergency; goToExplore">{{ $t('header.emergency') }}</mdb-dropdown-item>
-                    <mdb-dropdown-item @click="goToMemorial; goToExplore">{{ $t('header.memorial') }}</mdb-dropdown-item>
-                    <mdb-dropdown-item router to="/animal-rescue" @click="goToAnimalRescue">{{ $t('header.animal-rescue') }}</mdb-dropdown-item>
-                    <mdb-dropdown-item router to="/medical" @click="goToMedical">{{ $t('header.medical') }}</mdb-dropdown-item>
-                    <mdb-dropdown-item router to="/charity" @click="goToCharity">{{ $t('header.charity') }}</mdb-dropdown-item>
+                    <mdb-dropdown-item @click="goToEmergency">{{ $t('header.emergency') }}</mdb-dropdown-item>
+                    <mdb-dropdown-item @click="goToMemorial">{{ $t('header.memorial') }}</mdb-dropdown-item>
+                    <mdb-dropdown-item @click="goToAnimalRescue">{{ $t('header.animal-rescue') }}</mdb-dropdown-item>
+                    <mdb-dropdown-item @click="goToMedical">{{ $t('header.medical') }}</mdb-dropdown-item>
+                    <mdb-dropdown-item @click="goToCharity">{{ $t('header.charity') }}</mdb-dropdown-item>
                   </mdb-dropdown-menu>
                 </mdb-dropdown>                      
                 <mdb-nav-item router to="/" waves-fixed class="nav-item nav-link">{{ $t('header.101moo') }}</mdb-nav-item>

@@ -119,7 +119,9 @@
     "My campaign is for": "我的募款目的。。。",
     "Choose a category": "選擇募款類別",
     "Create Campaign": "發起募款",
-    "subscribe": "訂閱電郵通知"
+    "subscribe": "訂閱電郵通知",
+    "View": "View-C",
+    "Upload": "Upload-C"
   },
   "campaign_details": {
     "comments": "留言紀錄：",

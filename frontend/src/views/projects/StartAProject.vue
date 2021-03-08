@@ -18,9 +18,9 @@
                             <mdb-select :options="campaignCategory.options" :value.sync="campaignCategory.value" :label="$t('campaign.Choose a category')"
 
                             />
-                            <div class="input-group input-group-lg">
-                                <input class="form-control" type="file" @change="onFileChanged" />
-                                <button class="bttn-mid btn-fill" @click="onUpload">Upload!</button>
+                            <div class="input-group input-group-sm">
+                                <input class="form-control" type="file" @change="onFileChanged" style="height: revert;" />
+                                <button class="btn-sm btn-fill" @click="onUpload">{{ $t('campaign.Upload') }}</button>
                             </div>
                             <br />
                             <!--div class="upload-img">

@@ -39,7 +39,7 @@
                                 <h3><a href="">{{ campaign.name }}</a></h3>
                             </div>
                             <p class="text-truncate" style="max-width: 100%">{{ campaign.description }}</p>
-                            <router-link class="bttn-small btn-wht" :to="{ name: 'causes-details', params: { campaignID: 1 }}" tag="button">{{ $t('header.donate_now') }}</router-link>
+                            <router-link class="bttn-small btn-wht" :to="{ name: 'causes-details', params: { campaignID: 1 }}" tag="button">{{ $t('campaign.View') }}</router-link>
                         </div>
                     </div>
                 </div>                
