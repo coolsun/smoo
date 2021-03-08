@@ -1,22 +1,31 @@
 <template>
   <div id="app">
-    <custom-header />
-    <custom-breadcrumb />
-    <main>
-      <transition name="fade" mode="out-in">
-        <router-view/>
-      </transition>
-    </main>
+    <div v-if="!$store.state.isAdmin">
+      <custom-header />
+      <!--custom-breadcrumb /-->
+      <main>
+        <transition name="fade" mode="out-in">
+          <router-view />
+        </transition>
+      </main>
 
-    <custom-footer />
-    <custom-copyright />
+      <custom-footer />
+      <custom-copyright />
+    </div>
+    <div v-else>
+      <main>
+        <transition name="fade" mode="out-in">
+          <router-view />
+        </transition>
+      </main>
+    </div>
   </div>
 </template>
 
 <script>
 
 import CustomHeader from '@/views/layouts/Header';
-import CustomBreadcrumb from '@/views/layouts/Breadcrumb';
+//import CustomBreadcrumb from '@/views/layouts/Breadcrumb';
 import CustomFooter from '@/views/layouts/Footer';
 import CustomCopyright from '@/views/layouts/Copyright';
 
@@ -24,7 +33,7 @@ export default {
   name: "app",
   components: {
     CustomHeader,
-    CustomBreadcrumb,
+//    CustomBreadcrumb,
     CustomFooter,
     CustomCopyright
   },

@@ -59,7 +59,7 @@
                         <ul>
                           <mdb-btn v-if="!$store.state.isLoggedIn" class="btn-sm btn-emt" @click.native="modal = true">{{ $t('app.sign_in') }}</mdb-btn>
                           <li><router-link to=""><i class="fa fa-search"></i></router-link></li>
-                          <input class="form-control" type="text" placeholder="Search" aria-label="Search" style="display: inline; width: 45%; margin-left: 4%;"/>
+                          <input class="form-control" type="text" :placeholder="$t('app.Search')" :aria-label="$t('app.Search')" style="display: inline; width: 45%; margin-left: 4%;"/>
                           <li v-if="$store.state.isLoggedIn" style="vertical-align: middle; margin-left: 0;">
                             <mdb-dropdown v-if="$store.state.isLoggedIn" tag="li" class="nav-item nav-link">
                               <mdb-dropdown-toggle tag="a" navLink color="primary-bg" slot="toggle" waves-fixed>
@@ -85,10 +85,8 @@
             <!-- Navbar brand -->
             <mdb-navbar-brand><router-link to="/"><img src="@/assets/images/logo.png" class="d-inline-block align-top" alt="" width="30%"></router-link>
             </mdb-navbar-brand>
-            <mdb-navbar-toggler>
+            <mdb-navbar-toggler color="primary">
               <mdb-navbar-nav right>
-                <mdb-nav-item router to="/" waves-fixed class="nav-item nav-link">{{ $t('header.101moo') }}</mdb-nav-item>
-                <mdb-nav-item router to="/about" waves-fixed class="nav-item nav-link">{{ $t('header.about') }}</mdb-nav-item>
                 <mdb-dropdown tag="li" class="nav-item nav-link">
                   <mdb-dropdown-toggle
                     tag="a"
@@ -104,7 +102,10 @@
                     <mdb-dropdown-item router to="/medical" @click="goToMedical">{{ $t('header.medical') }}</mdb-dropdown-item>
                     <mdb-dropdown-item router to="/charity" @click="goToCharity">{{ $t('header.charity') }}</mdb-dropdown-item>
                   </mdb-dropdown-menu>
-                </mdb-dropdown>             
+                </mdb-dropdown>                      
+                <mdb-nav-item router to="/" waves-fixed class="nav-item nav-link">{{ $t('header.101moo') }}</mdb-nav-item>
+                <mdb-nav-item router to="/about" waves-fixed class="nav-item nav-link">{{ $t('header.about') }}</mdb-nav-item>
+       
                 <mdb-nav-item router to="contact" waves-fixed class="nav-item nav-link">{{ $t('header.contact') }}</mdb-nav-item>
               </mdb-navbar-nav>
             </mdb-navbar-toggler>

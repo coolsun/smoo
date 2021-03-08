@@ -1,9 +1,10 @@
 <template>
    <!--About Section-->
     <section class="about-area bg-white">
-        <div class="about-left dark-overlay wow fadeInUp" data-wow-delay="0.4s" style="background: url('assets/images/about-bg.jpg') no-repeat center / cover;">
+        <!--div class="about-left dark-overlay wow fadeInUp" data-wow-delay="0.4s" :style="{'background-image': 'url(' + require('@/assets/images/about-us.jpg') + ') no-repeat center / cover'}" -->
+        <div class="about-left" :style="{'background-image': 'url(' + require('@/assets/images/about-us.jpg') + ') '}" >
             <div class="left-img-wrap">
-                <a href="https://www.youtube.com/watch?v=GT6-H4BRyqQ" class="video-popup"><img src="assets/images/play-button.png" alt=""></a>
+                <a href="https://www.youtube.com/watch?v=GT6-H4BRyqQ" class="video-popup"><img src="@/assets/images/play-button.png" alt=""></a>
             </div>
         </div>
         <div class="about-content mid-bg-gray wow fadeInUp" data-wow-delay="0.4s">
@@ -21,6 +22,7 @@
 透明化的網路募款平台來⿎勵⼤眾能更熱衷於⽇⾏⼀善來捐款送暖給社會上需要
 幫助的弱勢族群，協助他們度過急難。</p>
 <h3>服務宗旨</h3>
+<br>
 <p>
 「⼀⽇⼀募」是⼀個政府合法⽴案的⾮營利公益募款平台。我們希望能藉由這個
 平台所發起的募款⾏動，⿎勵、提醒更多有能⼒的⼈可以發揮愛⼼和善⼼來捐款
@@ -30,6 +32,7 @@
 需要幫助的⼈或團體⼿中。
                 </p>
                 <h3>以下是本會提供之募款服務:</h3>
+                <br>
                 <p>
                 <ul>
                     <li><i class="fa fa-angle-double-right"></i>急難救助</li>

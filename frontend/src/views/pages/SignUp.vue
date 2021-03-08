@@ -7,7 +7,7 @@
                 <div class="col-xl-7 col-lg-7 col-md-12 col-sm-12">
                     <div class="donate-project-content">
                         <h2>{{ $t('sign_in.sign_up') }}</h2><br>
-                        <form action="#">
+                        <form action="#" v-on:submit.prevent>
                             <mdb-input :label="'* '+$t('sign_in.your_email')" class="mb-5" type="email" v-model="email"/>
                             <mdb-input :label="'* '+$t('sign_in.your_password')" type="password" v-model="password"/><br>
                             <mdb-input :label="'* '+$t('sign_in.first_name')" type="text" v-model="firstName"/><br>

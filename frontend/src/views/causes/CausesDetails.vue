@@ -11,7 +11,7 @@
                             <p>{{ campaign.description }}</p>
                             <div class="blog-comment-form wow fadeInUp" data-wow-delay="0.3s">
                                 <h3>{{ $t('campaign_details.leave_comment') }}</h3>
-                                <form action="#">
+                                <form action="#" v-on:submit.prevent>
                                     <div class="row">
                                         <div v-if="!$store.state.isLoggedIn" class="col-md-6">
                                             <mdb-input type="text" placeholder="Name*" v-model="name" required />
@@ -83,8 +83,8 @@
                             <h4>發起人</h4>
                             <p>Those an equal point no years do. Depend warmth fat but her but played. Shy and subjects wondered trifling pleasant.</p>
                         </div>
-                        <form action="#">
-                            <input type="email" :placeholder="$t('campaign_details.Subscribe')" required>
+                        <form action="#" v-on:submit.prevent>
+                            <input type="email" :placeholder="$t('campaign_details.subscribe')" required>
                             <button type="submit"><i class="flaticon-paper-plane"></i></button>
                         </form>
                     </div>
@@ -158,7 +158,6 @@ export default {
               console.log(error.message)
           }) 
         } else {
-            this.$router.push({ name: 'home'});
             this.$notify.info({message: 'Please login to comment', position: 'top center', timeOut: 5000});
         }
     }
