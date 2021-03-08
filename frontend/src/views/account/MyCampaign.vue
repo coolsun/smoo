@@ -7,20 +7,11 @@
                 <div class="col-sm">
                     <input type="text" placeholder="Category">
                 </div>
-                <div class="col-sm">
-                    <input type="text" placeholder="Start date">
-                </div>
-                <div class="col-sm">
-                    <input type="text" placeholder="End date">
-                </div>
-                <div class="col-">
-                        <button type="submit" class="bttn-mid btn-fill-2">{{ $t('app.Search') }}</button>                   
-                </div>
             </div>
 
             <div class="row portfolio portfolio-gallery column-3 gutter wow fadeInUp" data-wow-delay="0.5s">
 
-                <div class="portfolio-item cat1 cat3">
+                <div class="portfolio-item">
                     <div class="item-thumb">
                         <img src="@/assets/images/portfolios/7.jpg" alt="">
                     </div>
@@ -33,7 +24,8 @@
                     </div>
                 </div>
 
-                <div v-for="my_campaign in my_campaigns" :key="my_campaign.id" class="portfolio-item">
+                <div v-for="my_campaign in my_campaigns" :key="my_campaign.id">
+                  <div class="portfolio-item">
                     <div class="item-thumb">
                         <img src="@/assets/images/portfolios/7.jpg" alt="">
                         <div class="item-tag">By Petey Cruiser</div>
@@ -51,8 +43,13 @@
                             <h3><a href="">{{ my_campaign.name }}</a></h3>
                         </div>
                         <p class="text-truncate" style="max-width: 100%">{{ my_campaign.description }}</p>
-                        <router-link class="bttn-small btn-wht" :to="{ name: 'causes-details'}" tag="button">{{ $t('header.donate_now') }}</router-link>
+                        <button type="button" class="btn btn-outline-1 waves-effect px-3"><i class="fas fa-edit"
+                          aria-hidden="true"></i></button>
+                        <button type="button" class="btn btn-outline-1 waves-effect px-3"><i class="fas fa-user-friends"
+                            aria-hidden="true"></i></button>
+                        <button type="button" class="btn btn-outline-danger waves-effect px-3"><i class="fas fa-trash-alt" aria-hidden="true"></i></button>
                     </div>
+                  </div>
                 </div>    
             </div>
         </div>
