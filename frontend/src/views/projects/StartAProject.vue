@@ -12,7 +12,7 @@
                             </div>
                             <input v-model="projectGoal" type="number" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
                         </div><br>
-                        <form action="#">
+                        <form action="#" v-on:submit.prevent>
                             <textarea v-model="projectName" rows="1" :placeholder="$t('campaign.My campaign')"></textarea>
                             <textarea v-model="projectDescription" rows="5" :placeholder="$t('campaign.My campaign is for')"></textarea>
                             <mdb-select :options="campaignCategory.options" :value.sync="campaignCategory.value" :label="$t('campaign.Choose a category')"

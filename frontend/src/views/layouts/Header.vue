@@ -59,7 +59,7 @@
                         <ul>
                           <mdb-btn v-if="!$store.state.isLoggedIn" class="btn-sm btn-emt" @click.native="modal = true">{{ $t('app.sign_in') }}</mdb-btn>
                           <li><router-link to=""><i class="fa fa-search"></i></router-link></li>
-                          <input class="form-control" type="text" placeholder="Search" aria-label="Search" style="display: inline; width: 45%; margin-left: 4%;"/>
+                          <input class="form-control" type="text" :placeholder="$t('app.Search')" :aria-label="$t('app.Search')" style="display: inline; width: 45%; margin-left: 4%;"/>
                           <li v-if="$store.state.isLoggedIn" style="vertical-align: middle; margin-left: 0;">
                             <mdb-dropdown v-if="$store.state.isLoggedIn" tag="li" class="nav-item nav-link">
                               <mdb-dropdown-toggle tag="a" navLink color="primary-bg" slot="toggle" waves-fixed>

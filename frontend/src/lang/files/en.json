@@ -22,6 +22,7 @@
     "company": "Company",
     "t_chinese": "Chinese(Traditional)",
     "english": "English",
+    "Search": "Search",
     "Our Services":"Our Services",
     "Easy Setup":"Easy Setup",
     "Easy Setup Content":"Set up in a few minutes to start the funding campaign",
@@ -34,7 +35,7 @@
     "Receipt Download":"Receipt Download",
     "Receipt Download Content":"Receipt Download Content",
     "Quick Search":"Quick Search",
-    "Quick Search Content":"Quick Search Content"
+    "Quick Search Content":"Quick Search Result upon your finger tip to find all campaigns matching your requirements"
   },
   "header": {
     "101moo": "101moo",
@@ -120,6 +121,20 @@
     "leave_comment": "Leave a comment",
     "post_comment": "Post comment",
     "subscribe": "Subscribe"
+  },
+  "contact": {
+    "Get in touch": "Get in touch",
+    "Name": "Name",
+    "Email Address": "Email Address",
+    "Phone Number": "Phone Number",
+    "Message": "Message",
+    "Send Message": "Send Message",
+    "Donation": "Donation",
+    "Campaign": "Campaign",
+    "Payment": "Payment",
+    "Partnership": "Partnership",
+    "Customer Support": "Customer Support",
+    "Other": "Other"
   },
   "layouts": {
     "hello": "Welcome!",

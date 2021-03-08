@@ -7,7 +7,7 @@
                 <div class="col-xl-7 col-lg-7 col-md-12 col-sm-12">
                     <div class="donate-project-content">
                         <h2>{{ $t('sign_in.sign_up') }}</h2><br>
-                        <form action="#">
+                        <form action="#" v-on:submit.prevent>
                             <h3>*Email</h3>
                             <textarea name="email" rows="1" placeholder="abc@gmail.com"></textarea><br>
                             <h3>*Username</h3>

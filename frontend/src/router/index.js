@@ -26,6 +26,9 @@ import MyDonation from '@/views/account/MyDonation';
 import MyCampaign from '@/views/account/MyCampaign';
 import DonationHistory from '@/views/donations/DonationHistory';
 
+
+import AdminHome from '@/views/layouts/admin/Home';
+
 Vue.use(Router);
 
 export default new Router({
@@ -150,6 +153,12 @@ export default new Router({
     {
       path: '*',
       redirect: '/not-found'
+    },
+    // admin
+    {
+      path: '/admin',
+      name: 'admin',
+      component: AdminHome
     }
   ],
   scrollBehavior () {

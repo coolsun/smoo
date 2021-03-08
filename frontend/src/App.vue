@@ -1,15 +1,24 @@
 <template>
   <div id="app">
-    <custom-header />
-    <!--custom-breadcrumb /-->
-    <main>
-      <transition name="fade" mode="out-in">
-        <router-view/>
-      </transition>
-    </main>
+    <div v-if="!$store.state.isAdmin">
+      <custom-header />
+      <!--custom-breadcrumb /-->
+      <main>
+        <transition name="fade" mode="out-in">
+          <router-view />
+        </transition>
+      </main>
 
-    <custom-footer />
-    <custom-copyright />
+      <custom-footer />
+      <custom-copyright />
+    </div>
+    <div v-else>
+      <main>
+        <transition name="fade" mode="out-in">
+          <router-view />
+        </transition>
+      </main>
+    </div>
   </div>
 </template>
 

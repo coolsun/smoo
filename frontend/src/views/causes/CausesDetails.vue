@@ -83,8 +83,8 @@
                             <h4>發起人</h4>
                             <p>Those an equal point no years do. Depend warmth fat but her but played. Shy and subjects wondered trifling pleasant.</p>
                         </div>
-                        <form action="#">
-                            <input type="email" :placeholder="$t('campaign_details.Subscribe')" required>
+                        <form action="#" v-on:submit.prevent>
+                            <input type="email" :placeholder="$t('campaign_details.subscribe')" required>
                             <button type="submit"><i class="flaticon-paper-plane"></i></button>
                         </form>
                     </div>

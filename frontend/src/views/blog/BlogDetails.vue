@@ -99,7 +99,7 @@
                                     </div>
                                     <div class="blog-comment-form wow fadeInUp" data-wow-delay="0.3s">
                                         <h3>Leave a Comment</h3>
-                                        <form action="#">
+                                        <form action="#" v-on:submit.prevent>
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <input type="text" placeholder="Name*" required />
@@ -156,7 +156,7 @@
                             <h4>Joshua Johnson</h4>
                             <p>Those an equal point no years do. Depend warmth fat but her but played. Shy and subjects wondered trifling pleasant.</p>
                         </div>
-                        <form action="#">
+                        <form action="#" v-on:submit.prevent>
                             <input type="email" placeholder="Subscribe" required>
                             <button type="submit"><i class="flaticon-paper-plane"></i></button>
                         </form>

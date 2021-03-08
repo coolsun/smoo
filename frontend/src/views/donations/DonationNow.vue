@@ -13,7 +13,7 @@
                             </div>
                             <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
                         </div><br>
-                        <form action="#">
+                        <form action="#" v-on:submit.prevent>
                             <h3>Name</h3>
                             <h5>John Doe</h5>
                             <br>

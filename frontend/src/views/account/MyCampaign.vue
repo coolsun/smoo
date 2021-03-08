@@ -14,7 +14,7 @@
                     <input type="text" placeholder="End date">
                 </div>
                 <div class="col-">
-                        <button type="submit" class="bttn-mid btn-fill-2">Search</button>                   
+                        <button type="submit" class="bttn-mid btn-fill-2">{{ $t('app.Search') }}</button>                   
                 </div>
             </div>
 

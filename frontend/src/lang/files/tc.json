@@ -25,6 +25,7 @@
     "company": "公司",
     "t_chinese": "繁體中文",
     "english": "英文",
+    "Search": "搜尋",
     "Our Services":"芸端互助",
     "Easy Setup":"設定簡單",
     "Easy Setup Content":"不論手機，平板，或電腦，都可在幾分鐘內即可完成設定並開始募款。",
@@ -126,6 +127,20 @@
     "leave_comment": "我要留言",
     "post_comment": "送出留言",
     "subscribe": "訂閱電郵通知"
+  },
+  "contact": {
+    "Get in touch": "聯繫我們",
+    "Name": "姓名",
+    "Email Address": "電子郵件",
+    "Phone Number": "電話號碼",
+    "Message": "您的訊息",
+    "Send Message": "送出訊息",
+    "Donation": "協助",
+    "Campaign": "募款",
+    "Payment": "付款",
+    "Partnership": "合作夥伴",
+    "Customer Support": "客服中心",
+    "Other": "其他"
   },
   "layouts": {
     "hello": "歡迎!",

@@ -6,36 +6,37 @@
                 <div class="row justify-content-center">
                     <div class="col centered wow fadeInUp" data-wow-delay="0.3s">
                         <div class="section-title">
-                            <h2>Get in touch</h2>
+                            <h2>{{ $t('contact.Get in touch') }}</h2>
                         </div>
                     </div>
                 </div>
-                <form action="#" class="row justify-content-center section-padding pt-0 wow fadeInUp" data-wow-delay="0.4s">
+                <form action="#" v-on:submit.prevent class="row justify-content-center section-padding pt-0 wow fadeInUp" data-wow-delay="0.4s">
                     <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12">
                         <div class="row">
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                                <input type="text" placeholder="Name">
+                                <input type="text" :placeholder="$t('contact.Name')">
                             </div>
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                                <input type="text" placeholder="Email Address">
+                                <input type="text" :placeholder="$t('contact.Email Address')">
                             </div>
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                                <input type="text" placeholder="Phone Number">
+                                <input type="text" :placeholder="$t('contact.Phone Number')">
                             </div>
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                                <select name="Category">
-                                    <option value="donation">Donation</option>
-                                    <option value="campaign">Campaign</option>
-                                    <option value="partnership">Partnership</option>
-                                    <option value="customer-support">Customer Support</option>
-                                    <option value="other">Other</option>
+                                <select name="category">
+                                    <option value="0">{{ $t('contact.Donation') }}</option>
+                                    <option value="1">{{ $t('contact.Campaign') }}</option>
+                                    <option value="2">{{ $t('contact.Payment') }}</option>
+                                    <option value="3">{{ $t('contact.Partnership') }}</option>
+                                    <option value="4">{{ $t('contact.Customer Support') }}</option>
+                                    <option value="5">{{ $t('contact.Other') }}</option>
                                 </select>
                             </div>
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-                                <textarea name="message" rows="5" placeholder="Message"></textarea>
+                                <textarea name="message" rows="5" :placeholder="$t('contact.Message')"></textarea>
                             </div>
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-                                <button type="submit" class="bttn-mid btn-fill-2">Send Message</button>
+                                <button type="submit" class="bttn-mid btn-fill-2">{{ $t('contact.Send Message') }}</button>
                             </div>
                         </div>
                     </div>

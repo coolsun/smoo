@@ -10,7 +10,8 @@ export default new Vuex.Store({
         currentUserID: null,
         currentUserName: null,
         currentUserEmail: null,
-        authToken: null
+        authToken: null,
+        isAdmin: false
     },
     mutations: {
         setCurrentUser(state, { userID, userName, userEmail, authToken } ) {
