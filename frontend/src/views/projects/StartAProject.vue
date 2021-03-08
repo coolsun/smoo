@@ -18,6 +18,11 @@
                             <mdb-select :options="campaignCategory.options" :value.sync="campaignCategory.value" :label="$t('campaign.Choose a category')"
 
                             />
+                            <div class="input-group input-group-lg">
+                                <input class="form-control" type="file" @change="onFileChanged" />
+                                <button class="bttn-mid btn-fill" @click="onUpload">Upload!</button>
+                            </div>
+                            <br />
                             <!--div class="upload-img">
                                 <span>Upload campaign image</span>
                                 <div class="file-field">
@@ -69,6 +74,7 @@ export default {
         projectDescription: "",
         categoryID: "1",
         projectGoal: "",
+        selectedFile: null,
         campaignCategory: {
           value: '1',
           options: [
@@ -107,6 +113,18 @@ export default {
             console.log(error.message)
         }) 
     }
+  },
+  onFileChanged(event) {
+      this.selectedFile = event.target.files[0];
+  },
+  onFileUpload() {
+    let fileData = {
+        "file": {
+            "name": this.selectedFile.name,
+            "content": this.selectedFile.file
+        }
+    }
+    this.$axios.post('/campaigns/file-upload', fileData);
   }
 };
 </script>
