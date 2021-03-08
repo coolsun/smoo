@@ -98,11 +98,11 @@
                     waves-fixed
                     >{{ $t('header.featured') }}</mdb-dropdown-toggle>
                   <mdb-dropdown-menu color="primary-bg">
-                    <mdb-dropdown-item router to="/emergency">{{ $t('header.emergency') }}</mdb-dropdown-item>
-                    <mdb-dropdown-item router to="/memorial">{{ $t('header.memorial') }}</mdb-dropdown-item>
-                    <mdb-dropdown-item router to="/animal-rescue">{{ $t('header.animal-rescue') }}</mdb-dropdown-item>
-                    <mdb-dropdown-item router to="/medical">{{ $t('header.medical') }}</mdb-dropdown-item>
-                    <mdb-dropdown-item router to="/charity">{{ $t('header.charity') }}</mdb-dropdown-item>
+                    <mdb-dropdown-item @click="goToEmergency; goToExplore">{{ $t('header.emergency') }}</mdb-dropdown-item>
+                    <mdb-dropdown-item @click="goToMemorial; goToExplore">{{ $t('header.memorial') }}</mdb-dropdown-item>
+                    <mdb-dropdown-item router to="/animal-rescue" @click="goToAnimalRescue">{{ $t('header.animal-rescue') }}</mdb-dropdown-item>
+                    <mdb-dropdown-item router to="/medical" @click="goToMedical">{{ $t('header.medical') }}</mdb-dropdown-item>
+                    <mdb-dropdown-item router to="/charity" @click="goToCharity">{{ $t('header.charity') }}</mdb-dropdown-item>
                   </mdb-dropdown-menu>
                 </mdb-dropdown>             
                 <mdb-nav-item router to="contact" waves-fixed class="nav-item nav-link">{{ $t('header.contact') }}</mdb-nav-item>
@@ -215,6 +215,26 @@ import {
       goToSignUp() {
         this.modal = false;
         this.$router.push({ name: 'sign-up'});
+      },
+      goToEmergency() {
+        this.$store.state.currentCategory = '1';
+        this.$router.push({name: 'explore'});
+      },
+      goToMemorial() {
+        this.$store.state.currentCategory = '2';
+        this.$router.push({name: 'explore'});
+      },
+      goToAnimalRescue() {
+        this.$store.state.currentCategory = '3';
+        this.$router.push({name: 'explore'});
+      },
+      goToMedical() {
+        this.$store.state.currentCategory = '4';
+        this.$router.push({name: 'explore'});
+      },
+      goToCharity() {
+        this.$store.state.currentCategory = '5';
+        this.$router.push({name: 'explore'});
       }
     }  
   };

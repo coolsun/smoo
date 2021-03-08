@@ -4,10 +4,10 @@
         <div class="container">
             <div class="explore-search row">
                 <div class="col-sm">
-                    <mdb-select :options="campaignCategory.options" :value.sync="campaignCategory.value" :label="$t('campaign.Choose a category')"
+                    <mdb-select :options="campaignCategory.options" :value.sync="campaignCategory.value" :label="$t('campaign.Choose a category')" width="50%"
                     />
                 </div>
-                <div class="col-sm">
+                <!--<div class="col-sm">
                     <input type="text" placeholder="Start date">
                 </div>
                 <div class="col-sm">
@@ -15,30 +15,32 @@
                 </div>
                 <div class="col-">
                     <button type="submit" class="bttn-mid btn-fill-2">{{ $t('explore.search') }}</button>                   
-                </div>
+                </div>-->
             </div>
 
             <div v-if="isLoaded" class="row portfolio portfolio-gallery column-3 gutter wow fadeInUp" data-wow-delay="0.5s">
 
-                <div v-for="campaign in campaigns" :key="campaign.id" class="portfolio-item">
-                    <div class="item-thumb">
-                        <img src="@/assets/images/portfolios/7.jpg" alt="">
-                        <div class="item-tag">By Petey Cruiser</div>
-                        <div class="progress light-blue-bg">
-                            <div class="progress-bar" role="progressbar" style="width: 45%;" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"><span>45%</span></div>
+                <div v-for="campaign in campaigns" :key="campaign.id">
+                    <div v-if="campaign.category_id == campaignID" class="portfolio-item">
+                        <div class="item-thumb">
+                            <img src="@/assets/images/portfolios/7.jpg" alt="">
+                            <div class="item-tag">By Petey Cruiser</div>
+                            <div class="progress light-blue-bg">
+                                <div class="progress-bar" role="progressbar" style="width: 45%;" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"><span>45%</span></div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="item-details">
-                        <div class="item-meta">
-                            <span>$450 Pledged</span>
-                            <span>5 Days ago</span>
-                            <span>45% Funded</span>
+                        <div class="item-details">
+                            <div class="item-meta">
+                                <span>$450 Pledged</span>
+                                <span>5 Days ago</span>
+                                <span>45% Funded</span>
+                            </div>
+                            <div class="item-title">
+                                <h3><a href="">{{ campaign.name }}</a></h3>
+                            </div>
+                            <p class="text-truncate" style="max-width: 100%">{{ campaign.description }}</p>
+                            <router-link class="bttn-small btn-wht" :to="{ name: 'causes-details', params: { campaignID: 1 }}" tag="button">{{ $t('header.donate_now') }}</router-link>
                         </div>
-                        <div class="item-title">
-                            <h3><a href="">{{ campaign.name }}</a></h3>
-                        </div>
-                        <p class="text-truncate" style="max-width: 100%">{{ campaign.description }}</p>
-                        <router-link class="bttn-small btn-wht" :to="{ name: 'causes-details', params: { campaignID: 1 }}" tag="button">{{ $t('header.donate_now') }}</router-link>
                     </div>
                 </div>                
             </div>
@@ -58,7 +60,7 @@ export default {
     return {
         campaigns: [],
         isLoaded: false,
-        campaignID: '1',
+        campaignID: this.$store.state.currentCategory,
         campaignCategory: {
           value: '1',
           options: [
