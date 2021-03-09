@@ -2585,20 +2585,16 @@ Hero Area
     padding-left: 20px;
     border-radius: 4px;
     color: #666666;
+    resize: none;
 }
 
 .start-project .start-project-content form select {
     -webkit-appearance: none;
     appearance: none;
-    height: 60px;
 }
 
 .start-project .start-project-content form select option {
     padding-left: 15px;
-}
-
-.start-project .start-project-content form textarea {
-    padding-top: 10px;
 }
 
 .start-project .start-project-content form .upload-img {

@@ -14,12 +14,17 @@
                         </div><br>
                         <form action="#" v-on:submit.prevent>
                             <textarea v-model="projectName" rows="1" :placeholder="$t('campaign.My campaign')"></textarea>
-                            <textarea v-model="projectDescription" rows="5" :placeholder="$t('campaign.My campaign is for')"></textarea>
-                            <mdb-select :options="campaignCategory.options" :value="currentCategory" :label="$t('campaign.Choose a category')"
-
-                            />
+                            <textarea v-model="projectDescription" rows="5" :placeholder="$t('campaign.My campaign is for')"></textarea>        
+                            <select v-model="category" class="input-group">
+                              <option disabled value="">{{ $t('campaign.Choose a category') }}</option>
+                              <option>{{ this.$t('header.emergency') }}</option>
+                              <option>{{ this.$t('header.memorial') }}</option>
+                              <option>{{ this.$t('header.animal-rescue') }}</option>
+                              <option>{{ this.$t('header.medical') }}</option>
+                              <option>{{ this.$t('header.charity') }}</option>
+                            </select>                            
                             <div class="input-group input-group-sm">
-                                <input class="form-control" type="file" @change="onFileChanged" style="height: revert;">        
+                                <input class="form-control" type="file" @change="onFileChanged" style="height: revert;" />
                             </div>
                             <img id="preview_image" src="" class="form-control" height="200" alt="Image preview...">
                             <br />
@@ -62,17 +67,16 @@
 </template>
 
 <script>
-import { mdbSelect } from "mdbvue";
 export default {
   name: "StartAProject",
   components: {
-      mdbSelect,
   },
   data() {
     return {
         projectName: "",
         projectDescription: "",
-        categoryID: "1",
+        category: "",
+        categoryID: "",
         projectGoal: "",
         selectedFile: null,
         selectedFileName: null,
@@ -94,11 +98,33 @@ export default {
       }
   },
   methods: {
-
+    getCategoryID() {
+      switch(this.category) {
+        case this.$t('header.emergency'):
+          this.categoryID = '1';
+          break;
+        case this.$t('header.memorial'):
+          this.categoryID = '2';
+          break;
+        case this.$t('header.animal-rescue'):
+          this.categoryID = '3';
+          break;        
+        case this.$t('header.medical'):
+          this.categoryID = '4';
+          break;
+        case this.$t('header.charity'):
+          this.categoryID = '5';
+          break;
+        default:
+          this.categoryID = '1';
+      }
+    },
     startProject() {
+        this.getCategoryID();
         console.log("name: " + this.projectName);
         console.log("desc: " + this.projectDescription);
-        console.log("goal: " + this.goal);
+        console.log("goal: " + this.projectGoal);
+        console.log("category " + this.categoryID);
         let newCampaign = {
             user_id: this.$store.state.currentUserID,
             category_id: this.categoryID,
@@ -122,7 +148,6 @@ export default {
         }) 
     },
     onFileChanged(event) {
-
         const preview = document.getElementById('preview_image');
         this.selectedFile = preview;
         const file = event.target.files[0];

@@ -45,7 +45,7 @@
                             <!--li><mdb-btn class="btn-sm btn-emt" @click.native="goToExplore"><router-link to="explore">{{ $t('header.explore') }}</router-link></mdb-btn></li>
                             <li><mdb-btn class="btn-sm btn-emt" @click.native="goToStartProject">{{ $t('header.start_project') }}</mdb-btn></li-->
                             <li><mdb-btn class="btn-sm btn-emt" ><router-link to="/explore">{{ $t('header.explore') }}</router-link></mdb-btn></li>
-                            <li><mdb-btn class="btn-sm btn-emt" @click.native="goToStartProject">{{ $t('header.start_project') }}</mdb-btn></li>
+                            <li><mdb-btn class="btn-sm btn-emt" @click="goToStartProject">{{ $t('header.start_project') }}</mdb-btn></li>
                         </ul>
                     </div>
                 </div>
@@ -58,8 +58,8 @@
                     <div class="single-header-top last">
                         <ul>
                           <mdb-btn v-if="!$store.state.isLoggedIn" class="btn-sm btn-emt" @click.native="modal = true">{{ $t('app.sign_in') }}</mdb-btn>
-                          <li><router-link to=""><i class="fa fa-search"></i></router-link></li>
-                          <input class="form-control" type="text" :placeholder="$t('app.Search')" :aria-label="$t('app.Search')" style="display: inline; width: 45%; margin-left: 4%;"/>
+                          <li><router-link to="" @click.native="search"><i class="fa fa-search"></i></router-link></li>
+                          <input v-model="searchInput" class="form-control" type="text" :placeholder="$t('app.Search')" :aria-label="$t('app.Search')" style="display: inline; width: 45%; margin-left: 4%;"/>
                           <li v-if="$store.state.isLoggedIn" style="vertical-align: middle; margin-left: 0;">
                             <mdb-dropdown v-if="$store.state.isLoggedIn" tag="li" class="nav-item nav-link">
                               <mdb-dropdown-toggle tag="a" navLink color="primary-bg" slot="toggle" waves-fixed>
@@ -158,7 +158,8 @@ import {
       return {
         modal: false,
         email: null,
-        password: null
+        password: null,
+        searchInput: "",
       };
     },
     methods: {
@@ -200,13 +201,28 @@ import {
         
       },
       signOut() {
-          this.$store.state.isLoggedIn = false;
-          this.$router.push({ name: 'home'});
-          window.location.reload();
+        this.$store.state.isLoggedIn = false;
+        this.$router.push({ name: 'home'});
+        window.location.reload();
       },
       forgetPassword() {
           console.log('Forget password');
       },
+      search() {
+        console.log("search: " + this.searchInput);
+        let newSearch = {
+            search: this.searchInput
+        };
+        this.$axios.post('/api/search', newSearch)
+        .then(() => {
+            // alert: success
+            console.log("Search succeeded!");
+        })
+        .catch(error => {
+            // alert: error
+            console.log(error.message);
+        })
+      }, 
       goToExplore() {
         this.$router.push({ name: 'explore'});
       },
