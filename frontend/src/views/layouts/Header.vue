@@ -59,11 +59,12 @@
                         <ul>
                           <mdb-btn v-if="!$store.state.isLoggedIn" class="btn-sm btn-emt" @click.native="modal = true">{{ $t('app.sign_in') }}</mdb-btn>
                           <input v-model="searchInput" class="form-control" type="text" :placeholder="$t('app.Search')" :aria-label="$t('app.Search')" style="display: inline; width: 45%; margin-left: 4%;"/>
-                          <li><router-link to="" @click.native="search"><i class="fa fa-search"></i></router-link></li>
+                          <li style="margin-left: 0.5rem;"><router-link to="" @click.native="search"><i class="fa fa-search"></i></router-link></li>
                           <li v-if="$store.state.isLoggedIn" style="vertical-align: middle; margin-left: 0;">
-                            <mdb-dropdown v-if="$store.state.isLoggedIn" tag="li" class="nav-item nav-link">
+                            <mdb-dropdown v-if="$store.state.isLoggedIn" class="nav-item nav-link">
                               <mdb-dropdown-toggle tag="a" navLink color="primary-bg" slot="toggle" waves-fixed>
-                                  <img src="@/assets/images/commenter3.png" alt="" style="width: 2rem; margin: .2rem; border-radius: 50px;"/>
+                                  <img src="@/assets/images/commenter3.png" alt="" style="width: 2rem; margin: 0.2rem; border-radius: 50px; "/>
+                                  <i class="fas fa-caret-down"></i>
                               </mdb-dropdown-toggle>
                               <mdb-dropdown-menu color="primary-bg">
                                 <mdb-dropdown-item router to="/my-account">{{ $t('header.my-account') }}</mdb-dropdown-item>
@@ -74,7 +75,7 @@
                             </mdb-dropdown> 
                           </li>
                           <li v-if="!$store.state.isAdmin" style="vertical-align: middle; margin-left: 0;">
-                            <mdb-dropdown v-if="$store.state.isLoggedIn" tag="li" class="nav-item nav-link">
+                            <mdb-dropdown v-if="$store.state.isLoggedIn" class="nav-item nav-link">
                               <mdb-dropdown-toggle tag="a" navLink color="primary-bg" slot="toggle" waves-fixed>
                                   <i class="fa fa-cog"></i>
                               </mdb-dropdown-toggle>
@@ -99,14 +100,16 @@
             </mdb-navbar-brand>
             <mdb-navbar-toggler color="primary">
               <mdb-navbar-nav right>
-                <mdb-dropdown tag="li" class="nav-item nav-link">
+                <mdb-dropdown class="nav-item nav-link">
                   <mdb-dropdown-toggle
                     tag="a"
                     navLink
                     color="primary-bg"
                     slot="toggle"
                     waves-fixed
-                    >{{ $t('header.featured') }}</mdb-dropdown-toggle>
+                    >{{ $t('header.featured') }}
+                    <i class="fas fa-caret-down"></i>
+                  </mdb-dropdown-toggle>
                   <mdb-dropdown-menu color="primary-bg">
                     <mdb-dropdown-item @click="goToEmergency">{{ $t('header.emergency') }}</mdb-dropdown-item>
                     <mdb-dropdown-item @click="goToMemorial">{{ $t('header.memorial') }}</mdb-dropdown-item>
