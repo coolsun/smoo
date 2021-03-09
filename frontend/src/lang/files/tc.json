@@ -67,7 +67,10 @@
     "donation-history": "協助紀錄",
     "my-donation": "我的協助紀錄",
     "my-campaign": "我的募款紀錄",
-    "sign_up": "註冊"
+    "sign_up": "註冊",
+    "manage-accounts": "管理帳號",
+    "manage-donations": "管理協助紀錄",
+    "manage-campaigns": "管理募款紀錄"
   },
   "footer": {
     "101moo": "一日一募",

@@ -39,7 +39,7 @@
     <div class="header-top dark-green-bg">
         <div class="container">
             <div class="row">
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4">
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
                     <div class="single-header-top">
                         <ul>                        
                             <!--li><mdb-btn class="btn-sm btn-emt" @click.native="goToExplore"><router-link to="explore">{{ $t('header.explore') }}</router-link></mdb-btn></li>
@@ -49,17 +49,17 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-xl-6 col-lg-6 col-md-7 col-sm-5">
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
                     <div class="single-header-top" >
                         <p>{{ $t('header.help') }}</p>
                     </div>
                 </div>
-                <div class="col-xl-3 col-lg-3 col-md-2 col-sm-3">
+                <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5">
                     <div class="single-header-top last">
                         <ul>
                           <mdb-btn v-if="!$store.state.isLoggedIn" class="btn-sm btn-emt" @click.native="modal = true">{{ $t('app.sign_in') }}</mdb-btn>
-                          <li><router-link to="" @click.native="search"><i class="fa fa-search"></i></router-link></li>
                           <input v-model="searchInput" class="form-control" type="text" :placeholder="$t('app.Search')" :aria-label="$t('app.Search')" style="display: inline; width: 45%; margin-left: 4%;"/>
+                          <li><router-link to="" @click.native="search"><i class="fa fa-search"></i></router-link></li>
                           <li v-if="$store.state.isLoggedIn" style="vertical-align: middle; margin-left: 0;">
                             <mdb-dropdown v-if="$store.state.isLoggedIn" tag="li" class="nav-item nav-link">
                               <mdb-dropdown-toggle tag="a" navLink color="primary-bg" slot="toggle" waves-fixed>
@@ -70,6 +70,18 @@
                                 <mdb-dropdown-item router to="/my-donation">{{ $t('header.my-donation') }}</mdb-dropdown-item>
                                 <mdb-dropdown-item router to="/my-campaign">{{ $t('header.my-campaign') }}</mdb-dropdown-item>
                                 <mdb-dropdown-item @click.native="signOut">{{ $t('app.sign_out') }}</mdb-dropdown-item>
+                              </mdb-dropdown-menu>
+                            </mdb-dropdown> 
+                          </li>
+                          <li v-if="!$store.state.isAdmin" style="vertical-align: middle; margin-left: 0;">
+                            <mdb-dropdown v-if="$store.state.isLoggedIn" tag="li" class="nav-item nav-link">
+                              <mdb-dropdown-toggle tag="a" navLink color="primary-bg" slot="toggle" waves-fixed>
+                                  <i class="fa fa-cog"></i>
+                              </mdb-dropdown-toggle>
+                              <mdb-dropdown-menu color="primary-bg">
+                                <mdb-dropdown-item router to="/manage-accounts">{{ $t('header.manage-accounts') }}</mdb-dropdown-item>
+                                <mdb-dropdown-item router to="/manage-donations">{{ $t('header.manage-donations') }}</mdb-dropdown-item>
+                                <mdb-dropdown-item router to="/manage-campaigns">{{ $t('header.manage-campaigns') }}</mdb-dropdown-item>
                               </mdb-dropdown-menu>
                             </mdb-dropdown> 
                           </li>
@@ -189,6 +201,8 @@ import {
           this.$store.state.isLoggedIn = true;
           // res.data.data is not a typo
           this.$store.state.currentUserID = res.data.data.id;
+          this.$store.state. currentUserEmail= res.data.data.email;
+          this.$store.state.isAdmin = res.data.data.is_admin;
           this.modal = false;
         })
         .catch(error => {

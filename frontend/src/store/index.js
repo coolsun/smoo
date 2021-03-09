@@ -15,11 +15,12 @@ export default new Vuex.Store({
         isAdmin: false
     },
     mutations: {
-        setCurrentUser(state, { userID, userName, userEmail, authToken } ) {
+        setCurrentUser(state, { userID, userName, userEmail, authToken, isAdmin } ) {
             state.currentUserID = userID;
             state.currentUserName = userName;
             state.currentUserEmail = userEmail;
             state.authToken = authToken;
+            state.isAdmin = isAdmin;
         },
         setAuthToken(state, authToken) {
             state.authToken = authToken;

@@ -64,7 +64,10 @@
     "donation-history": "Donation History",
     "my-donation": "My Donation",
     "my-campaign": "My Campaign",
-    "sign_up": "Sign up"
+    "sign_up": "Sign up",
+    "manage-accounts": "Manage Accounts",
+    "manage-donations": "Manage Donations",
+    "manage-campaigns": "Manage Campaigns"
   },
   "footer": {
     "101moo": "101Moo",

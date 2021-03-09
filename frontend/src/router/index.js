@@ -25,6 +25,9 @@ import MyAccount from '@/views/account/MyAccount';
 import MyDonation from '@/views/account/MyDonation';
 import MyCampaign from '@/views/account/MyCampaign';
 import DonationHistory from '@/views/donations/DonationHistory';
+import ManageAccounts from '@/views/admin/ManageAccounts';
+import ManageDonations from '@/views/admin/ManageDonations';
+import ManageCampaigns from '@/views/admin/ManageCampaigns';
 
 
 import AdminHome from '@/views/layouts/admin/Home';
@@ -139,6 +142,21 @@ export default new Router({
       path: '/my-campaign',
       name: 'my-campaign',
       component: MyCampaign
+    },
+    {
+      path: '/manage-accounts',
+      name: 'manage-accounts',
+      component: ManageAccounts
+    },
+    {
+      path: '/manage-donations',
+      name: 'manage-donations',
+      component: ManageDonations
+    },
+    {
+      path: '/manage-campaigns',
+      name: 'manage-campaigns',
+      component: ManageCampaigns
     },
     {
       path: '/donation-history',
