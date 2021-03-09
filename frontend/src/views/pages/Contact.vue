@@ -14,13 +14,13 @@
                     <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12">
                         <div class="row">
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                                <input type="text" :placeholder="$t('contact.Name')">
+                                <input v-model="senderName" type="text" :placeholder="$t('contact.Name')">
                             </div>
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                                <input type="text" :placeholder="$t('contact.Email Address')">
+                                <input v-model="senderEmail" type="text" :placeholder="$t('contact.Email Address')">
                             </div>
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                                <input type="text" :placeholder="$t('contact.Phone Number')">
+                                <input v-model="senderPhoneNumber" type="text" :placeholder="$t('contact.Phone Number')">
                             </div>
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                                 <select name="category">
@@ -33,10 +33,10 @@
                                 </select>
                             </div>
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-                                <textarea name="message" rows="5" :placeholder="$t('contact.Message')"></textarea>
+                                <textarea v-model="senderMessage" name="message" rows="5" :placeholder="$t('contact.Message')"></textarea>
                             </div>
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-                                <button type="submit" class="bttn-mid btn-fill-2">{{ $t('contact.Send Message') }}</button>
+                                <button type="submit" class="bttn-mid btn-fill-2" @click="contact">{{ $t('contact.Send Message') }}</button>
                             </div>
                         </div>
                     </div>
@@ -79,7 +79,37 @@ export default {
   },
   data() {
     return {
+      senderName: "",
+      senderPhoneNumber: "",
+      senderEmail: "",
+      senderMessage: ""
     };
   },
+  methods: {
+    contact() {
+      console.log("name: " + this.senderName);
+      console.log("phone: " + this.senderPhoneNumber);
+      console.log("email: " + this.senderEmail);
+      console.log("message: " + this.senderMessage);
+      let newMessage = {
+          name: this.senderName,
+          phoneNumber: this.senderPhoneNumber,
+          email: this.senderEmail,
+          message: this.senderMessage
+      }
+      this.$axios.post('/api/contact_us', 
+          {message: newMessage},
+          {headers: { 'Authorization': this.$store.state.authToken }})
+      .then(() => {
+          // alert: success
+          console.log("send message succeeded!")
+          this.$notify.info({message: 'Successfully sent message!', position: 'top center', timeOut: 3000});
+      })
+      .catch(error => {
+          // alert: error
+          console.log(error.message)
+      }) 
+    }
+  }
 };
 </script>
