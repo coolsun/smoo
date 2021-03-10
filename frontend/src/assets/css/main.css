@@ -2422,6 +2422,13 @@ Hero Area
     
 }
 
+.center-cropped {
+  width: 350px;
+  height: 210px;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
 /* Review Area */
 .review-area .reviews .single-review {
     text-align: center;

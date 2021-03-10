@@ -3,11 +3,8 @@
     <section class="explore-area section-padding-2">
         <div class="container">
             <div class="explore-search row">
-                <div class="col-sm">
-                    <mdb-select :options="campaignCategory.options" :value.sync="campaignCategory.value" :label="$t('campaign.Choose a category')" width="50%"
-                    />
-                </div>
-                <select v-model="category" class="input-group">
+                <h6 style="margin-bottom: 0.2rem;">Category</h6>
+                <select v-model="category" class="input-group" style="margin-bottom: 15px; width: 100%; border: 1px solid #E0E0E0; padding-left: 20px; border-radius: 4px; color: #666666; resize: none;">
                   <option disabled value="">{{ $t('campaign.Choose a category') }}</option>
                   <option>{{ this.$t('header.emergency') }}</option>
                   <option>{{ this.$t('header.memorial') }}</option>
@@ -29,9 +26,9 @@
             <div v-if="isLoaded" class="row portfolio portfolio-gallery column-3 gutter wow fadeInUp" data-wow-delay="0.5s">
 
                 <div v-for="campaign in campaigns" :key="campaign.id">
-                    <div v-if="campaign.category_id == campaignID" class="portfolio-item">
+                    <div v-if="campaign.category_id == $store.state.currentCategory" class="portfolio-item">
                         <div class="item-thumb">
-                            <img v-if="campaign.photo_url" :src="campaign.photo_url" alt="">
+                            <img v-if="campaign.photo_url" class="center-cropped" :src="campaign.photo_url" alt="">
                             <img v-else src="@/assets/images/portfolios/7.jpg" alt="">
                             <div class="item-tag">By Petey Cruiser</div>
                             <div class="progress light-blue-bg">
@@ -41,7 +38,7 @@
                         <div class="item-details">
                             <div class="item-meta">
                                 <span>{{ $t('campaign_details.goal') }}: ${{ campaign.goal }}</span>
-                                <span>{{ campaign.campaign_started }}{{ $t('campaign_details.days_ago')}}</span>
+                                <span>{{ campaign.campaign_started + " " + $t('campaign_details.days_ago') }}</span>
                                 <span>{{ campaign.goal_reached }}% {{ $t('campaign_details.funded') }}</span>
                             </div>
                             <div class="item-title">
@@ -59,34 +56,48 @@
 </template>
 
 <script>
-import { mdbSelect } from "mdbvue";
 export default {
   name: "Explore",
   components: {
-      mdbSelect
   },
   data() {
     return {
         campaigns: [],
         isLoaded: false,
-        testDate: "",
-        campaignID: this.$store.state.currentCategory,
-        campaignCategory: {
-          value: '1',
-          options: [
-            { text: this.$t('header.emergency'), value: 1, selected: true },
-            { text: this.$t('header.memorial'), value: 2 },
-            { text: this.$t('header.animal-rescue'), value: 3 },
-            { text: this.$t('header.medical'), value: 4 },
-            { text: this.$t('header.charity'), value: 5 }
-          ]
-        }
+        category: this.$store.state.currentCategory
     };
   },
   created() {
       this.campaign();
   },
+  watch: {
+      category: function() {
+          this.getCategoryID();
+          this.campaign();
+      }
+  },
   methods: {
+      getCategoryID() {
+        switch(this.category) {
+          case this.$t('header.emergency'):
+            this.$store.state.currentCategory = '1';
+            break;
+          case this.$t('header.memorial'):
+            this.$store.state.currentCategory = '2';
+            break;
+          case this.$t('header.animal-rescue'):
+            this.$store.state.currentCategory = '3';
+            break;        
+          case this.$t('header.medical'):
+            this.$store.state.currentCategory = '4';
+            break;
+          case this.$t('header.charity'):
+            this.$store.state.currentCategory = '5';
+            break;
+          default:
+            this.$store.state.currentCategory = '1';
+        }
+    },
     campaign() {
         console.log("this.campaigns authToken:"+this.$store.state.authToken)
         // this.$axios.get('/api/campaigns', { headers: { 'Authorization': this.$store.state.authToken}})
