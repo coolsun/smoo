@@ -718,7 +718,7 @@ export default {
     };
   },
   created() {
-    this.$notify.info({message: 'Welcome to 101Moo!', position: 'top center', timeOut: 5000});
+    this.$notify.info({message: 'Welcome to 101Moo!', position: 'top left', timeOut: 5000});
   }
   /*mounted() {
     this.$refs.hero-slideshow.owlCarousel({

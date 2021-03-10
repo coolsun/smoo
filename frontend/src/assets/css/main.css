@@ -1041,6 +1041,7 @@ a#scrollUp:hover {
 .header-top .single-header-top p {
     margin: 0;
     text-align: center;
+    float: right;
 }
 
 .header-top .single-header-top.last ul {
@@ -2685,6 +2686,11 @@ Hero Area
 
     color: white;
 }*/
+
+.form-control-image {
+    height: auto;
+    margin: .5rem;
+}
 
 .input-group-lg > .custom-select, .input-group-lg > .form-control:not(textarea) {
     height: 5rem;

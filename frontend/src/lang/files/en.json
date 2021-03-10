@@ -125,7 +125,10 @@
     "share": "Share",
     "leave_comment": "Leave a comment",
     "post_comment": "Post comment",
-    "subscribe": "Subscribe"
+    "subscribe": "Subscribe",
+    "days_ago": "Days Ago",
+    "funded": "Funded",
+    "goal": "Goal"
   },
   "contact": {
     "Get in touch": "Get in touch",

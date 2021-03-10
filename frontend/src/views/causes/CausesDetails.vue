@@ -5,7 +5,8 @@
             <div class="row">
                 <div class="col-xl-8 col-lg-8 col-md-7 col-sm-7">
                     <div class="cause-details-content">
-                        <img src="@/assets/images/causes-details.jpg" alt="">
+                        <img v-if="campaign.photo_url" :src="campaign.photo_url" alt="">
+                        <img v-else src="@/assets/images/causes-details.jpg" alt="">
                         <div class="cause-details-contents">
                             <h2>{{ campaign.name }}</h2>
                             <p>{{ campaign.description }}</p>

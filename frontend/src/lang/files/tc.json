@@ -131,7 +131,10 @@
     "share": "分享",
     "leave_comment": "我要留言",
     "post_comment": "送出留言",
-    "subscribe": "訂閱電郵通知"
+    "subscribe": "訂閱電郵通知",
+    "days_ago": "Days Ago-C",
+    "funded": "Funded-C",
+    "goal": "Goal-C"
   },
   "contact": {
     "Get in touch": "聯繫我們",

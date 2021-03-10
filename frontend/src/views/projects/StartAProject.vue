@@ -26,7 +26,7 @@
                             <div class="input-group input-group-sm">
                                 <input class="form-control" type="file" @change="onFileChanged" style="height: revert;" />
                             </div>
-                            <img id="preview_image" src="" class="form-control" height="200" alt="Image preview...">
+                            <img id="preview_image" src="" class="form-control-image" alt="Image preview...">
                             <br />
                             <!--div class="upload-img">
                                 <span>Upload campaign image</span>

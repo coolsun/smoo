@@ -7,6 +7,14 @@
                     <mdb-select :options="campaignCategory.options" :value.sync="campaignCategory.value" :label="$t('campaign.Choose a category')" width="50%"
                     />
                 </div>
+                <select v-model="category" class="input-group">
+                  <option disabled value="">{{ $t('campaign.Choose a category') }}</option>
+                  <option>{{ this.$t('header.emergency') }}</option>
+                  <option>{{ this.$t('header.memorial') }}</option>
+                  <option>{{ this.$t('header.animal-rescue') }}</option>
+                  <option>{{ this.$t('header.medical') }}</option>
+                  <option>{{ this.$t('header.charity') }}</option>
+                </select>
                 <!--<div class="col-sm">
                     <input type="text" placeholder="Start date">
                 </div>
@@ -23,7 +31,8 @@
                 <div v-for="campaign in campaigns" :key="campaign.id">
                     <div v-if="campaign.category_id == campaignID" class="portfolio-item">
                         <div class="item-thumb">
-                            <img src="@/assets/images/portfolios/7.jpg" alt="">
+                            <img v-if="campaign.photo_url" :src="campaign.photo_url" alt="">
+                            <img v-else src="@/assets/images/portfolios/7.jpg" alt="">
                             <div class="item-tag">By Petey Cruiser</div>
                             <div class="progress light-blue-bg">
                                 <div class="progress-bar" role="progressbar" style="width: 45%;" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"><span>45%</span></div>
@@ -31,15 +40,15 @@
                         </div>
                         <div class="item-details">
                             <div class="item-meta">
-                                <span>$450 Pledged</span>
-                                <span>5 Days ago</span>
-                                <span>45% Funded</span>
+                                <span>{{ $t('campaign_details.goal') }}: ${{ campaign.goal }}</span>
+                                <span>{{ campaign.campaign_started }}{{ $t('campaign_details.days_ago')}}</span>
+                                <span>{{ campaign.goal_reached }}% {{ $t('campaign_details.funded') }}</span>
                             </div>
                             <div class="item-title">
                                 <h3><a href="">{{ campaign.name }}</a></h3>
                             </div>
                             <p class="text-truncate" style="max-width: 100%">{{ campaign.description }}</p>
-                            <router-link class="bttn-small btn-wht" :to="{ name: 'causes-details', params: { campaignID: 1 }}" tag="button">{{ $t('campaign.View') }}</router-link>
+                            <router-link class="bttn-small btn-wht" :to="{ name: 'causes-details', params: { campaignID: campaign.id }}" tag="button">{{ $t('campaign.View') }}</router-link>
                         </div>
                     </div>
                 </div>                
@@ -60,6 +69,7 @@ export default {
     return {
         campaigns: [],
         isLoaded: false,
+        testDate: "",
         campaignID: this.$store.state.currentCategory,
         campaignCategory: {
           value: '1',
