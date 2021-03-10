@@ -41,7 +41,7 @@
                         <div class="item-details">
                             <div class="item-meta">
                                 <span>{{ $t('campaign_details.goal') }}: ${{ campaign.goal }}</span>
-                                <span>{{ campaign.campaign_started }}{{ $t('campaign_details.days_ago')}}</span>
+                                <span>{{ campaign.campaign_started }} {{ $t('campaign_details.days_ago')}}</span>
                                 <span>{{ campaign.goal_reached }}% {{ $t('campaign_details.funded') }}</span>
                             </div>
                             <div class="item-title">

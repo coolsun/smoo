@@ -52,7 +52,7 @@
     "causes-details": "協助內容",
     "blog": "部落客",
     "all_blogs": "部落客內容",
-    "blog_details": "Blog Details-C",
+    "blog_details": "部落客詳細內容",
     "contact_us": "聯繫我們",
     "contact": "聯繫客服",
     "medical": "醫療救助",
@@ -123,8 +123,8 @@
     "Choose a category": "選擇募款類別",
     "Create Campaign": "發起募款",
     "subscribe": "訂閱電郵通知",
-    "View": "View-C",
-    "Upload": "Upload-C"
+    "View": "查看",
+    "Upload": "上傳"
   },
   "campaign_details": {
     "comments": "留言紀錄：",
@@ -132,9 +132,9 @@
     "leave_comment": "我要留言",
     "post_comment": "送出留言",
     "subscribe": "訂閱電郵通知",
-    "days_ago": "Days Ago-C",
-    "funded": "Funded-C",
-    "goal": "Goal-C"
+    "days_ago": "天前",
+    "funded": "募款",
+    "goal": "目標"
   },
   "contact": {
     "Get in touch": "聯繫我們",
