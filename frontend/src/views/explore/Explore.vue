@@ -32,7 +32,7 @@
                             <img v-else src="@/assets/images/portfolios/7.jpg" alt="">
                             <div class="item-tag">By Petey Cruiser</div>
                             <div class="progress light-blue-bg">
-                                <div class="progress-bar" role="progressbar" style="width: 45%;" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"><span>45%</span></div>
+                                <div class="progress-bar" role="progressbar" :style="progressBarStyle(campaign)" :aria-valuenow="campaign.goal_reached" aria-valuemin="0" aria-valuemax="100"><span>{{ campaign.goal_reached }}%</span></div>
                             </div>
                         </div>
                         <div class="item-details">
@@ -112,7 +112,12 @@ export default {
             // alert: error
             console.log(error.message)
         })
+    },
+    progressBarStyle(campaign) {
+        var width = parseInt(campaign.goal_reached) + 10.0;
+        return "width:" + width + "%;";
     }
+   
   }
 };
 </script>

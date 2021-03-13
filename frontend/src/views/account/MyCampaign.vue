@@ -30,14 +30,14 @@
                         <img src="@/assets/images/portfolios/7.jpg" alt="">
                         <div class="item-tag">By Petey Cruiser</div>
                         <div class="progress light-blue-bg">
-                            <div class="progress-bar" role="progressbar" style="width: 45%;" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"><span>45%</span></div>
+                        <div class="progress-bar" role="progressbar" :style="progressBarStyle(my_campaign)" :aria-valuenow="my_campaign.goal_reached" aria-valuemin="0" aria-valuemax="100"><span>{{ my_campaign.goal_reached }}%</span></div>
                         </div>
                     </div>
                     <div class="item-details">
                         <div class="item-meta">
-                            <span>$450 Pledged</span>
-                            <span>5 Days ago</span>
-                            <span>45% Funded</span>
+                            <span>{{ $t('campaign_details.goal') }}: ${{ my_campaign.goal }}</span>
+                            <span>{{ my_campaign.campaign_started + " " + $t('campaign_details.days_ago') }}</span>
+                            <span>{{ my_campaign.goal_reached }}% {{ $t('campaign_details.funded') }}</span>
                         </div>
                         <div class="item-title">
                             <h3><a href="">{{ my_campaign.name }}</a></h3>
@@ -70,7 +70,7 @@ export default {
     this.my_campaign();
   },
   methods: {
-    my_campaign() {
+      my_campaign() {
         this.$axios.get('/api/campaigns/my_campaigns', { headers: { 'Authorization': this.$store.state.authToken}})
         .then((res) => {
             // alert: success
@@ -81,6 +81,12 @@ export default {
             // alert: error
             console.log(error.message)
         }) 
+    },
+    progressBarStyle(this_campaign) {
+        if (this_campaign) {
+          var width = parseInt(this_campaign.goal_reached) + 10.0;
+          return "width:" + width + "%;";
+        }
     }
   }
 };
