@@ -16,6 +16,10 @@ import Notify from 'mdbvue/lib/components/Notify'
 import i18n from './lang/language';
 import axios from 'axios';
 
+var VueCookie = require('vue-cookie');
+// Tell Vue to use the plugin
+Vue.use(VueCookie);
+
 //Vue.use(Vue2TouchEvents);
 //Vue.use(LoadScript);
 

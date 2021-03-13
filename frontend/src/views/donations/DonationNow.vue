@@ -52,7 +52,7 @@
                                         <span class="fill-control-description">I have a debit and/or credit card.</span>
                                 </label>  
                             </div>
-                            <button class="bttn-mid btn-fill" type="submit">Submit Donation</button>
+                            <button class="bttn-mid btn-fill" type="submit" @click="donate_now">Submit Donation</button>
                         </form>
                     </div>
                 </div>
@@ -72,5 +72,22 @@ export default {
     return {
     };
   },
+  created() {
+  },
+  methods: {
+    donate_now() {
+        this.$axios.post('/api/donate_now', 
+            { headers: { 'Authorization': this.$store.state.authToken}})
+        .then((res) => {
+            // alert: success
+            this.donations = res.data;
+            console.log("this.donations:"+this.donations);
+        })
+        .catch(error => {
+            // alert: error
+            console.log(error.message)
+        }) 
+    }
+  }
 };
 </script>

@@ -1,24 +1,15 @@
 <template>
   <div id="app">
-    <div v-if="!$store.state.isAdmin">
-      <custom-header />
-      <!--custom-breadcrumb /-->
-      <main>
-        <transition name="fade" mode="out-in">
-          <router-view />
-        </transition>
-      </main>
+    <custom-header />
+    <!--custom-breadcrumb /-->
+    <main>
+      <transition name="fade" mode="out-in">
+        <router-view />
+      </transition>
+    </main>
 
-      <custom-footer />
-      <custom-copyright />
-    </div>
-    <div v-else>
-      <main>
-        <transition name="fade" mode="out-in">
-          <router-view />
-        </transition>
-      </main>
-    </div>
+    <custom-footer />
+    <custom-copyright />
   </div>
 </template>
 
@@ -41,6 +32,8 @@ export default {
     return {
     };
   },
+  created() {
+  }
 };
 </script>
 

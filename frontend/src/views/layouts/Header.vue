@@ -77,7 +77,7 @@
                           <li v-if="!$store.state.isAdmin" style="vertical-align: middle; margin-left: 0;">
                             <mdb-dropdown v-if="$store.state.isLoggedIn" class="nav-item nav-link">
                               <mdb-dropdown-toggle tag="a" navLink color="primary-bg" slot="toggle" waves-fixed>
-                                  <i class="fa fa-cog"></i>
+                                  <i class="fa fa-cog fa-lg"></i>
                               </mdb-dropdown-toggle>
                               <mdb-dropdown-menu color="primary-bg">
                                 <mdb-dropdown-item router to="/manage-accounts">{{ $t('header.manage-accounts') }}</mdb-dropdown-item>
@@ -168,7 +168,7 @@ import {
       mdbDropdownItem,
       mdbDropdownMenu,
       mdbDropdownToggle
-  },
+    },
     data() {
       return {
         modal: false,
@@ -176,6 +176,23 @@ import {
         password: null,
         searchInput: "",
       };
+    },
+    computed: {
+    },
+    created() {
+      let authToken = this.$cookie.get('auth_token');
+      let userId = this.$cookie.get('auth_id');
+      if (authToken && userId) {
+        this.$axios.get('/api/users/'+userId, { headers: { 'Authorization': authToken}})
+        .then((res) => {
+          this.$store.commit('setAuthToken', authToken);
+          this.$store.state.currentUserID=userId;
+          this.$store.state.isLoggedIn=true;
+          this.$store.state.currentUserEmail= res.data.data.email;
+          this.$store.state.isAdmin = res.data.data.is_admin;
+          console.log("res:"+res);
+        })
+      }
     },
     methods: {
       openSignInModal() {
@@ -201,10 +218,12 @@ import {
           // alert: success
           console.log("setAuthToken:"+res.headers['authorization'])
           this.$store.commit('setAuthToken', res.headers['authorization']);
+          this.$cookie.set('auth_id', res.data.data.id)
+          this.$cookie.set('auth_token', res.headers['authorization'])
           this.$store.state.isLoggedIn = true;
           // res.data.data is not a typo
           this.$store.state.currentUserID = res.data.data.id;
-          this.$store.state. currentUserEmail= res.data.data.email;
+          this.$store.state.currentUserEmail= res.data.data.email;
           this.$store.state.isAdmin = res.data.data.is_admin;
           this.modal = false;
         })
@@ -219,6 +238,8 @@ import {
       },
       signOut() {
         this.$store.state.isLoggedIn = false;
+        this.$cookie.delete('auth_token');
+        this.$cookie.delete('auth_id');
         this.$router.push({ name: 'home'});
         window.location.reload();
       },
