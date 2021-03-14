@@ -189,6 +189,8 @@ import {
           this.$store.state.currentUserID=userId;
           this.$store.state.isLoggedIn=true;
           this.$store.state.currentUserEmail= res.data.data.email;
+          this.$store.state.currentUserFirstName= res.data.data.first_name;
+          this.$store.state.currentUserLastName= res.data.data.last_name;
           this.$store.state.isAdmin = res.data.data.is_admin;
           console.log("res:"+res);
         })

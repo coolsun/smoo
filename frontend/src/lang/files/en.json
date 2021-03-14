@@ -130,6 +130,9 @@
     "funded": "Funded",
     "goal": "Goal"
   },
+  "donation": {
+    "Enter your Donation":"Enter your Donation"
+  },
   "contact": {
     "Get in touch": "Get in touch",
     "Name": "Name",

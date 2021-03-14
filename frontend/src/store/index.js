@@ -10,6 +10,8 @@ export default new Vuex.Store({
         currentUserID: null,
         currentUserName: null,
         currentUserEmail: null,
+        currentUserFirstName: null,
+        currentUserLastName: null,
         currentCategory: '1',
         authToken: null,
         isAdmin: false
