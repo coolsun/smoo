@@ -34,7 +34,7 @@
                                 </select>
                             </div>
                             <h4>{{ $t('donation.Comment') }}</h4>
-                            <textarea name="message" rows="3" :placeholder="$t('donation.Why I donate...')"></textarea>
+                            <textarea name="message" rows="3" :placeholder="$t('donation.Why I donate')"></textarea>
                             <br><br>
                             <button class="bttn-mid btn-fill" type="submit" @click="donate_now">{{ $t('donation.Submit Donation') }}</button>
                         </form>

@@ -137,7 +137,16 @@
     "goal": "目標"
   },
   "donation": {
-    "Enter your Donation":"我要芸助"
+    "Enter your Donation":"我要芸助",
+    "First Name": "名",
+    "Last Name": "姓",
+    "Address": "地址",
+    "City": "市",
+    "Zipcode": "郵遞區碼",
+    "Country": "國家",
+    "Comment": "留言",
+    "Why I donate": "協助原因...",
+    "Submit Donation": "提交協助"
   },
   "contact": {
     "Get in touch": "聯繫我們",

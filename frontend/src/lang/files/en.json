@@ -131,7 +131,16 @@
     "goal": "Goal"
   },
   "donation": {
-    "Enter your Donation":"Enter your Donation"
+    "Enter your Donation":"Enter your Donation",
+    "First Name": "First Name",
+    "Last Name": "Last Name",
+    "Address": "Address",
+    "City": "City",
+    "Zipcode": "Zipcode",
+    "Country": "Country",
+    "Comment": "Comment",
+    "Why I donate": "Why I donate...",
+    "Submit Donation": "Submit Donation"
   },
   "contact": {
     "Get in touch": "Get in touch",
