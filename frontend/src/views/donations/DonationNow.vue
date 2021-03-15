@@ -10,27 +10,23 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="inputGroup-sizing-lg">$</span>
                             </div>
-                            <input type="text" v-model="amount" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
+                            <mdb-input type="number" v-model="amount" min="0" aria-label="Large" aria-describedby="inputGroup-sizing-sm"/>
                         </div><br>
                         <form action="#" v-on:submit.prevent>
-                            <h4>{{ $t('donation.First Name') }}</h4>
-                            <input type="text" v-model="first_name" class="form-control" aria-label="small" aria-describedby="inputGroup-sizing-sm">
-                            <h4>{{ $t('donation.Last Name') }}</h4>
-                            <input type="text" v-model="last_name" class="form-control" aria-label="small" aria-describedby="inputGroup-sizing-sm">
-                            <h4>{{ $t('donation.Address') }}</h4>
-                            <input type="text" v-model="address" class="form-control" aria-label="small" aria-describedby="inputGroup-sizing-sm">
-                            <h4>{{ $t('donation.City') }}</h4>
-                            <input type="text" v-model="city" class="form-control" aria-label="small" aria-describedby="inputGroup-sizing-sm">
-                            <h4>{{ $t('donation.Zipcode') }}</h4>
-                            <input type="text" v-model="zipcode" class="form-control" aria-label="small" aria-describedby="inputGroup-sizing-sm">
-                            <h4>{{ $t('donation.Country') }}</h4>
-                            <div class="form-select" aria-label="small" aria-describedby="inputGroup-sizing-sm">
+                            <mdb-input type="text" :label="$t('donation.First Name')" v-model="first_name" />
+                          
+                            <mdb-input type="text" :label="$t('donation.Last Name')" v-model="last_name" />
+                            <mdb-input type="text" :label="$t('donation.Address')" v-model="address" />
+                            <mdb-input type="text" :label="$t('donation.City')" v-model="city" />
+                            <mdb-input type="text" :label="$t('donation.Zipcode')" v-model="zipcode" />
+                            <div class="form-select" >
                                 <select v-model="country">
-                                    <option value="">Select your country</option>
-                                    <option value="">Select your country</option>
-                                    <option value="">Select your country</option>
-                                    <option value="">Select your country</option>
-                                    <option value="">Select your country</option>
+                                    <option value="0">{{ $t('donation.Country') }}</option>
+                                    <option value="1">Taiwan</option>
+                                    <option value="2">Japan</option>
+                                    <option value="3">United States</option>
+                                    <option value="4">South Korea</option>
+                                    <option value="5">Vietnam</option>
                                 </select>
                             </div>
                             <h4>{{ $t('donation.Comment') }}</h4>
@@ -46,10 +42,12 @@
 </template>
 
 <script>
+import { mdbInput } from 'mdbvue';
 
 export default {
   name: "DonationNow",
   components: {
+      mdbInput
   },
   data() {
     return {
@@ -59,7 +57,7 @@ export default {
         address: null,
         zipcode: null,
         city: null,
-        country: null,
+        country: 0,
         comment: null
     };
   },

@@ -57,7 +57,7 @@
 import { mdbInput } from 'mdbvue';
 
 export default {
-  name: "DonationNow",
+  name: "SignUp",
   components: {
       mdbInput
   },
