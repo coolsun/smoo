@@ -63,14 +63,21 @@ export default {
   },
   data() {
     return {
+        email: "",
+        password: "",
+        firstName: "",
+        lastName: ""
     };
   },
   methods: {
     signUp() {
+        console.log("first: " + this.firstName);
         let signUpData = {
             user: {
                 email: this.email,
-                password: this.password
+                password: this.password,
+                first_name: this.firstName,
+                last_name: this.lastName
                 //email: "aa",
                 //password: "bb"
             }
