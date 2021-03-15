@@ -3,14 +3,14 @@
     <section class="explore-area section-padding-2">
         <div class="container">
             <div class="explore-search row">
-                <h6 style="margin-bottom: 0.2rem;">Category</h6>
-                <select v-model="category" class="input-group" style="margin-bottom: 15px; width: 100%; border: 1px solid #E0E0E0; padding-left: 20px; border-radius: 4px; color: #666666; resize: none;">
-                  <option disabled value="">{{ $t('campaign.Choose a category') }}</option>
-                  <option>{{ this.$t('header.emergency') }}</option>
-                  <option>{{ this.$t('header.memorial') }}</option>
-                  <option>{{ this.$t('header.animal-rescue') }}</option>
-                  <option>{{ this.$t('header.medical') }}</option>
-                  <option>{{ this.$t('header.charity') }}</option>
+                <h6 style="margin-bottom: 0.2rem;">{{ $t('campaign.Category') }}</h6>
+                <select v-model="$store.state.currentCategory" class="input-group" style="margin-bottom: 15px; width: 100%; border: 1px solid #E0E0E0; padding-left: 20px; border-radius: 4px; color: #666666; resize: none;">
+                  <option disabled value="0">{{ $t('campaign.Choose a category') }}</option>
+                  <option value="1">{{ this.$t('header.emergency') }}</option>
+                  <option value="2">{{ this.$t('header.memorial') }}</option>
+                  <option value="3">{{ this.$t('header.animal-rescue') }}</option>
+                  <option value="4">{{ this.$t('header.medical') }}</option>
+                  <option value="5">{{ this.$t('header.charity') }}</option>
                 </select>
                 <!--<div class="col-sm">
                     <input type="text" placeholder="Start date">

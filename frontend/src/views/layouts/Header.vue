@@ -44,7 +44,7 @@
                         <ul>                        
                             <!--li><mdb-btn class="btn-sm btn-emt" @click.native="goToExplore"><router-link to="explore">{{ $t('header.explore') }}</router-link></mdb-btn></li>
                             <li><mdb-btn class="btn-sm btn-emt" @click.native="goToStartProject">{{ $t('header.start_project') }}</mdb-btn></li-->
-                            <li><mdb-btn class="btn-sm btn-emt" ><router-link to="/explore">{{ $t('header.explore') }}</router-link></mdb-btn></li>
+                            <li><mdb-btn class="btn-sm btn-emt" @click="goToExplore">{{ $t('header.explore') }}</mdb-btn></li>
                             <li><mdb-btn class="btn-sm btn-emt" @click="goToStartProject">{{ $t('header.start_project') }}</mdb-btn></li>
                         </ul>
                     </div>
@@ -264,6 +264,7 @@ import {
         })
       }, 
       goToExplore() {
+        this.$store.state.currentCategory = 1;
         this.$router.push({ name: 'explore'});
       },
       goToStartProject() {
