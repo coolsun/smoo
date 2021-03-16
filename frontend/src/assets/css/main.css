@@ -2124,6 +2124,7 @@ Hero Area
 .portfolio-item .item-thumb .progress .progress-bar {
     background: #23A875;
     position: relative;
+    overflow: visible;
 }
 
 .portfolio-item .item-thumb .progress .progress-bar span {
@@ -2312,6 +2313,7 @@ Hero Area
 .causes-area .cause-details-sidebar .cause-single-sidebar .progress .progress-bar {
     background: #5de3a0;
     position: relative;
+    overflow: visible;
 }
 
 .causes-area .cause-details-sidebar .cause-single-sidebar .progress .progress-bar span {

@@ -54,12 +54,12 @@
                     <div class="cause-details-sidebar sticky-top">
                         <div class="cause-single-sidebar">
                             <div class="progress red-bg-2">
-                                <div class="progress-bar" role="progressbar" style="width: 45%;" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"><span>45%</span></div>
+                                <div class="progress-bar" role="progressbar" :style="progressBarStyle(campaign)" :aria-valuenow="campaign.goal_reached" aria-valuemin="0" aria-valuemax="100"><span>{{ campaign.goal_reached }}%</span></div>
                             </div>
                             <div class="item-meta">
-                                <span>$450 Pledged</span>
-                                <span>5 Days ago</span>
-                                <span>45% Funded</span>
+                                <span>{{ $t('campaign_details.goal') }}: ${{ campaign.goal }}</span>
+                                <span>{{ campaign.campaign_started + " " + $t('campaign_details.days_ago') }}</span>
+                                <span>{{ campaign.goal_reached }}% {{ $t('campaign_details.funded') }}</span>
                             </div>
                             <router-link class="bttn-mid btn-emt w-100" :to="{ name: 'donation-now'}" tag="button">{{ $t('header.donate_now') }}</router-link>
                             <button class="bttn-mid btn-share w-100">{{ $t('campaign_details.share') }}</button>
@@ -161,6 +161,10 @@ export default {
         } else {
             this.$notify.info({message: 'Please login to comment', position: 'top center', timeOut: 5000});
         }
+    },
+    progressBarStyle(campaign) {
+        var width = parseInt(campaign.goal_reached) + 10.0;
+        return "width:" + width + "%;";
     }
   }
 };
