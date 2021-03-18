@@ -26,26 +26,26 @@
             <div v-if="isLoaded" class="row portfolio portfolio-gallery column-3 gutter wow fadeInUp" data-wow-delay="0.5s">
 
                 <div v-for="campaign in campaigns" :key="campaign.id">
-                    <div v-if="campaign.category_id == $store.state.currentCategory" class="portfolio-item">
+                    <div v-if="campaign.campaign.category_id == $store.state.currentCategory" class="portfolio-item">
                         <div class="item-thumb">
-                            <img v-if="campaign.photo_url" class="center-cropped" :src="campaign.photo_url" alt="">
+                            <img v-if="campaign.campaign.photo_url" class="center-cropped" :src="campaign.campaign.photo_url" alt="">
                             <img v-else src="@/assets/images/portfolios/7.jpg" alt="">
-                            <div class="item-tag">By Petey Cruiser</div>
+                            <div class="item-tag">{{ campaign.user.first_name }}</div>
                             <div class="progress light-blue-bg">
-                                <div class="progress-bar" role="progressbar" :style="progressBarStyle(campaign)" :aria-valuenow="campaign.goal_reached" aria-valuemin="0" aria-valuemax="100"><span>{{ campaign.goal_reached }}%</span></div>
+                                <div class="progress-bar" role="progressbar" :style="progressBarStyle(campaign)" :aria-valuenow="campaign.campaign.goal_reached" aria-valuemin="0" aria-valuemax="100"><span>{{ campaign.campaign.goal_reached }}%</span></div>
                             </div>
                         </div>
                         <div class="item-details">
                             <div class="item-meta">
                                 <span>{{ $t('campaign_details.goal') }}: ${{ campaign.goal }}</span>
-                                <span>{{ campaign.campaign_started + " " + $t('campaign_details.days_ago') }}</span>
-                                <span>{{ campaign.goal_reached }}% {{ $t('campaign_details.funded') }}</span>
+                                <span>{{ campaign.campaign.campaign_started + " " + $t('campaign_details.days_ago') }}</span>
+                                <span>{{ campaign.campaign.goal_reached }}% {{ $t('campaign_details.funded') }}</span>
                             </div>
                             <div class="item-title">
-                                <h3><a href="">{{ campaign.name }}</a></h3>
+                                <h3><a href="">{{ campaign.campaign.name }}</a></h3>
                             </div>
-                            <p class="text-truncate" style="max-width: 100%">{{ campaign.description }}</p>
-                            <router-link class="bttn-small btn-wht" :to="{ name: 'causes-details', params: { campaignID: campaign.id }}" tag="button">{{ $t('campaign.View') }}</router-link>
+                            <p class="text-truncate" style="max-width: 100%">{{ campaign.campaign.description }}</p>
+                            <router-link class="bttn-small btn-wht" :to="{ name: 'causes-details', params: { campaignID: campaign.campaign.id }}" tag="button">{{ $t('campaign.View') }}</router-link>
                         </div>
                     </div>
                 </div>                
@@ -104,7 +104,7 @@ export default {
         this.$axios.get('/api/campaigns/all_campaigns')
         .then((res) => {
             // alert: success
-            this.campaigns = res.data;
+            this.campaigns = res.data.all_campaigns;
             console.log("this.campaigns:"+this.campaigns);
             this.isLoaded = true;
         })
@@ -114,7 +114,7 @@ export default {
         })
     },
     progressBarStyle(campaign) {
-        var width = parseInt(campaign.goal_reached) + 10.0;
+        var width = parseInt(campaign.campaign.goal_reached) + 10.0;
         return "width:" + width + "%;";
     }
    
