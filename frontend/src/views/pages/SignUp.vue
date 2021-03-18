@@ -8,10 +8,10 @@
                     <div class="donate-project-content">
                         <h2>{{ $t('sign_in.sign_up') }}</h2><br>
                         <form action="#" v-on:submit.prevent>
+                            <mdb-input :label="'* '+$t('sign_in.first_name')" class="mb-5" type="text" v-model="firstName"/>
+                            <mdb-input :label="'* '+$t('sign_in.last_name')" class="mb-5" type="text" v-model="lastName"/>
                             <mdb-input :label="'* '+$t('sign_in.your_email')" class="mb-5" type="email" v-model="email" validate/>
-                            <mdb-input :label="'* '+$t('sign_in.your_password')" type="password" v-model="password"/><br>
-                            <mdb-input :label="'* '+$t('sign_in.first_name')" type="text" v-model="firstName"/><br>
-                            <mdb-input :label="'* '+$t('sign_in.last_name')" type="text" v-model="lastName"/><br>
+                            <mdb-input :label="'* '+$t('sign_in.your_password')" class="mb-5" type="password" v-model="password"/>
                             <!--h5>*Country</h5>
                             <div class="form-select">
                                 <select name="project-select">

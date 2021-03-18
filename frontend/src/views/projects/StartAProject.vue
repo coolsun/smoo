@@ -5,7 +5,7 @@
             <div class="row justify-content-center">
                 <div class="col-xl-7 col-lg-7 col-md-12 col-sm-12">
                     <div class="start-project-content">
-                        <h2>{{$t('campaign.Enter your Campaign Goal')}}</h2><br>
+                        <h2 class="text-center">{{$t('campaign.Enter your Campaign Goal')}}</h2><br>
                         <div class="input-group input-group-lg">
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="inputGroup-sizing-lg">$</span>
@@ -13,9 +13,11 @@
                             <input v-model="projectGoal" type="number" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
                         </div><br>
                         <form action="#" v-on:submit.prevent>
-                            <textarea v-model="projectName" rows="1" :placeholder="$t('campaign.My campaign')"></textarea>
+                            <label class="input-label">{{ $t('campaign.My campaign') }}</label>
+                            <input class="mb-4 form-control" type="text" v-model="projectName" />
                             <textarea v-model="projectDescription" rows="5" :placeholder="$t('campaign.My campaign is for')"></textarea>        
-                            <select v-model="category" class="input-group">
+                            <label class="input-label">{{ $t('campaign.Category') }}</label>
+                            <select v-model="category" class="input-group mb-4">
                               <option disabled value="">{{ $t('campaign.Choose a category') }}</option>
                               <option>{{ this.$t('header.emergency') }}</option>
                               <option>{{ this.$t('header.memorial') }}</option>

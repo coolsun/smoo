@@ -1,69 +1,72 @@
-
 <template>
-    <!--Donation Now Section-->
-    <section class="donate-project section-padding">
+    <section class="section-padding-2">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-xl-7 col-lg-7 col-md-12 col-sm-12">
-                    <div class="donate-project-content">
-                        <h2>{{ $t('sign_in.sign_up') }}</h2><br>
-                        <form action="#" v-on:submit.prevent>
-                            <h3>*Email</h3>
-                            <textarea name="email" rows="1" placeholder="abc@gmail.com"></textarea><br>
-                            <h3>*Username</h3>
-                            <textarea name="username" rows="1" placeholder=""></textarea><br>
-                            <h3>*Name</h3>
-                            <textarea name="name" rows="1" placeholder="John Smith"></textarea><br>
-                            <h3>*Country</h3>
-                            <div class="form-select">
-                                <select name="project-select">
-                                    <option value="">Select your country</option>
-                                    <option value="">Select your country</option>
-                                    <option value="">Select your country</option>
-                                    <option value="">Select your country</option>
-                                    <option value="">Select your country</option>
-                                </select>
-                            </div>
-                            <h3>Zipcode</h3>
-                            <textarea name="zipcode" rows="1"></textarea><br>
-                            <br><br>
-                            <h6>Please verify the following:</h6>
-                            <div class="form-tick">
-                                <label class="custom-control fill-checkbox">
-                                    <input type="checkbox" class="fill-control-input">
-                                    <span class="fill-control-indicator"></span>
-                                    <span class="fill-control-description">I am at least 18 years old.</span>
-                                </label>  
-                                <label class="custom-control fill-checkbox">
-                                        <input type="checkbox" class="fill-control-input">
-                                        <span class="fill-control-indicator"></span>
-                                        <span class="fill-control-description">I can verify a bank account and government-issued ID.</span>
-                                </label>
-                                <label class="custom-control fill-checkbox">
-                                        <input type="checkbox" class="fill-control-input">
-                                        <span class="fill-control-indicator"></span>
-                                        <span class="fill-control-description">I have a debit and/or credit card.</span>
-                                </label>  
-                            </div>
-                            <button class="bttn-mid btn-fill" type="submit">{{ $t('sign_in.sign_up') }}</button>
-                        </form>
-                    </div>
-                </div>
+            <h2> Users </h2>
+            <br>
+            <div>
+              <mdb-tbl responsive>
+                <mdb-tbl-head class="donation-table" textWhite>
+                  <tr>
+                    <th>#</th>
+                    <th>Email</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Date Joined</th>
+                    <th>Actions</th>
+                  </tr>
+                </mdb-tbl-head>
+                <mdb-tbl-body>
+                  <tr v-for="user in users" :key="user.id" scope="row">
+                    <th scope="row">{{ user.id }}</th>
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.first_name }}</td>
+                    <td>{{ user.last_name }}</td>
+                    <td>{{ user.created_at }}</td>
+                    <td>
+                        <button type="button" class="btn btn-outline-1 waves-effect px-3"><i class="fas fa-trophy"
+                          aria-hidden="true"></i></button>
+                        <button type="button" class="btn btn-outline-1 waves-effect px-3"><i class="fas fa-thumbtack"
+                          aria-hidden="true"></i></button>
+                        <button type="button" class="btn btn-outline-danger waves-effect px-3"><i class="fas fa-rocket" aria-hidden="true"></i></button>
+                    </td>
+                  </tr>
+                </mdb-tbl-body>
+              </mdb-tbl>
             </div>
         </div>
     </section>
-    <!--/Donation Now Section-->
 </template>
 
 <script>
-
+import { mdbTbl, mdbTblHead, mdbTblBody } from 'mdbvue';
 export default {
   name: "MyAccount",
   components: {
+    mdbTbl,
+    mdbTblHead,
+    mdbTblBody
   },
   data() {
     return {
+      users: []
     };
   },
+  created() {
+    this.getUsers();
+  },
+  methods: {
+    getUsers() {
+        this.$axios.get('/api/donations', { headers: { 'Authorization': this.$store.state.authToken}})
+        .then((res) => {
+            // alert: success
+            this.users = res.data;
+            console.log("this.users:"+this.users);
+        })
+        .catch(error => {
+            // alert: error
+            console.log(error.message)
+        }) 
+    }
+  }
 };
 </script>

@@ -2667,10 +2667,6 @@ Hero Area
     border: 1px solid #5de3a0;
 }
 
-.start-project .start-project-content {
-    text-align: center;
-}
-
 .start-project .start-project-content .form-tick {
     text-align: left;
     padding-left: 1rem;
@@ -2732,25 +2728,21 @@ Hero Area
     padding-left: 20px;
     border-radius: 4px;
     color: #666666;
+    resize: none;
 }
 
 .donate-project .donate-project-content form select {
     -webkit-appearance: none;
     appearance: none;
-    height: 60px;
 }
 
 .donate-project .donate-project-content form select option {
     padding-left: 15px;
 }
 
-.donate-project .donate-project-content form textarea {
-    padding-top: 10px;
-}
-
-.donate-project .donate-project-content form .form-tick {
-    margin-top: 20px;
-    margin-bottom: 35px;
+.donate-project .donate-project-content form .upload-img {
+    padding-top: 2rem;
+    padding-bottom: 3rem;
 }
 
 .donate-project .donate-project-content form .form-tick {
@@ -2803,12 +2795,9 @@ Hero Area
     border: 1px solid #5de3a0;
 }
 
-.donate-project .donate-project-content {
-    text-align: center;
-}
-
 .donate-project .donate-project-content .form-tick {
     text-align: left;
+    padding-left: 1rem;
 }
 
 .donate-project .donate-project-content .md-form .file-path-wrapper {
@@ -2816,29 +2805,14 @@ Hero Area
     float: right;
 }
 
-.donate-project .donate-project-content h3 {
-    text-align: left; 
-    font-weight: normal;
-    color: #5de3a0;
-    padding-bottom: 0.5rem;
-}
-
-.donate-project .donate-project-content h4 {
-    text-align: left;
-    font-weight: normal;
-    padding: 0.5rem;
-}
-
-.donate-project .donate-project-content h5 {
-    text-align: left;
-    font-weight: normal;
-}
-
 .donate-project .donate-project-content .input-group .form-control {
     background: white;
     color: #5de3a0;
 }
 
+.donate-project .donate-project-content .input-label {
+    text-align: left;
+}
 /* Donation History */
 .donation-table {
     background: #23A875;
